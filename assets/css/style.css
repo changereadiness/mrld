@@ -1,1 +1,353 @@
+/* MRLD Industrial Design System */
 
+
+:root {
+
+    --black:#111111;
+    --charcoal:#252525;
+    --steel:#5F666B;
+    --background:#F5F5F3;
+    --white:#FFFFFF;
+    --accent:#C56A24;
+
+
+    --heading-font:"Manrope", sans-serif;
+    --body-font:"Inter", sans-serif;
+
+
+    --container:1280px;
+
+}
+
+
+
+* {
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+
+body {
+
+    font-family:var(--body-font);
+    background:var(--background);
+    color:var(--charcoal);
+    line-height:1.7;
+
+}
+
+
+
+h1,h2,h3 {
+
+    font-family:var(--heading-font);
+    color:var(--black);
+    letter-spacing:-0.02em;
+
+}
+
+
+
+h1 {
+
+    font-size:clamp(3rem,6vw,5rem);
+    line-height:1.05;
+
+}
+
+
+
+h2 {
+
+    font-size:2.5rem;
+    margin-bottom:25px;
+
+}
+
+
+
+h3 {
+
+    font-size:1.4rem;
+
+}
+
+
+
+.container {
+
+    max-width:var(--container);
+    margin:auto;
+    padding:0 40px;
+
+}
+
+
+
+/* Navigation */
+
+
+.navbar {
+
+    max-width:var(--container);
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:35px 8%;
+
+}
+
+
+
+.logo {
+
+    text-decoration:none;
+    color:var(--black);
+
+    font-size:1.6rem;
+    font-weight:800;
+
+    letter-spacing:4px;
+
+}
+
+
+
+.nav-links {
+
+    display:flex;
+    gap:35px;
+
+    list-style:none;
+
+}
+
+
+
+.nav-links a {
+
+    text-decoration:none;
+    color:var(--charcoal);
+
+}
+
+
+
+.nav-links a:hover {
+
+    color:var(--accent);
+
+}
+
+
+
+/* Hero */
+
+
+.hero {
+
+    padding:140px 0 100px;
+
+}
+
+
+
+.hero-layout {
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+
+
+.hero p {
+
+    font-size:1.25rem;
+    margin:30px 0;
+
+    max-width:700px;
+
+}
+
+
+
+/* Button */
+
+
+.button {
+
+    display:inline-block;
+
+    padding:16px 32px;
+
+    background:var(--black);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+
+
+.button:hover {
+
+    background:var(--accent);
+
+}
+
+
+
+/* Equipment Card */
+
+
+.machine-card {
+
+    background:white;
+
+    padding:40px;
+
+    border:1px solid #ddd;
+
+}
+
+
+
+.machine-card div {
+
+    padding:18px;
+
+    margin-bottom:12px;
+
+    background:var(--background);
+
+    text-align:center;
+
+    font-weight:600;
+
+}
+
+
+
+/* Sections */
+
+
+section {
+
+    padding:100px 0;
+
+}
+
+
+
+.section-header {
+
+    max-width:700px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+/* Cards */
+
+
+.cards {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.card {
+
+    background:white;
+
+    padding:40px;
+
+    border:1px solid #e5e5e5;
+
+}
+
+
+
+.card:hover {
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* Footer */
+
+
+footer {
+
+    background:var(--black);
+
+    color:white;
+
+    padding:60px 8% 30px;
+
+}
+
+
+.footer-bottom {
+
+    margin-top:40px;
+
+    border-top:1px solid rgba(255,255,255,.2);
+
+    padding-top:20px;
+
+}
+
+
+
+@media(max-width:768px){
+
+.hero-layout,
+.cards {
+
+grid-template-columns:1fr;
+
+}
+
+
+.navbar {
+
+flex-direction:column;
+gap:25px;
+
+}
+
+
+.nav-links {
+
+flex-direction:column;
+
+}
+
+}
