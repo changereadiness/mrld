@@ -490,7 +490,6 @@ button {
 
 /* Footer */
 
-
 footer {
 
     background: var(--black);
@@ -500,19 +499,6 @@ footer {
     padding: 60px 8% 30px;
 
 }
-
-
-
-
-footer p {
-
-    color: #aaa;
-
-    font-size: .9rem;
-
-}
-
-
 
 
 .footer-content {
@@ -527,7 +513,6 @@ footer p {
 
 
 
-
 .footer-brand {
 
     max-width: 350px;
@@ -536,15 +521,37 @@ footer p {
 
 
 
-
 .footer-brand h3 {
 
     color: var(--white);
 
+    text-transform: uppercase;
+
     letter-spacing: 3px;
+
+    margin-bottom: 15px;
 
 }
 
+
+
+.footer-tagline {
+
+    color: var(--accent);
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.footer-description {
+
+    color: #B5B5B5;
+
+}
 
 
 
@@ -558,7 +565,6 @@ footer p {
 
 
 
-
 .footer-links h4 {
 
     color: var(--accent);
@@ -569,14 +575,13 @@ footer p {
 
 
 
-
 .footer-links a {
 
     display: block;
 
     color: var(--white);
 
-    opacity: .8;
+    opacity: .85;
 
     text-decoration: none;
 
@@ -584,6 +589,15 @@ footer p {
 
 }
 
+
+
+.footer-links a:hover {
+
+    opacity: 1;
+
+    color: var(--accent);
+
+}
 
 
 
@@ -595,8 +609,37 @@ footer p {
 
     border-top: 1px solid rgba(255,255,255,.15);
 
+    display: flex;
+
+    justify-content: space-between;
+
 }
 
+
+
+.footer-bottom p {
+
+    color: #999;
+
+    font-size: .9rem;
+
+}
+
+
+
+@media(max-width:768px){
+
+    .footer-content,
+    .footer-links,
+    .footer-bottom {
+
+        flex-direction: column;
+
+        gap:30px;
+
+    }
+
+}
 
 
 
