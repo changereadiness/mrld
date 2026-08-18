@@ -774,7 +774,83 @@ header {
     transform: translateX(4px);
 }
 
+/* =====================================================
+   Principal
+===================================================== */
 
+.principal-section {
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+
+.principal-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+
+.principal-image {
+    width: 100%;
+    max-width: 420px;
+}
+
+
+.principal-image img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: var(--background);
+}
+
+
+.principal-content {
+    max-width: 650px;
+}
+
+
+.principal-content h2 {
+    margin-bottom: 12px;
+}
+
+
+.principal-role {
+    margin-bottom: 24px;
+    color: var(--copper);
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+}
+
+
+.principal-content p:not(.principal-role) {
+    color: var(--text);
+}
+
+
+@media (min-width: 1050px) {
+
+    .principal-layout {
+        grid-template-columns:
+            minmax(320px, .75fr)
+            minmax(0, 1fr);
+
+        gap: 100px;
+    }
+
+}
+
+
+@media (min-width: 1400px) {
+
+    .principal-layout {
+        gap: 120px;
+    }
+
+}
 /* =====================================================
    11. Process Section
 ===================================================== */
