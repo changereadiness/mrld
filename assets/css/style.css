@@ -802,8 +802,8 @@ header {
 .principal-image img {
     width: 100%;
     aspect-ratio: 4 / 5;
-    object-fit: contain;
-    background: var(--background);
+    object-fit: cover;
+    object-position: center top;
 }
 
 
