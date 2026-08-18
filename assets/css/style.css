@@ -10,6 +10,7 @@
 ===================================================== */
 
 :root {
+
     --graphite: #202426;
     --graphite-dark: #151819;
 
@@ -26,6 +27,7 @@
     --body-font: "Inter", sans-serif;
 
     --container: 1280px;
+
 }
 
 
@@ -55,7 +57,7 @@ body {
     font-size: 16px;
     line-height: 1.7;
 
-    color: var(--charcoal);
+    color: var(--text);
     background: var(--background);
 
     overflow-x: hidden;
@@ -92,7 +94,7 @@ h3,
 h4 {
     font-family: var(--heading-font);
 
-    color: var(--navy);
+    color: var(--graphite);
 
     font-weight: 700;
 
@@ -155,7 +157,7 @@ section {
 
 
 .section-header p {
-    color: var(--text-muted);
+    color: var(--steel);
 
     font-size: 1.05rem;
 }
@@ -166,7 +168,7 @@ section {
 
     margin-bottom: 20px;
 
-    color: var(--accent);
+    color: var(--copper);
 
     font-size: .72rem;
     font-weight: 600;
@@ -177,7 +179,7 @@ section {
 
 
 .eyebrow-light {
-    color: var(--accent-light);
+    color: var(--copper);
 }
 
 
@@ -221,7 +223,7 @@ header {
 
     letter-spacing: 4px;
 
-    color: var(--navy);
+    color: var(--graphite);
 
     text-decoration: none;
 
@@ -230,7 +232,7 @@ header {
 
 
 .logo:hover {
-    color: var(--accent);
+    color: var(--copper);
 }
 
 
@@ -257,7 +259,7 @@ header {
 
     border: 0;
 
-    color: var(--navy);
+    color: var(--graphite);
 
     cursor: pointer;
 }
@@ -315,7 +317,7 @@ header {
 
     padding: 15px 16px;
 
-    color: var(--charcoal);
+    color: var(--text);
 
     text-decoration: none;
 
@@ -329,7 +331,7 @@ header {
 
 
 .nav-links.is-open a:hover {
-    color: var(--navy);
+    color: var(--copper);
 }
 
 
@@ -379,7 +381,7 @@ header {
 
     padding: 14px 26px;
 
-    background: var(--navy);
+    background: var(--graphite);
 
     color: var(--white);
 
@@ -405,7 +407,7 @@ header {
 
 
 .button:hover {
-    background: var(--accent);
+    background: var(--copper);
 
     transform: translateY(-2px);
 }
@@ -423,7 +425,7 @@ header {
 
     gap: 8px;
 
-    color: var(--navy);
+    color: var(--graphite);
 
     font-weight: 600;
 
@@ -436,6 +438,11 @@ header {
 }
 
 
+.text-link:hover {
+    color: var(--copper);
+}
+
+
 .text-link:hover span {
     transform: translateX(4px);
 }
@@ -444,14 +451,14 @@ header {
 .button-light {
     background: var(--white);
 
-    color: var(--navy);
+    color: var(--graphite);
 }
 
 
 .button-light:hover {
-    background: var(--background);
+    background: var(--copper);
 
-    color: var(--navy);
+    color: var(--white);
 }
 
 
@@ -492,7 +499,7 @@ header {
 
     max-width: 680px;
 
-    color: var(--text-muted);
+    color: var(--steel);
 
     font-size: 1.08rem;
 
@@ -533,7 +540,7 @@ header {
     border-radius: 4px;
 
     box-shadow:
-        0 20px 50px rgba(0,0,0,.06);
+        0 20px 50px rgba(32, 36, 38, .07);
 }
 
 
@@ -544,7 +551,7 @@ header {
 
     gap: 20px;
 
-    color: var(--accent);
+    color: var(--copper);
 
     font-size: .68rem;
 
@@ -616,9 +623,13 @@ header {
 
     background: var(--background);
 
-    border: 1px solid var(--accent);
+    border: 1px solid var(--copper);
 
     border-radius: 50%;
+
+    transition:
+        background .25s ease,
+        transform .25s ease;
 }
 
 
@@ -626,9 +637,21 @@ header {
     width: 12px;
     height: 12px;
 
-    background: var(--accent);
+    background: var(--copper);
 
     border-radius: 50%;
+}
+
+
+.diagram-node:hover {
+    background: var(--copper);
+
+    transform: scale(1.05);
+}
+
+
+.diagram-node:hover span {
+    background: var(--white);
 }
 
 
@@ -674,7 +697,7 @@ header {
 
 
 .machine-card-label strong {
-    color: var(--navy);
+    color: var(--graphite);
 
     font-family: var(--heading-font);
 
@@ -685,7 +708,7 @@ header {
 
 
 .machine-card-label span {
-    color: var(--text-muted);
+    color: var(--steel);
 
     font-size: .85rem;
 }
@@ -739,10 +762,10 @@ header {
 .service-card:hover {
     transform: translateY(-4px);
 
-    border-color: var(--accent);
+    border-color: var(--copper);
 
     box-shadow:
-        0 14px 35px rgba(0,0,0,.05);
+        0 14px 35px rgba(32, 36, 38, .06);
 }
 
 
@@ -751,7 +774,7 @@ header {
 
     margin-bottom: 40px;
 
-    color: var(--accent);
+    color: var(--copper);
 
     font-size: .78rem;
 
@@ -772,7 +795,7 @@ header {
 
 
 .service-card p {
-    color: var(--text-muted);
+    color: var(--steel);
 
     font-size: .95rem;
 }
@@ -787,13 +810,18 @@ header {
 
     margin-top: 32px;
 
-    color: var(--navy);
+    color: var(--graphite);
 
     font-size: .85rem;
 
     font-weight: 600;
 
     text-decoration: none;
+}
+
+
+.card-link:hover {
+    color: var(--copper);
 }
 
 
@@ -812,7 +840,7 @@ header {
 ===================================================== */
 
 .process-section {
-    background: var(--navy);
+    background: var(--graphite);
 
     color: var(--white);
 }
@@ -839,7 +867,7 @@ header {
 .process-intro p {
     max-width: 650px;
 
-    color: rgba(255,255,255,.72);
+    color: rgba(250,250,248,.72);
 }
 
 
@@ -857,12 +885,12 @@ header {
 
     padding: 32px 0;
 
-    border-top: 1px solid var(--border-dark);
+    border-top: 1px solid rgba(216,215,210,.16);
 }
 
 
 .process-step:last-child {
-    border-bottom: 1px solid var(--border-dark);
+    border-bottom: 1px solid rgba(216,215,210,.16);
 }
 
 
@@ -871,7 +899,7 @@ header {
 
     margin-bottom: 28px;
 
-    color: var(--accent-light);
+    color: var(--copper);
 
     font-size: .75rem;
 
@@ -896,7 +924,7 @@ header {
 
 
 .process-step p {
-    color: rgba(255,255,255,.68);
+    color: rgba(250,250,248,.68);
 
     font-size: .93rem;
 }
@@ -933,18 +961,20 @@ header {
 
     padding: 20px 0;
 
-    color: var(--navy);
+    color: var(--graphite);
 
     text-decoration: none;
 
     border-bottom: 1px solid var(--border);
 
-    transition: padding .25s ease;
+    transition:
+        padding .25s ease,
+        color .25s ease;
 }
 
 
 .industry-item > span:first-child {
-    color: var(--accent);
+    color: var(--copper);
 
     font-size: .75rem;
 
@@ -964,18 +994,26 @@ header {
 .industry-arrow {
     text-align: right;
 
+    color: var(--steel);
+
     font-size: 1.1rem;
 
-    transition: transform .25s ease;
+    transition:
+        transform .25s ease,
+        color .25s ease;
 }
 
 
 .industry-item:hover {
     padding-left: 8px;
+
+    color: var(--copper);
 }
 
 
 .industry-item:hover .industry-arrow {
+    color: var(--copper);
+
     transform: translate(3px, -3px);
 }
 
@@ -1002,7 +1040,7 @@ header {
 
     align-items: center;
 
-    background: var(--navy);
+    background: var(--graphite);
 
     border-radius: 3px;
 }
@@ -1016,7 +1054,7 @@ header {
 
 
 .cta-box p {
-    color: rgba(255,255,255,.72);
+    color: rgba(250,250,248,.72);
 }
 
 
@@ -1032,7 +1070,7 @@ header {
 footer {
     padding: 72px 0 24px;
 
-    background: var(--navy-dark);
+    background: var(--graphite-dark);
 
     color: var(--white);
 }
@@ -1072,13 +1110,20 @@ footer {
     letter-spacing: 4px;
 
     text-decoration: none;
+
+    transition: color .25s ease;
+}
+
+
+.footer-logo:hover {
+    color: var(--copper);
 }
 
 
 .footer-tagline {
     margin-bottom: 16px;
 
-    color: var(--accent-light);
+    color: var(--copper);
 
     font-size: .9rem;
 
@@ -1087,7 +1132,7 @@ footer {
 
 
 .footer-description {
-    color: rgba(255,255,255,.62);
+    color: rgba(250,250,248,.62);
 
     font-size: .9rem;
 
@@ -1107,7 +1152,7 @@ footer {
 .footer-column h4 {
     margin-bottom: 18px;
 
-    color: var(--accent-light);
+    color: var(--copper);
 
     font-size: .75rem;
 
@@ -1124,7 +1169,7 @@ footer {
 
     margin-bottom: 11px;
 
-    color: rgba(255,255,255,.82);
+    color: rgba(250,250,248,.82);
 
     font-size: .9rem;
 
@@ -1137,7 +1182,7 @@ footer {
 
 
 .footer-column a:hover {
-    color: var(--white);
+    color: var(--copper);
 
     transform: translateX(3px);
 }
@@ -1150,12 +1195,12 @@ footer {
 
     padding-top: 24px;
 
-    border-top: 1px solid var(--border-dark);
+    border-top: 1px solid rgba(216,215,210,.14);
 }
 
 
 .footer-bottom p {
-    color: rgba(255,255,255,.42);
+    color: rgba(250,250,248,.42);
 
     font-size: .8rem;
 }
@@ -1216,7 +1261,7 @@ footer {
 
     .process-step:nth-child(3),
     .process-step:nth-child(4) {
-        border-bottom: 1px solid var(--border-dark);
+        border-bottom: 1px solid rgba(216,215,210,.16);
     }
 
 
@@ -1293,7 +1338,7 @@ footer {
 
 
     .nav-links a {
-        color: var(--charcoal);
+        color: var(--text);
 
         font-size: .9rem;
 
@@ -1306,7 +1351,7 @@ footer {
 
 
     .nav-links a:hover {
-        color: var(--navy);
+        color: var(--copper);
     }
 
 
@@ -1382,7 +1427,7 @@ footer {
 
         border-top: 0;
         border-bottom: 0;
-        border-left: 1px solid var(--border-dark);
+        border-left: 1px solid rgba(216,215,210,.16);
     }
 
 
@@ -1415,7 +1460,7 @@ footer {
 
         margin-bottom: 28px;
 
-        background: var(--accent);
+        background: var(--copper);
     }
 
 
