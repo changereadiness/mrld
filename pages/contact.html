@@ -10,17 +10,12 @@
 
 <meta name="description" content="Contact MRLD to discuss industrial equipment sourcing, project logistics, and equipment delivery requirements.">
 
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
-
 <link rel="stylesheet" href="../assets/css/style.css">
-
 
 </head>
 
@@ -37,16 +32,52 @@ MRLD
 </a>
 
 
-<ul class="nav-links">
+<button
+    class="nav-toggle"
+    type="button"
+    aria-label="Open navigation"
+    aria-expanded="false"
+    aria-controls="primary-navigation"
+>
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 
-<li><a href="equipment.html">Equipment</a></li>
-<li><a href="project-logistics.html">Project Logistics</a></li>
-<li><a href="industries.html">Industries</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
+
+<ul class="nav-links" id="primary-navigation">
+
+<li>
+<a href="equipment.html">
+Equipment
+</a>
+</li>
+
+<li>
+<a href="project-logistics.html">
+Project Logistics
+</a>
+</li>
+
+<li>
+<a href="industries.html">
+Industries
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
 
 </ul>
-
 
 </nav>
 
@@ -54,26 +85,28 @@ MRLD
 
 
 
-
-
 <main>
 
 
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
 <div class="container">
 
+<div class="hero-content">
 
 <h1>
 Discuss Your Project
 </h1>
 
-
 <p>
 Whether you are sourcing equipment, planning a delivery, or exploring a complex industrial requirement, MRLD can help identify the right path forward.
 </p>
 
+</div>
 
 </div>
 
@@ -81,36 +114,31 @@ Whether you are sourcing equipment, planning a delivery, or exploring a complex 
 
 
 
-
-
-
+<!-- =====================================================
+     CONTACT FORM
+===================================================== -->
 
 <section>
 
-
 <div class="container">
 
-
 <div class="section-header">
-
 
 <h2>
 Project Inquiry
 </h2>
 
-
 <p>
 Provide details about your requirements and our team will review how MRLD can support your project.
 </p>
 
-
 </div>
 
 
-
-
-
 <form class="contact-form">
+
+
+<div class="form-grid">
 
 
 <div class="form-group">
@@ -119,11 +147,15 @@ Provide details about your requirements and our team will review how MRLD can su
 Name
 </label>
 
-<input type="text" id="name" name="name" required>
+<input
+    type="text"
+    id="name"
+    name="name"
+    autocomplete="name"
+    required
+>
 
 </div>
-
-
 
 
 <div class="form-group">
@@ -132,11 +164,14 @@ Name
 Company
 </label>
 
-<input type="text" id="company" name="company">
+<input
+    type="text"
+    id="company"
+    name="company"
+    autocomplete="organization"
+>
 
 </div>
-
-
 
 
 <div class="form-group">
@@ -145,11 +180,15 @@ Company
 Email
 </label>
 
-<input type="email" id="email" name="email" required>
+<input
+    type="email"
+    id="email"
+    name="email"
+    autocomplete="email"
+    required
+>
 
 </div>
-
-
 
 
 <div class="form-group">
@@ -158,11 +197,14 @@ Email
 Phone
 </label>
 
-<input type="text" id="phone" name="phone">
+<input
+    type="tel"
+    id="phone"
+    name="phone"
+    autocomplete="tel"
+>
 
 </div>
-
-
 
 
 <div class="form-group">
@@ -173,18 +215,37 @@ Industry
 
 <select id="industry" name="industry">
 
-<option>Construction</option>
-<option>Mining</option>
-<option>Manufacturing</option>
-<option>Energy</option>
-<option>Infrastructure</option>
-<option>Other</option>
+<option value="" selected disabled>
+Select an industry
+</option>
+
+<option value="construction">
+Construction
+</option>
+
+<option value="mining">
+Mining
+</option>
+
+<option value="manufacturing">
+Manufacturing
+</option>
+
+<option value="energy">
+Energy
+</option>
+
+<option value="infrastructure">
+Infrastructure
+</option>
+
+<option value="other">
+Other
+</option>
 
 </select>
 
 </div>
-
-
 
 
 <div class="form-group">
@@ -195,29 +256,48 @@ Project Type
 
 <select id="requirement" name="requirement">
 
-<option>Equipment Sourcing</option>
-<option>Project Logistics</option>
-<option>Equipment Delivery Coordination</option>
-<option>Other Industrial Requirement</option>
+<option value="" selected disabled>
+Select a project type
+</option>
+
+<option value="equipment-sourcing">
+Equipment Sourcing
+</option>
+
+<option value="project-logistics">
+Project Logistics
+</option>
+
+<option value="equipment-delivery">
+Equipment Delivery Coordination
+</option>
+
+<option value="other">
+Other Industrial Requirement
+</option>
 
 </select>
 
 </div>
 
 
-
-
-<div class="form-group">
+<div class="form-group form-group-full">
 
 <label for="message">
 Project Details
 </label>
 
-<textarea id="message" name="message" rows="6"></textarea>
+<textarea
+    id="message"
+    name="message"
+    rows="7"
+    placeholder="Tell us about your equipment, project, timeline, location, or other requirements."
+></textarea>
 
 </div>
 
 
+</div>
 
 
 <button class="button" type="submit">
@@ -227,44 +307,46 @@ Submit Inquiry
 
 </form>
 
-
 </div>
-
 
 </section>
 
 
 
-
-
-
+<!-- =====================================================
+     WHAT HAPPENS NEXT
+===================================================== -->
 
 <section>
 
-
 <div class="container">
 
-
 <div class="section-header">
-
 
 <h2>
 What Happens Next
 </h2>
 
+<p>
+A straightforward process from initial inquiry to project discussion.
+</p>
 
 </div>
 
 
+<div class="service-grid">
 
 
-<div class="cards">
+<div class="service-card">
 
+<span class="service-number">
+01
+</span>
 
-<div class="card">
+<div class="service-card-content">
 
 <h3>
-01. Review
+Review
 </h3>
 
 <p>
@@ -273,13 +355,19 @@ MRLD reviews your requirements, project context, and objectives.
 
 </div>
 
+</div>
 
 
+<div class="service-card">
 
-<div class="card">
+<span class="service-number">
+02
+</span>
+
+<div class="service-card-content">
 
 <h3>
-02. Discuss
+Discuss
 </h3>
 
 <p>
@@ -288,13 +376,19 @@ We identify potential sourcing, logistics, or coordination solutions.
 
 </div>
 
+</div>
 
 
+<div class="service-card">
 
-<div class="card">
+<span class="service-number">
+03
+</span>
+
+<div class="service-card-content">
 
 <h3>
-03. Execute
+Execute
 </h3>
 
 <p>
@@ -303,12 +397,12 @@ We help move your equipment project forward through trusted networks and structu
 
 </div>
 
-
 </div>
 
 
 </div>
 
+</div>
 
 </section>
 
@@ -318,7 +412,9 @@ We help move your equipment project forward through trusted networks and structu
 
 
 
-
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -327,30 +423,25 @@ We help move your equipment project forward through trusted networks and structu
 
 <div class="footer-brand">
 
-<h3>
+<a href="../index.html" class="footer-logo">
 MRLD
-</h3>
-
+</a>
 
 <p class="footer-tagline">
 Industrial equipment. Project delivery. Reliable execution.
 </p>
 
-
 <p class="footer-description">
 Helping organizations acquire and deliver industrial equipment through trusted networks and structured project support.
 </p>
 
-
 </div>
-
-
 
 
 <div class="footer-links">
 
 
-<div>
+<div class="footer-column">
 
 <h4>
 Capabilities
@@ -371,9 +462,7 @@ Industries
 </div>
 
 
-
-
-<div>
+<div class="footer-column">
 
 <h4>
 Company
@@ -390,15 +479,13 @@ Contact
 </div>
 
 
-
-
-<div>
+<div class="footer-column">
 
 <h4>
 Connect
 </h4>
 
-<a href="#" target="_blank">
+<a href="#" target="_blank" rel="noopener">
 LinkedIn
 </a>
 
@@ -411,10 +498,7 @@ Email
 
 </div>
 
-
 </div>
-
-
 
 
 <div class="footer-bottom">
@@ -425,8 +509,40 @@ Email
 
 </div>
 
-
 </footer>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav-links");
+
+    if (!toggle || !nav) {
+        return;
+    }
+
+    toggle.addEventListener("click", function () {
+
+        const isOpen = nav.classList.toggle("is-open");
+
+        toggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation" : "Open navigation"
+        );
+
+    });
+
+});
+
+</script>
 
 
 </body>
