@@ -10,27 +10,22 @@
 ===================================================== */
 
 :root {
+    --graphite: #202426;
+    --graphite-dark: #151819;
 
-    --navy: #0B1F33;
-    --navy-dark: #071725;
-    --charcoal: #2C2C2C;
+    --background: #F2F1ED;
+    --white: #FAFAF8;
 
-    --background: #F8F8F6;
-    --white: #FFFFFF;
+    --copper: #B56A3C;
+    --steel: #687278;
 
-    --accent: #476B8A;
-    --accent-light: #7E9AB0;
-
-    --text-muted: #555555;
-
-    --border: #E5E5E2;
-    --border-dark: rgba(255,255,255,.14);
+    --text: #41474A;
+    --border: #D8D7D2;
 
     --heading-font: "Manrope", sans-serif;
     --body-font: "Inter", sans-serif;
 
     --container: 1280px;
-
 }
 
 
