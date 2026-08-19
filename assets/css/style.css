@@ -520,6 +520,10 @@ header {
 }
 
 
+/* -----------------------------------------------------
+   Project Delivery Diagram
+----------------------------------------------------- */
+
 .machine-diagram {
     position: relative;
 
@@ -527,6 +531,8 @@ header {
     height: 270px;
 }
 
+
+/* Main delivery axis */
 
 .diagram-line {
     position: absolute;
@@ -544,25 +550,34 @@ header {
 }
 
 
+/* Vertical project axis */
+
 .line-two {
-    top: 25%;
-    left: 25%;
+    top: 17%;
+    left: 50%;
 
-    width: 50%;
+    width: 66%;
 
-    transform: rotate(90deg);
+    transform: translateX(-50%) rotate(90deg);
 }
 
+
+/* Diagonal coordination path */
 
 .line-three {
     top: 50%;
     left: 50%;
 
-    width: 35%;
+    width: 32%;
 
+    transform-origin: left center;
     transform: rotate(45deg);
 }
 
+
+/* -----------------------------------------------------
+   Technical Nodes
+----------------------------------------------------- */
 
 .diagram-node {
     position: absolute;
@@ -579,58 +594,135 @@ header {
 
     border: 1px solid var(--copper);
 
-    border-radius: 50%;
-
     transition:
         background .25s ease,
         transform .25s ease;
 }
 
 
-.diagram-node span {
-    width: 12px;
-    height: 12px;
+/* Source */
 
-    background: var(--copper);
+.node-one {
+    top: 12%;
+    left: calc(50% - 26px);
+
+    border-radius: 3px;
+}
+
+
+/* Equipment */
+
+.node-two {
+    top: calc(50% - 26px);
+    left: 7%;
+
+    border-radius: 3px;
+}
+
+
+/* Project */
+
+.node-three {
+    top: calc(50% - 26px);
+    right: 7%;
+
+    border-radius: 3px;
+}
+
+
+/* Delivery */
+
+.node-four {
+    bottom: 12%;
+    left: calc(50% - 26px);
 
     border-radius: 50%;
 }
 
 
+/* Inner technical markers */
+
+.diagram-node span {
+    position: relative;
+
+    width: 14px;
+    height: 14px;
+
+    background: var(--copper);
+
+    border-radius: 1px;
+}
+
+
+/* Central visual detail */
+
+.node-one span,
+.node-two span,
+.node-three span {
+    width: 18px;
+    height: 12px;
+
+    border: 1px solid var(--copper);
+
+    background: transparent;
+}
+
+
+/* Delivery marker */
+
+.node-four span {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+}
+
+
+/* Small structural detail */
+
+.node-one span::after,
+.node-two span::after,
+.node-three span::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: -5px;
+
+    width: 1px;
+    height: 20px;
+
+    background: var(--copper);
+
+    transform: translateX(-50%);
+}
+
+
+/* Subtle interaction */
+
 .diagram-node:hover {
     background: var(--copper);
-    transform: scale(1.05);
+
+    transform: scale(1.04);
 }
 
 
 .diagram-node:hover span {
     background: var(--white);
+
+    border-color: var(--white);
 }
 
 
-.node-one {
-    top: 12%;
-    left: calc(50% - 26px);
+.diagram-node:hover span::after {
+    background: var(--white);
 }
 
 
-.node-two {
-    top: calc(50% - 26px);
-    left: 7%;
-}
-
-
-.node-three {
-    top: calc(50% - 26px);
-    right: 7%;
-}
-
-
-.node-four {
-    bottom: 12%;
-    left: calc(50% - 26px);
-}
-
+/* -----------------------------------------------------
+   Card Label
+----------------------------------------------------- */
 
 .machine-card-label {
     display: flex;
@@ -657,9 +749,9 @@ header {
 
 .machine-card-label span {
     color: var(--steel);
+
     font-size: .85rem;
 }
-
 
 /* =====================================================
    10. Capabilities
