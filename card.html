@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#151819">
+  <meta
+    name="description"
+    content="Ali Saïd — Founder & Director, MRLD. Industrial Equipment & Global Project Delivery."
+  >
+
+  <title>Ali Saïd | MRLD</title>
+
+  <style>
+    :root {
+      --graphite: #202426;
+      --graphite-dark: #151819;
+      --background: #f2f1ed;
+      --white: #fafaf8;
+      --copper: #b56a3c;
+      --steel: #687278;
+      --emerald: #16806b;
+      --border: rgba(104, 114, 120, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--graphite);
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .card {
+      width: min(100%, 430px);
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 70px rgba(21, 24, 25, 0.13);
+      overflow: hidden;
+    }
+
+    /* ─────────────────────────
+       HEADER
+    ───────────────────────── */
+
+    .header {
+      position: relative;
+      background: var(--graphite-dark);
+      color: var(--white);
+      padding: 30px;
+    }
+
+    .header::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 42%;
+      height: 3px;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--emerald)
+      );
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+    }
+
+    .brand-mark {
+      width: 9px;
+      height: 9px;
+
+      background: var(--emerald);
+      transform: rotate(45deg);
+    }
+
+    .tagline {
+      margin-top: 10px;
+
+      color: #b9c0c3;
+      font-size: 10px;
+      line-height: 1.5;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    /* ─────────────────────────
+       MAIN
+    ───────────────────────── */
+
+    .content {
+      padding: 35px 30px 30px;
+    }
+
+    .name {
+      margin: 0;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(36px, 10vw, 48px);
+      line-height: 0.98;
+      font-weight: 500;
+
+      letter-spacing: -0.035em;
+    }
+
+    .title {
+      margin-top: 11px;
+
+      color: var(--steel);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .rule {
+      width: 100%;
+      height: 1px;
+
+      background: var(--border);
+
+      margin: 28px 0 23px;
+    }
+
+    /* ─────────────────────────
+       CONTACT
+    ───────────────────────── */
+
+    .contact {
+      display: grid;
+      gap: 15px;
+    }
+
+    .contact a {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      color: var(--graphite);
+      text-decoration: none;
+
+      font-size: 15px;
+    }
+
+    .contact a:hover {
+      color: var(--copper);
+    }
+
+    .icon {
+      width: 28px;
+
+      color: var(--copper);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+
+    /* ─────────────────────────
+       COMPANY
+    ───────────────────────── */
+
+    .company {
+      margin-top: 29px;
+
+      color: var(--steel);
+
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .company strong {
+      color: var(--graphite);
+    }
+
+    /* ─────────────────────────
+       ACTIONS
+    ───────────────────────── */
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+
+      margin-top: 26px;
+    }
+
+    .actions a {
+      padding: 13px 10px;
+
+      border: 1px solid var(--graphite);
+
+      color: var(--graphite);
+      text-decoration: none;
+
+      text-align: center;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .actions a:hover {
+      background: var(--graphite);
+      color: var(--white);
+    }
+
+    .actions .primary {
+      background: var(--graphite);
+      color: var(--white);
+    }
+
+    .actions .primary:hover {
+      background: var(--copper);
+      border-color: var(--copper);
+    }
+
+    /* ─────────────────────────
+       QR
+    ───────────────────────── */
+
+    .qr-area {
+      display: flex;
+      align-items: center;
+      gap: 19px;
+
+      margin-top: 29px;
+      padding-top: 24px;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .qr {
+      flex: 0 0 96px;
+
+      width: 96px;
+      height: 96px;
+
+      padding: 7px;
+
+      background: #ffffff;
+      border: 1px solid var(--border);
+    }
+
+    .qr img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+    .qr-copy {
+      flex: 1;
+    }
+
+    .qr-copy strong {
+      display: block;
+
+      margin-bottom: 7px;
+
+      font-size: 11px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .qr-copy span {
+      color: var(--steel);
+
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    /* ─────────────────────────
+       FOOTER
+    ───────────────────────── */
+
+    .footer {
+      padding: 15px 30px;
+
+      background: #e9e8e3;
+
+      color: var(--steel);
+
+      font-size: 9px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    /* ─────────────────────────
+       MOBILE
+    ───────────────────────── */
+
+    @media (max-width: 390px) {
+      body {
+        padding: 12px;
+      }
+
+      .header,
+      .content {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .footer {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="card">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+      <div class="brand">
+        <span class="brand-mark"></span>
+        MRLD
+      </div>
+
+      <div class="tagline">
+        Industrial Equipment &amp; Global Project Delivery
+      </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <section class="content">
+
+      <h1 class="name">
+        Ali Saïd
+      </h1>
+
+      <div class="title">
+        Founder &amp; Director
+      </div>
+
+
+      <div class="rule"></div>
+
+
+      <!-- CONTACT DETAILS -->
+
+      <div class="contact">
+
+        <a href="tel:+14389699697">
+          <span class="icon">TEL</span>
+          +1 (438) 969-9697
+        </a>
+
+        <a href="mailto:contact@sayudi.com">
+          <span class="icon">@</span>
+          contact@sayudi.com
+        </a>
+
+        <a href="https://mrldx.com">
+          <span class="icon">WEB</span>
+          mrldx.com
+        </a>
+
+        <!-- Replace with your actual LinkedIn URL -->
+        <a
+          href="linkedin.com/in/sayudi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="icon">IN</span>
+          LinkedIn
+        </a>
+
+      </div>
+
+
+      <!-- COMPANY -->
+
+      <div class="company">
+
+        <strong>MRLD</strong> · Montreal, Quebec, Canada<br>
+
+        A business of Sayudi Inc.
+
+      </div>
+
+
+      <!-- ACTION BUTTONS -->
+
+      <div class="actions">
+
+        <a
+          class="primary"
+          href="https://mrldx.com"
+        >
+          Visit MRLD
+        </a>
+
+        <a
+          href="linkedin.com/in/sayudi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
+
+      <!-- QR CODE -->
+
+      <div class="qr-area">
+
+        <div class="qr">
+
+          <img
+            src="mrld-card-qr.png"
+            alt="QR code for MRLD virtual business card"
+          >
+
+        </div>
+
+        <div class="qr-copy">
+
+          <strong>
+            Save the card
+          </strong>
+
+          <span>
+            Scan to open the MRLD virtual business card.
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+      MRLD · Sayudi Inc. · Montreal, Canada
+    </footer>
+
+  </main>
+
+</body>
+</html>
