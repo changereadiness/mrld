@@ -10,16 +10,450 @@
 
 <title>Project Logistics | MRLD</title>
 
-<meta name="description" content="MRLD coordinates industrial equipment logistics through trusted partners, supporting transportation planning, delivery coordination, and complex equipment projects.">
+<meta
+    name="description"
+    content="MRLD coordinates industrial equipment delivery through trusted logistics partners, supporting complex projects from supplier to site."
+>
 
 <meta name="author" content="MRLD">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+>
 
 <link rel="stylesheet" href="../assets/css/style.css">
+
+
+<style>
+
+/* =====================================================
+   PROJECT LOGISTICS PAGE
+===================================================== */
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.logistics-hero {
+    padding: 5rem 0 5.5rem;
+}
+
+.logistics-hero .hero-content {
+    max-width: 980px;
+}
+
+.logistics-hero h1 {
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+}
+
+.logistics-hero p {
+    max-width: 760px;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.logistics-intro {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.logistics-intro-content {
+    max-width: 820px;
+}
+
+
+/* =====================================================
+   LOGISTICS CAPABILITIES
+===================================================== */
+
+.logistics-capabilities {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    margin-top: 2.75rem;
+
+    border-top: 1px solid rgba(0,0,0,0.14);
+    border-left: 1px solid rgba(0,0,0,0.1);
+}
+
+
+.logistics-capability {
+    padding: 1.75rem 1.5rem;
+
+    border-right: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.14);
+}
+
+
+.logistics-number {
+    display: block;
+
+    margin-bottom: 0.75rem;
+
+    font-size: 0.68rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.5;
+}
+
+
+.logistics-capability h3 {
+    margin: 0 0 0.5rem;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 1rem;
+}
+
+
+.logistics-capability p {
+    margin: 0;
+
+    font-size: 0.86rem;
+
+    line-height: 1.55;
+
+    opacity: 0.7;
+}
+
+
+/* =====================================================
+   SUPPLIER TO SITE GRAPHIC
+===================================================== */
+
+.logistics-process {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+.logistics-process-header {
+    max-width: 760px;
+
+    margin-bottom: 2.75rem;
+}
+
+
+.logistics-flow {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        70px
+        1fr
+        70px
+        1fr
+        70px
+        1fr;
+
+    align-items: center;
+
+    padding: 2rem;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+        #151819;
+
+    background-size: 34px 34px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    overflow: hidden;
+}
+
+
+.logistics-flow::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(181,106,60,0.11) 0%,
+        transparent 68%
+    );
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+.logistics-node {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 1rem 0.5rem;
+}
+
+
+.logistics-node-number {
+    display: block;
+
+    margin-bottom: 0.6rem;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.12em;
+
+    color: rgba(255,255,255,0.4);
+}
+
+
+.logistics-node strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 0.92rem;
+
+    line-height: 1.25;
+}
+
+
+.logistics-node p {
+    margin: 0.55rem auto 0;
+
+    max-width: 170px;
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 0.78rem;
+
+    line-height: 1.45;
+}
+
+
+.logistics-arrow {
+    position: relative;
+    z-index: 2;
+
+    height: 1px;
+
+    background: rgba(255,255,255,0.2);
+}
+
+
+.logistics-arrow::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.5);
+
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+/* =====================================================
+   ROLE / PARTNER POSITIONING
+===================================================== */
+
+.logistics-role {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+.logistics-role-content {
+    max-width: 820px;
+}
+
+
+.logistics-role-content strong {
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   MANUFACTURER / PROJECT CONNECTION
+===================================================== */
+
+.logistics-partnership {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+.logistics-partnership-box {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        0.6fr;
+
+    gap: 3rem;
+
+    align-items: center;
+
+    padding: 3rem;
+
+    background: #151819;
+
+    color: #ffffff;
+}
+
+
+.logistics-partnership-box h2 {
+    color: #ffffff;
+}
+
+
+.logistics-partnership-box p {
+    color: rgba(255,255,255,0.68);
+}
+
+
+.logistics-partnership-box .eyebrow {
+    color: rgba(255,255,255,0.5);
+}
+
+
+.logistics-partnership-action {
+    text-align: right;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .logistics-capabilities {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .logistics-flow {
+        grid-template-columns:
+            1fr
+            45px
+            1fr
+            45px
+            1fr
+            45px
+            1fr;
+    }
+
+
+    .logistics-partnership-box {
+        grid-template-columns: 1fr;
+    }
+
+
+    .logistics-partnership-action {
+        text-align: left;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .logistics-hero {
+        padding: 4rem 0 4.5rem;
+    }
+
+
+    .logistics-intro,
+    .logistics-process,
+    .logistics-role,
+    .logistics-partnership {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+
+    .logistics-capabilities {
+        grid-template-columns: 1fr;
+    }
+
+
+    .logistics-flow {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .logistics-node {
+        padding: 1rem;
+    }
+
+
+    .logistics-arrow {
+        width: 1px;
+        height: 25px;
+
+        margin: 0 auto;
+
+        background: rgba(255,255,255,0.2);
+    }
+
+
+    .logistics-arrow::after {
+        right: auto;
+        top: auto;
+        bottom: 0;
+        left: 50%;
+
+        transform:
+            translateX(-50%)
+            rotate(135deg);
+    }
+
+
+    .logistics-partnership-box {
+        padding: 2rem;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -28,557 +462,667 @@
 
 
 <!-- =====================================================
-     Header
+     HEADER
 ===================================================== -->
 
 <header>
 
-    <nav class="navbar">
+<nav class="navbar">
 
-        <a href="../index.html" class="logo">
-            MRLD
-        </a>
-
-
-        <button
-            class="nav-toggle"
-            type="button"
-            aria-label="Open navigation"
-            aria-expanded="false"
-            aria-controls="primary-navigation"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+<a
+    href="../index.html"
+    class="logo"
+    aria-label="MRLD Home"
+>
+    MRLD
+</a>
 
 
-        <ul class="nav-links" id="primary-navigation">
+<button
+    class="nav-toggle"
+    type="button"
+    aria-label="Open navigation"
+    aria-expanded="false"
+    aria-controls="primary-navigation"
+>
 
-            <li>
-                <a href="equipment.html">
-                    Equipment
-                </a>
-            </li>
+<span></span>
+<span></span>
+<span></span>
 
-            <li>
-                <a href="project-logistics.html">
-                    Project Logistics
-                </a>
-            </li>
+</button>
 
-            <li>
-                <a href="industries.html">
-                    Industries
-                </a>
-            </li>
 
-            <li>
-                <a href="about.html">
-                    About
-                </a>
-            </li>
+<ul
+    class="nav-links"
+    id="primary-navigation"
+>
 
-            <li>
-                <a href="contact.html">
-                    Contact
-                </a>
-            </li>
+<li>
+<a href="equipment.html">
+Equipment
+</a>
+</li>
 
-        </ul>
+<li>
+<a href="project-logistics.html">
+Project Logistics
+</a>
+</li>
 
-    </nav>
+<li>
+<a href="industries.html">
+Industries
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+
+</ul>
+
+</nav>
 
 </header>
 
 
-<!-- =====================================================
-     Main
-===================================================== -->
 
 <main>
 
 
-    <!-- =================================================
-         Interior Hero
-    ================================================== -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-    <section class="hero">
+<section class="hero logistics-hero">
 
-        <div class="container">
+<div class="container">
 
-            <div class="hero-content">
+<div class="hero-content">
 
-                <span class="eyebrow">
-                    PROJECT LOGISTICS
-                </span>
+<span class="eyebrow">
+PROJECT LOGISTICS
+</span>
 
-                <h1>
-                    Project Logistics
-                </h1>
 
-                <p>
-                    Moving industrial equipment requires more than transportation. MRLD coordinates the planning, partners, and processes required to support successful equipment delivery.
-                </p>
+<h1>
+From supplier to site.
+</h1>
 
-            </div>
 
-        </div>
+<p>
+Industrial equipment projects rarely end when the equipment is sourced.
+MRLD helps coordinate the partners, planning, and communication required
+to move equipment toward its destination.
+</p>
 
-    </section>
+</div>
 
+</div>
 
-    <!-- =================================================
-         Beyond Transportation
-    ================================================== -->
+</section>
 
-    <section class="capabilities">
 
-        <div class="container">
 
-            <div class="section-header">
+<!-- =====================================================
+     INTRO
+===================================================== -->
 
-                <span class="eyebrow">
-                    COORDINATION
-                </span>
+<section class="logistics-intro">
 
-                <h2>
-                    Beyond Transportation
-                </h2>
+<div class="container">
 
-                <p>
-                    Complex equipment projects require coordination across multiple suppliers, carriers, and stakeholders. MRLD helps organizations manage the journey from supplier to operational site.
-                </p>
+<div class="logistics-intro-content">
 
-            </div>
+<span class="eyebrow">
+COORDINATION
+</span>
 
 
-            <div class="service-grid">
+<h2>
+The bridge continues beyond the transaction.
+</h2>
 
 
-                <article class="service-card">
+<p>
+Equipment acquisition can involve manufacturers, buyers, freight providers,
+specialized carriers, site teams, and other stakeholders. MRLD helps bring
+these parties into a coordinated process rather than treating logistics as
+an isolated transaction.
+</p>
 
-                    <span class="service-number">
-                        01
-                    </span>
 
-                    <div class="service-card-content">
+<p>
+We work with specialized logistics and project partners according to the
+requirements of each movement. Our role is to help keep the commercial,
+equipment, and delivery sides of the project connected.
+</p>
 
-                        <h3>
-                            Logistics Planning
-                        </h3>
+</div>
 
-                        <p>
-                            Developing delivery strategies that consider equipment requirements, timelines, locations, and operational constraints.
-                        </p>
 
-                    </div>
 
-                </article>
+<div class="logistics-capabilities">
 
 
-                <article class="service-card">
+<article class="logistics-capability">
 
-                    <span class="service-number">
-                        02
-                    </span>
+<span class="logistics-number">
+01
+</span>
 
-                    <div class="service-card-content">
+<h3>
+Logistics Planning
+</h3>
 
-                        <h3>
-                            Transportation Coordination
-                        </h3>
+<p>
+Understanding equipment dimensions, weight, destination, timeline, and
+delivery constraints.
+</p>
 
-                        <p>
-                            Working with specialized logistics providers to support heavy equipment movement and delivery requirements.
-                        </p>
+</article>
 
-                    </div>
 
-                </article>
 
+<article class="logistics-capability">
 
-                <article class="service-card">
+<span class="logistics-number">
+02
+</span>
 
-                    <span class="service-number">
-                        03
-                    </span>
+<h3>
+Partner Coordination
+</h3>
 
-                    <div class="service-card-content">
+<p>
+Working with qualified logistics providers and specialized project partners.
+</p>
 
-                        <h3>
-                            Project Coordination
-                        </h3>
+</article>
 
-                        <p>
-                            Aligning suppliers, logistics partners, and stakeholders to help ensure smooth execution.
-                        </p>
 
-                    </div>
 
-                </article>
+<article class="logistics-capability">
 
+<span class="logistics-number">
+03
+</span>
 
-            </div>
+<h3>
+Delivery Coordination
+</h3>
 
-        </div>
+<p>
+Keeping suppliers, carriers, buyers, and project stakeholders aligned
+through the delivery process.
+</p>
 
-    </section>
+</article>
 
 
-    <!-- =================================================
-         Logistics Capabilities
-    ================================================== -->
 
-    <section>
+<article class="logistics-capability">
 
-        <div class="container">
+<span class="logistics-number">
+04
+</span>
 
-            <div class="section-header">
+<h3>
+Cross-Border Projects
+</h3>
 
-                <span class="eyebrow">
-                    CAPABILITIES
-                </span>
+<p>
+Supporting international equipment movements through coordinated partners
+and commercial communication.
+</p>
 
-                <h2>
-                    Project Logistics Capabilities
-                </h2>
+</article>
 
-                <p>
-                    Supporting complex equipment movements through coordinated planning and trusted industry relationships.
-                </p>
 
-            </div>
 
+<article class="logistics-capability">
 
-            <div class="service-grid">
+<span class="logistics-number">
+05
+</span>
 
+<h3>
+Site Requirements
+</h3>
 
-                <article class="service-card">
+<p>
+Helping identify scheduling, access, receiving, and operational considerations
+before delivery.
+</p>
 
-                    <span class="service-number">
-                        01
-                    </span>
+</article>
 
-                    <div class="service-card-content">
 
-                        <h3>
-                            Heavy Equipment Delivery
-                        </h3>
 
-                        <p>
-                            Supporting the movement of large machinery through specialized transportation partners.
-                        </p>
+<article class="logistics-capability">
 
-                    </div>
+<span class="logistics-number">
+06
+</span>
 
-                </article>
+<h3>
+Project Communication
+</h3>
 
+<p>
+Maintaining communication between the parties responsible for moving the
+project forward.
+</p>
 
-                <article class="service-card">
+</article>
 
-                    <span class="service-number">
-                        02
-                    </span>
 
-                    <div class="service-card-content">
+</div>
 
-                        <h3>
-                            International Coordination
-                        </h3>
+</div>
 
-                        <p>
-                            Supporting cross-border and international equipment projects through logistics networks and documentation coordination.
-                        </p>
+</section>
 
-                    </div>
 
-                </article>
 
+<!-- =====================================================
+     PROCESS GRAPHIC
+===================================================== -->
 
-                <article class="service-card">
+<section class="process-section logistics-process">
 
-                    <span class="service-number">
-                        03
-                    </span>
+<div class="container">
 
-                    <div class="service-card-content">
 
-                        <h3>
-                            Site Delivery Planning
-                        </h3>
+<div class="logistics-process-header">
 
-                        <p>
-                            Helping coordinate delivery requirements, scheduling, and operational readiness.
-                        </p>
+<span class="eyebrow eyebrow-light">
+FROM SUPPLIER TO SITE
+</span>
 
-                    </div>
 
-                </article>
+<h2>
+A coordinated path to delivery.
+</h2>
 
 
-            </div>
+<p>
+MRLD connects the commercial and operational sides of equipment delivery,
+working with specialized partners where required.
+</p>
 
-        </div>
+</div>
 
-    </section>
 
 
-    <!-- =================================================
-         From Supplier to Site
-    ================================================== -->
+<div class="logistics-flow">
 
-    <section class="process-section">
 
-        <div class="container">
+<div class="logistics-node">
 
-            <div class="process-intro">
+<span class="logistics-node-number">
+01
+</span>
 
-                <div>
+<strong>
+SUPPLIER
+</strong>
 
-                    <span class="eyebrow">
-                        PROCESS
-                    </span>
+<p>
+Equipment, specifications, documentation
+</p>
 
-                    <h2>
-                        From Supplier to Site
-                    </h2>
+</div>
 
-                </div>
 
+<div class="logistics-arrow"></div>
 
-                <p>
-                    MRLD supports each stage of the equipment delivery process.
-                </p>
 
-            </div>
+<div class="logistics-node">
 
+<span class="logistics-node-number">
+02
+</span>
 
-            <div class="process-grid">
+<strong>
+PLANNING
+</strong>
 
+<p>
+Requirements, route, timing, partners
+</p>
 
-                <article class="process-step">
+</div>
 
-                    <div class="process-line"></div>
 
-                    <span class="process-number">
-                        01
-                    </span>
+<div class="logistics-arrow"></div>
 
-                    <h3>
-                        Equipment Assessment
-                    </h3>
 
-                    <p>
-                        Understand equipment specifications, dimensions, weight, and delivery requirements.
-                    </p>
+<div class="logistics-node">
 
-                </article>
+<span class="logistics-node-number">
+03
+</span>
 
+<strong>
+COORDINATION
+</strong>
 
-                <article class="process-step">
+<p>
+Suppliers, carriers, stakeholders
+</p>
 
-                    <div class="process-line"></div>
+</div>
 
-                    <span class="process-number">
-                        02
-                    </span>
 
-                    <h3>
-                        Logistics Planning
-                    </h3>
+<div class="logistics-arrow"></div>
 
-                    <p>
-                        Coordinate transportation requirements, timelines, and specialized partners.
-                    </p>
 
-                </article>
+<div class="logistics-node">
 
+<span class="logistics-node-number">
+04
+</span>
 
-                <article class="process-step">
+<strong>
+SITE
+</strong>
 
-                    <div class="process-line"></div>
+<p>
+Delivery, receiving, project completion
+</p>
 
-                    <span class="process-number">
-                        03
-                    </span>
+</div>
 
-                    <h3>
-                        Delivery Execution
-                    </h3>
 
-                    <p>
-                        Support communication and coordination through final delivery.
-                    </p>
+</div>
 
-                </article>
+</div>
 
+</section>
 
-            </div>
 
-        </div>
 
-    </section>
+<!-- =====================================================
+     MRLD'S ROLE
+===================================================== -->
 
+<section class="logistics-role">
 
-    <!-- =================================================
-         CTA
-    ================================================== -->
+<div class="container">
 
-    <section class="cta-section">
+<div class="logistics-role-content">
 
-        <div class="container">
+<span class="eyebrow">
+MRLD'S ROLE
+</span>
 
-            <div class="cta-box">
 
-                <div>
+<h2>
+We coordinate the connection. Specialized partners handle the execution.
+</h2>
 
-                    <span class="eyebrow">
-                        GET STARTED
-                    </span>
 
-                    <h2>
-                        Planning an Equipment Project?
-                    </h2>
+<p>
+MRLD is not positioned as a freight carrier or traditional logistics
+operator. We work with specialized logistics providers and project partners
+to help ensure that equipment, commercial requirements, and delivery
+planning remain connected.
+</p>
 
-                    <p>
-                        Whether sourcing new machinery or coordinating delivery of existing assets, MRLD helps organizations move complex equipment projects forward.
-                    </p>
 
-                </div>
+<p>
+This allows MRLD to remain focused on its core role:
+<strong>connecting the right equipment, the right parties, and the right
+market opportunities.</strong>
+</p>
 
+</div>
 
-                <a class="button" href="contact.html">
-                    Discuss Your Project
-                </a>
+</div>
 
-            </div>
+</section>
 
-        </div>
 
-    </section>
+
+<!-- =====================================================
+     PARTNERSHIP
+===================================================== -->
+
+<section class="logistics-partnership">
+
+<div class="container">
+
+<div class="logistics-partnership-box">
+
+
+<div>
+
+<span class="eyebrow">
+PROJECT PARTNERS
+</span>
+
+
+<h2>
+Part of a larger equipment network.
+</h2>
+
+
+<p>
+MRLD works with logistics providers, freight specialists, and other
+industrial partners whose capabilities complement equipment sourcing and
+market development.
+</p>
+
+</div>
+
+
+<div class="logistics-partnership-action">
+
+<a
+    class="button button-light"
+    href="contact.html"
+>
+Discuss a Project
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="cta-section">
+
+<div class="container">
+
+<div class="cta-box">
+
+<div>
+
+<span class="eyebrow">
+GET STARTED
+</span>
+
+
+<h2>
+Moving equipment across borders?
+</h2>
+
+
+<p>
+Tell MRLD what you are trying to move, where it needs to go, and what the
+project requires. We can help identify the appropriate path and partners.
+</p>
+
+</div>
+
+
+<a
+    class="button"
+    href="contact.html"
+>
+Discuss Your Project
+</a>
+
+</div>
+
+</div>
+
+</section>
 
 
 </main>
 
 
+
 <!-- =====================================================
-     Footer
+     FOOTER
 ===================================================== -->
 
 <footer>
 
-    <div class="footer-content">
+<div class="footer-content">
 
 
-        <div class="footer-brand">
+<div class="footer-brand">
 
-    <div class="footer-logo">
-        <h3> MRLD </h3>
-    </div>
-
-            <p class="footer-tagline">
-                Industrial equipment. Project delivery. Reliable execution.
-            </p>
-
-            <p class="footer-description">
-                Helping organizations acquire and deliver industrial equipment
-                through trusted networks and structured project support.
-            </p>
-
-        </div>
+<div class="footer-logo">
+<h3>
+MRLD
+</h3>
+</div>
 
 
+<p class="footer-tagline">
+Industrial equipment. Global supply. Market access.
+</p>
 
-        <div class="footer-links">
 
+<p class="footer-description">
+Connecting selected manufacturers with qualified buyers across Canada
+and international markets.
+</p>
 
-            <div class="footer-column">
-
-                <h4>
-                    Explore
-                </h4>
-
-                <a href="equipment.html">
-                    Equipment
-                </a>
-
-                <a href="project-logistics.html">
-                    Project Logistics
-                </a>
-
-                <a href="industries.html">
-                    Industries
-                </a>
-
-                <a href="about.html">
-                    About
-                </a>
-
-            </div>
+</div>
 
 
 
-            <div class="footer-column">
-
-                <h4>
-                    Connect
-                </h4>
-
-                <a href="https://www.linkedin.com/in/sayudi/" target="_blank" rel="noopener noreferrer">
-                    LinkedIn
-                </a>
-
-                <a href="mailto:contact@sayudi.com">
-                    Email
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-            </div>
+<div class="footer-links">
 
 
+<div class="footer-column">
 
-            <div class="footer-column">
+<h4>
+Explore
+</h4>
 
-                <h4>
-                    Legal
-                </h4>
+<a href="equipment.html">
+Equipment
+</a>
 
-                <a href="privacy.html">
-                    Privacy Policy
-                </a>
+<a href="project-logistics.html">
+Project Logistics
+</a>
 
-                <a href="terms.html">
-                    Terms of Use
-                </a>
+<a href="industries.html">
+Industries
+</a>
 
-            </div>
+<a href="about.html">
+About
+</a>
 
-
-        </div>
-
-    </div>
+</div>
 
 
 
-    <div class="footer-bottom">
+<div class="footer-column">
 
-        <p>
-            © 2026 MRLD, a Sayudi Inc. company. All rights reserved.
-        </p>
+<h4>
+Connect
+</h4>
 
-    </div>
+<a
+    href="https://www.linkedin.com/in/sayudi/"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+LinkedIn
+</a>
+
+<a href="mailto:contact@sayudi.com">
+Email
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+
+
+<div class="footer-column">
+
+<h4>
+Legal
+</h4>
+
+<a href="privacy.htm">
+Privacy Policy
+</a>
+
+<a href="terms.html">
+Terms of Use
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+<p class="footer-canada">
+🇨🇦 Canadian company. Global reach.
+</p>
+
+
+<p>
+© 2026 MRLD, a Sayudi Inc. company. All rights reserved.
+</p>
+
+</div>
 
 </footer>
 
 
 
-
 <!-- =====================================================
-     Mobile Navigation
+     MOBILE NAVIGATION
 ===================================================== -->
 
 <script>
