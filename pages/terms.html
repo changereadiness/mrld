@@ -1,1 +1,301 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+<title>Terms | MRLD</title>
+
+<meta
+    name="description"
+    content="Terms for MRLD."
+>
+
+<meta name="author" content="MRLD">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     Header
+===================================================== -->
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="../index.html" class="logo" aria-label="MRLD Home">
+            MRLD
+        </a>
+
+
+        <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
+        <ul class="nav-links" id="primary-navigation">
+
+            <li>
+                <a href="equipment.html">
+                    Equipment
+                </a>
+            </li>
+
+            <li>
+                <a href="project-logistics.html">
+                    Project Logistics
+                </a>
+            </li>
+
+            <li>
+                <a href="industries.html">
+                    Industries
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+
+<section>
+
+    <div class="container">
+
+        <h1>
+            Privacy Policy
+        </h1>
+
+        <p>
+            This page is currently being updated.
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     Footer
+===================================================== -->
+
+<footer>
+
+    <div class="footer-content">
+
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+                <h3>MRLD</h3>
+            </div>
+
+            <p class="footer-tagline">
+                Industrial equipment. Project delivery. Reliable execution.
+            </p>
+
+            <p class="footer-description">
+                Helping organizations acquire and deliver industrial equipment
+                through trusted networks and structured project support.
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-links">
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="equipment.html">
+                    Equipment
+                </a>
+
+                <a href="project-logistics.html">
+                    Project Logistics
+                </a>
+
+                <a href="industries.html">
+                    Industries
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Connect
+                </h4>
+
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+
+                <a href="mailto:contact@sayudi.com">
+                    Email
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Legal
+                </h4>
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms.html">
+                    Terms of Use
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 MRLD, a Sayudi Inc. company. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     Navigation Script
+===================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav-links");
+
+    if (!toggle || !nav) {
+        return;
+    }
+
+
+    toggle.addEventListener("click", function () {
+
+        const isOpen = nav.classList.toggle("is-open");
+
+        toggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation" : "Open navigation"
+        );
+
+    });
+
+
+    nav.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            nav.classList.remove("is-open");
+
+            toggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            toggle.setAttribute(
+                "aria-label",
+                "Open navigation"
+            );
+
+        });
+
+    });
+
+});
+
+</script>
+
+
+</body>
+
+</html>
