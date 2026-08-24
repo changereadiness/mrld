@@ -1018,8 +1018,8 @@ header {
 }
 
 
-.principal-role {
-    margin-bottom: 24px;
+.principal-content h3 {
+    margin: 0 0 28px;
     color: var(--copper);
     font-size: .9rem;
     font-weight: 600;
@@ -1027,8 +1027,14 @@ header {
 }
 
 
-.principal-content p:not(.principal-role) {
+.principal-content p {
+    margin: 0 0 20px;
     color: var(--text);
+}
+
+
+.principal-content p:last-of-type {
+    margin-bottom: 28px;
 }
 
 
