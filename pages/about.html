@@ -25,6 +25,408 @@
 
 <link rel="stylesheet" href="../assets/css/style.css">
 
+
+<style>
+
+/* =====================================================
+   ABOUT PAGE — REFINED LAYOUT
+===================================================== */
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.about-hero {
+    padding: 5rem 0 5.5rem;
+}
+
+.about-hero .hero-content {
+    max-width: 980px;
+}
+
+.about-hero h1 {
+    max-width: 920px;
+    margin-bottom: 1.75rem;
+}
+
+.about-hero-copy {
+    max-width: 820px;
+}
+
+.about-hero-copy p {
+    margin: 0 0 1rem;
+}
+
+.about-hero-copy p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   CANADIAN POSITION
+===================================================== */
+
+.about-canada {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+/* =====================================================
+   PRINCIPAL
+===================================================== */
+
+.about-principal {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+}
+
+
+/* =====================================================
+   WHAT WE DO
+===================================================== */
+
+.about-capabilities {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.about-capabilities-header {
+    max-width: 720px;
+    margin-bottom: 2.25rem;
+}
+
+
+/* compact capability strip */
+
+.capability-strip {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    border-top: 1px solid rgba(0,0,0,0.14);
+    border-bottom: 1px solid rgba(0,0,0,0.14);
+}
+
+
+.capability-item {
+    position: relative;
+
+    padding: 1.75rem 1.5rem;
+
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+
+.capability-item:last-child {
+    border-right: none;
+}
+
+
+.capability-number {
+    display: block;
+
+    margin-bottom: 0.75rem;
+
+    font-size: 0.68rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.5;
+}
+
+
+.capability-item h3 {
+    margin: 0 0 0.55rem;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 1rem;
+}
+
+
+.capability-item p {
+    margin: 0;
+
+    font-size: 0.86rem;
+
+    line-height: 1.55;
+
+    opacity: 0.72;
+}
+
+
+/* =====================================================
+   OUR APPROACH
+===================================================== */
+
+.about-approach {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+.about-approach-header {
+    max-width: 760px;
+
+    margin-bottom: 2.75rem;
+}
+
+
+/* visual approach graphic */
+
+.approach-flow {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        70px
+        1fr
+        70px
+        1fr
+        70px
+        1fr;
+
+    align-items: center;
+
+    padding: 2rem;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+        #151819;
+
+    background-size: 34px 34px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    overflow: hidden;
+}
+
+
+.approach-flow::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(181,106,60,0.11) 0%,
+        transparent 68%
+    );
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+.approach-node {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 1.25rem 0.75rem;
+}
+
+
+.approach-node-number {
+    display: block;
+
+    margin-bottom: 0.55rem;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.12em;
+
+    color: rgba(255,255,255,0.4);
+}
+
+
+.approach-node strong {
+    display: block;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 0.92rem;
+
+    line-height: 1.25;
+
+    color: #ffffff;
+}
+
+
+.approach-arrow {
+    position: relative;
+    z-index: 2;
+
+    height: 1px;
+
+    background: rgba(255,255,255,0.2);
+}
+
+
+.approach-arrow::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.5);
+
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.about-cta {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .capability-strip {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .capability-item:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .capability-item:nth-child(-n+2) {
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+
+    .approach-flow {
+        grid-template-columns:
+            1fr
+            45px
+            1fr
+            45px
+            1fr
+            45px
+            1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .about-hero {
+        padding: 4rem 0 4.5rem;
+    }
+
+
+    .about-hero h1 {
+        margin-bottom: 1.5rem;
+    }
+
+
+    .about-canada,
+    .about-principal,
+    .about-capabilities,
+    .about-approach,
+    .about-cta {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+
+    .capability-strip {
+        grid-template-columns: 1fr;
+    }
+
+
+    .capability-item,
+    .capability-item:nth-child(2) {
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+
+    .capability-item:last-child {
+        border-bottom: none;
+    }
+
+
+    .approach-flow {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .approach-node {
+        padding: 1rem;
+    }
+
+
+    .approach-arrow {
+        width: 1px;
+        height: 25px;
+
+        margin: 0 auto;
+
+        background: rgba(255,255,255,0.2);
+    }
+
+
+    .approach-arrow::after {
+        right: auto;
+        top: auto;
+        bottom: 0;
+        left: 50%;
+
+        transform:
+            translateX(-50%)
+            rotate(135deg);
+    }
+
+}
+
+</style>
+
 </head>
 
 
@@ -111,7 +513,7 @@ Contact
      HERO
 ===================================================== -->
 
-<section class="hero">
+<section class="hero about-hero">
 
 <div class="container">
 
@@ -124,25 +526,34 @@ ABOUT MRLD
 
 <h1>
 A Canadian company building the bridge between global supply and real market opportunity.
-
 </h1>
 
+
+<div class="about-hero-copy">
 
 <p>
 MRLD was built around a simple observation: capable manufacturers do not
 always have direct access to the markets where their equipment can create
 value, while buyers do not always have access to the suppliers best suited
 to their requirements.
-&emsp;
+</p>
+
+
+<p>
 We operate between those two sides of the market. We develop relationships
 with selected manufacturers, identify commercial opportunities, and help
 connect equipment with qualified buyers.
-&emsp;
-Our role is not to be everything to everyone; we focus on building a focused
-network of manufacturers, buyers, and specialized partners around equipment
-categories where market access, commercial representation, and execution
-matter.    
 </p>
+
+
+<p>
+Our role is not to be everything to everyone. We focus on building a
+selective network of manufacturers, buyers, and specialized partners around
+equipment categories where market access, commercial representation, and
+execution matter.
+</p>
+
+</div>
 
 </div>
 
@@ -150,11 +561,13 @@ matter.
 
 </section>
 
+
+
 <!-- =====================================================
      CANADIAN POSITION
 ===================================================== -->
 
-<section class="process-section">
+<section class="process-section about-canada">
 
 <div class="container">
 
@@ -283,7 +696,7 @@ international suppliers.
      PRINCIPAL
 ===================================================== -->
 
-<section class="principal-section">
+<section class="principal-section about-principal">
 
 <div class="container">
 
@@ -365,12 +778,12 @@ Connect with MRLD
      WHAT WE DO
 ===================================================== -->
 
-<section>
+<section class="about-capabilities">
 
 <div class="container">
 
 
-<div class="section-header">
+<div class="about-capabilities-header">
 
 <span class="eyebrow">
 WHAT WE DO
@@ -383,104 +796,83 @@ Connecting opportunity to execution.
 
 
 <p>
-MRLD supports both sides of the industrial equipment market through four
-core activities.
+Four activities support the MRLD bridge between manufacturers and buyers.
 </p>
 
 </div>
 
 
 
-<div class="service-grid">
+<div class="capability-strip">
 
 
-<div class="service-card">
+<div class="capability-item">
 
-<span class="service-number">
+<span class="capability-number">
 01
 </span>
-
-<div class="service-card-content">
 
 <h3>
 Representation
 </h3>
 
 <p>
-Supporting selected manufacturers seeking commercial representation,
-business development, and access to new markets.
+Helping selected manufacturers enter new markets.
 </p>
 
 </div>
 
-</div>
 
 
+<div class="capability-item">
 
-<div class="service-card">
-
-<span class="service-number">
+<span class="capability-number">
 02
 </span>
-
-<div class="service-card-content">
 
 <h3>
 Sourcing
 </h3>
 
 <p>
-Helping buyers identify equipment and alternative sources aligned with
-their operational and commercial requirements.
+Helping buyers identify suitable equipment and suppliers.
 </p>
 
 </div>
 
-</div>
 
 
+<div class="capability-item">
 
-<div class="service-card">
-
-<span class="service-number">
+<span class="capability-number">
 03
 </span>
-
-<div class="service-card-content">
 
 <h3>
 Market Access
 </h3>
 
 <p>
-Connecting manufacturers, buyers, and opportunities across borders through
-structured commercial relationships.
+Creating commercial connections across borders.
 </p>
 
 </div>
 
-</div>
 
 
+<div class="capability-item">
 
-<div class="service-card">
-
-<span class="service-number">
+<span class="capability-number">
 04
 </span>
-
-<div class="service-card-content">
 
 <h3>
 Project Delivery
 </h3>
 
 <p>
-Supporting the coordination of suppliers, logistics providers, stakeholders,
-and requirements through the delivery process.
+Supporting coordination through delivery.
 </p>
-
-</div>
 
 </div>
 
@@ -494,17 +886,17 @@ and requirements through the delivery process.
 
 
 <!-- =====================================================
-     PRINCIPLES
+     OUR APPROACH
 ===================================================== -->
 
-<section>
+<section class="process-section about-approach">
 
 <div class="container">
 
 
-<div class="section-header">
+<div class="about-approach-header">
 
-<span class="eyebrow">
+<span class="eyebrow eyebrow-light">
 OUR APPROACH
 </span>
 
@@ -515,99 +907,78 @@ Focused relationships. Practical execution.
 
 
 <p>
-MRLD is built around long-term commercial relationships rather than
-transaction volume. We work selectively with manufacturers and buyers where
-there is a credible opportunity to create value on both sides.
+MRLD works selectively with manufacturers and buyers where there is a
+credible opportunity to create value on both sides.
 </p>
 
 </div>
 
 
 
-<div class="bridge-grid">
+<!-- APPROACH GRAPHIC -->
+
+<div class="approach-flow">
 
 
-<article class="bridge-card">
+<div class="approach-node">
 
-<span class="service-number">
+<span class="approach-node-number">
 01
 </span>
 
+<strong>
+SELECTIVE
+</strong>
 
-<h3>
-Selective
-</h3>
-
-
-<p>
-We focus on equipment categories, manufacturers, and opportunities where
-there is a genuine commercial fit.
-</p>
-
-</article>
+</div>
 
 
+<div class="approach-arrow"></div>
 
-<article class="bridge-card">
 
-<span class="service-number">
+<div class="approach-node">
+
+<span class="approach-node-number">
 02
 </span>
 
+<strong>
+RELATIONSHIP-DRIVEN
+</strong>
 
-<h3>
-Relationship-driven
-</h3>
-
-
-<p>
-Strong industrial relationships are built through consistency, transparency,
-and a clear understanding of each party's objectives.
-</p>
-
-</article>
+</div>
 
 
+<div class="approach-arrow"></div>
 
-<article class="bridge-card">
 
-<span class="service-number">
+<div class="approach-node">
+
+<span class="approach-node-number">
 03
 </span>
 
+<strong>
+EXECUTION-FOCUSED
+</strong>
 
-<h3>
-Execution-focused
-</h3>
-
-
-<p>
-The objective is not simply to make an introduction. It is to help move
-credible opportunities toward practical outcomes.
-</p>
-
-</article>
+</div>
 
 
+<div class="approach-arrow"></div>
 
-<article class="bridge-card">
 
-<span class="service-number">
+<div class="approach-node">
+
+<span class="approach-node-number">
 04
 </span>
 
+<strong>
+INTERNATIONAL
+</strong>
 
-<h3>
-International
-</h3>
-
-
-<p>
-MRLD connects Canadian and international market opportunities with a growing
-network of manufacturers and specialized partners.
-</p>
-
-</article>
+</div>
 
 
 </div>
@@ -622,7 +993,7 @@ network of manufacturers and specialized partners.
      FINAL CTA
 ===================================================== -->
 
-<section class="cta-section">
+<section class="cta-section about-cta">
 
 <div class="container">
 
