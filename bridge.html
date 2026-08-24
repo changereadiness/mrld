@@ -27,27 +27,40 @@
 
 <link rel="stylesheet" href="assets/css/style.css">
 
+
 <style>
 
 /* =====================================================
    HOMEPAGE BRIDGE TEST
-   Temporary page-specific styles
+   Page-specific styles
+===================================================== */
+
+
+/* =====================================================
+   HERO
 ===================================================== */
 
 .bridge-hero {
-    padding: 7rem 0 6rem;
+    padding: 6rem 0 6rem;
+}
+
+.bridge-hero .hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+    align-items: center;
+    gap: 5rem;
 }
 
 .bridge-hero .hero-content {
-    max-width: 760px;
+    max-width: 720px;
 }
 
 .bridge-hero h1 {
-    max-width: 780px;
+    max-width: 760px;
 }
 
 .bridge-hero .hero-lead {
-    max-width: 700px;
+    max-width: 680px;
     font-size: 1.15rem;
 }
 
@@ -58,15 +71,295 @@
     margin-top: 2rem;
 }
 
-.button-secondary {
-    display: inline-flex;
+
+/* =====================================================
+   HERO BRIDGE VISUAL
+===================================================== */
+
+.market-bridge {
+    position: relative;
+    min-height: 430px;
+    padding: 2rem;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+        #151819;
+
+    background-size: 38px 38px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    overflow: hidden;
+
+    display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+/* subtle technical glow */
+
+.market-bridge::before {
+    content: "";
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(181,106,60,0.16) 0%,
+        rgba(181,106,60,0.05) 35%,
+        transparent 70%
+    );
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+/* outer technical ring */
+
+.market-bridge::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+.market-bridge-inner {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+}
+
+
+/* eyebrow */
+
+.market-bridge-label {
+    text-align: center;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.68rem;
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    color: rgba(255,255,255,0.55);
+
+    text-transform: uppercase;
+
+    margin-bottom: 2.25rem;
+}
+
+
+/* node layout */
+
+.market-flow {
+    display: grid;
+
+    grid-template-columns:
+        minmax(100px, 1fr)
+        55px
+        minmax(130px, 1.25fr)
+        55px
+        minmax(100px, 1fr);
+
+    align-items: center;
+
+    gap: 0.5rem;
+}
+
+
+.market-node {
+    position: relative;
+
+    min-height: 125px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 1rem;
+
+    border: 1px solid rgba(255,255,255,0.16);
+
+    background: rgba(255,255,255,0.035);
+
+    color: #ffffff;
+}
+
+
+.market-node small {
+    display: block;
+
+    margin-bottom: 0.55rem;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,0.45);
+}
+
+
+.market-node strong {
+    font-family: "Manrope", sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.25;
+}
+
+
+.market-node.mrld {
+    min-height: 155px;
+
+    border-color: rgba(181,106,60,0.75);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(181,106,60,0.2),
+            rgba(255,255,255,0.035)
+        );
+
+    box-shadow:
+        0 0 0 1px rgba(181,106,60,0.08),
+        0 0 45px rgba(181,106,60,0.08);
+}
+
+
+.market-node.mrld small {
+    color: rgba(255,255,255,0.6);
+}
+
+
+.market-node.mrld strong {
+    font-size: 1.35rem;
+
+    letter-spacing: 0.03em;
+}
+
+
+/* arrows */
+
+.market-arrow {
+    position: relative;
+
+    height: 1px;
+
+    background: rgba(255,255,255,0.25);
+}
+
+
+.market-arrow::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    border-top: 1px solid rgba(255,255,255,0.6);
+    border-right: 1px solid rgba(255,255,255,0.6);
+
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+/* capabilities */
+
+.market-capabilities {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0.5rem;
+
+    margin-top: 2.25rem;
+
+    padding-top: 1.5rem;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.market-capabilities span {
+    text-align: center;
+
+    font-size: 0.63rem;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,0.48);
+}
+
+
+/* =====================================================
+   SECONDARY BUTTON
+===================================================== */
+
+.button-secondary {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
     padding: 0.9rem 1.4rem;
+
     border: 1px solid currentColor;
+
     text-decoration: none;
+
     font-weight: 600;
 }
+
+
+/* =====================================================
+   BRIDGE SECTION
+===================================================== */
 
 .bridge-section {
     padding: 6rem 0;
@@ -74,6 +367,7 @@
 
 .bridge-intro {
     max-width: 800px;
+
     margin-bottom: 3rem;
 }
 
@@ -81,93 +375,203 @@
     max-width: 760px;
 }
 
+
+/* =====================================================
+   MANUFACTURER / BUYER CARDS
+===================================================== */
+
 .bridge-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
     gap: 1.5rem;
 }
 
+
 .bridge-card {
     padding: 2.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+
+    border: 1px solid rgba(0,0,0,0.12);
+
+    background: rgba(255,255,255,0.35);
 }
+
 
 .bridge-card h3 {
     margin-bottom: 1rem;
 }
 
+
 .bridge-card p {
     max-width: 560px;
 }
 
+
 .bridge-card .card-link {
     display: inline-flex;
+
     margin-top: 1.5rem;
 }
 
-.bridge-diagram {
-    padding: 4rem 0;
-    text-align: center;
-}
 
-.bridge-line {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-
-.bridge-node {
-    padding: 1.25rem 1.5rem;
-    border: 1px solid currentColor;
-    font-family: "Manrope", sans-serif;
-    font-weight: 700;
-}
-
-.bridge-arrow {
-    font-size: 1.5rem;
-    opacity: 0.55;
-}
+/* =====================================================
+   EQUIPMENT
+===================================================== */
 
 .equipment-preview {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 1.25rem;
+
     margin-top: 2.5rem;
 }
 
+
 .equipment-item {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 175px;
+
     padding: 1.75rem;
-    border-top: 2px solid currentColor;
+
+    border: 1px solid rgba(0,0,0,0.12);
+
+    background: rgba(255,255,255,0.35);
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
 }
+
+
+.equipment-item:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(0,0,0,0.28);
+}
+
 
 .equipment-item strong {
     display: block;
-    margin-bottom: 0.5rem;
+
+    margin-bottom: 0.7rem;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 1.05rem;
 }
+
+
+.equipment-item span {
+    display: block;
+
+    line-height: 1.65;
+}
+
+
+.equipment-item.coming-soon {
+    border-style: dashed;
+
+    opacity: 0.78;
+}
+
+
+.equipment-item.coming-soon strong {
+    font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   MARKET ACCESS
+===================================================== */
 
 .partner-network-note {
     margin-top: 1.5rem;
+
     font-size: 0.9rem;
+
     opacity: 0.7;
 }
+
+
+/* =====================================================
+   CANADIAN IDENTITY
+===================================================== */
+
+.canadian-section {
+    padding: 5rem 0;
+}
+
+.canadian-section .section-header {
+    max-width: 760px;
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
 
 .final-cta {
     padding: 6rem 0;
 }
 
+
 .final-cta .cta-box h2 {
     max-width: 700px;
 }
 
+
 .final-actions {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 1rem;
+
     margin-top: 2rem;
 }
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer-canada {
+    margin-top: 1.5rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.01em;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .bridge-hero .hero-layout {
+        grid-template-columns: 1fr;
+
+        gap: 3.5rem;
+    }
+
+    .market-bridge {
+        min-height: 390px;
+    }
+
+}
+
 
 @media (max-width: 760px) {
 
@@ -175,21 +579,60 @@
         padding: 5rem 0 4rem;
     }
 
+
     .bridge-grid,
     .equipment-preview {
         grid-template-columns: 1fr;
     }
 
+
     .bridge-card {
         padding: 2rem;
     }
 
-    .bridge-line {
-        flex-direction: column;
+
+    .market-flow {
+        grid-template-columns: 1fr;
+
+        gap: 0.65rem;
     }
 
-    .bridge-arrow {
-        transform: rotate(90deg);
+
+    .market-node,
+    .market-node.mrld {
+        min-height: 95px;
+    }
+
+
+    .market-arrow {
+        width: 1px;
+
+        height: 24px;
+
+        margin: 0 auto;
+
+        background: rgba(255,255,255,0.25);
+    }
+
+
+    .market-arrow::after {
+        right: auto;
+
+        top: auto;
+        bottom: 0;
+        left: 50%;
+
+        transform:
+            translateX(-50%)
+            rotate(135deg);
+    }
+
+
+    .market-capabilities {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 1rem;
     }
 
 }
@@ -203,7 +646,7 @@
 
 
 <!-- =====================================================
-     Navigation
+     NAVIGATION
 ===================================================== -->
 
 <header>
@@ -226,9 +669,11 @@
             aria-expanded="false"
             aria-controls="primary-navigation"
         >
+
             <span></span>
             <span></span>
             <span></span>
+
         </button>
 
 
@@ -283,7 +728,10 @@
 
 <section class="hero bridge-hero">
 
-    <div class="container">
+    <div class="container hero-layout">
+
+
+        <!-- HERO COPY -->
 
         <div class="hero-content">
 
@@ -319,6 +767,95 @@
                 >
                     Source Equipment
                 </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO BRIDGE GRAPHIC -->
+
+        <div class="market-bridge">
+
+            <div class="market-bridge-inner">
+
+                <div class="market-bridge-label">
+                    THE MRLD BRIDGE
+                </div>
+
+
+                <div class="market-flow">
+
+
+                    <div class="market-node">
+
+                        <small>
+                            Supply
+                        </small>
+
+                        <strong>
+                            Global<br>
+                            Manufacturers
+                        </strong>
+
+                    </div>
+
+
+                    <div class="market-arrow"></div>
+
+
+                    <div class="market-node mrld">
+
+                        <small>
+                            Market Access
+                        </small>
+
+                        <strong>
+                            MRLD
+                        </strong>
+
+                    </div>
+
+
+                    <div class="market-arrow"></div>
+
+
+                    <div class="market-node">
+
+                        <small>
+                            Demand
+                        </small>
+
+                        <strong>
+                            Qualified<br>
+                            Buyers
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="market-capabilities">
+
+                    <span>
+                        Representation
+                    </span>
+
+                    <span>
+                        Sourcing
+                    </span>
+
+                    <span>
+                        Market Access
+                    </span>
+
+                    <span>
+                        Delivery
+                    </span>
+
+                </div>
 
             </div>
 
@@ -365,7 +902,7 @@
         <div class="bridge-grid">
 
 
-            <!-- Manufacturer -->
+            <!-- MANUFACTURERS -->
 
             <article class="bridge-card">
 
@@ -403,7 +940,7 @@
 
 
 
-            <!-- Buyer -->
+            <!-- BUYERS -->
 
             <article class="bridge-card">
 
@@ -439,68 +976,6 @@
 
             </article>
 
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     BRIDGE DIAGRAM
-===================================================== -->
-
-<section class="process-section">
-
-    <div class="container">
-
-
-        <div class="bridge-diagram">
-
-            <span class="eyebrow eyebrow-light">
-                HOW MRLD CONNECTS THE MARKET
-            </span>
-
-
-            <h2>
-                Manufacturers → MRLD → Buyers
-            </h2>
-
-
-            <div class="bridge-line">
-
-                <div class="bridge-node">
-                    Global Manufacturers
-                </div>
-
-
-                <span class="bridge-arrow">
-                    →
-                </span>
-
-
-                <div class="bridge-node">
-                    MRLD
-                </div>
-
-
-                <span class="bridge-arrow">
-                    →
-                </span>
-
-
-                <div class="bridge-node">
-                    Qualified Buyers
-                </div>
-
-            </div>
-
-
-            <p>
-                Market access · Representation · Sourcing · Project delivery
-            </p>
 
         </div>
 
@@ -553,6 +1028,7 @@
                     Power Generation
                 </strong>
 
+
                 <span>
                     Diesel generators and power generation equipment.
                 </span>
@@ -570,6 +1046,7 @@
                     Construction Machinery
                 </strong>
 
+
                 <span>
                     Equipment for construction, infrastructure, and earthmoving.
                 </span>
@@ -578,11 +1055,12 @@
 
 
 
-            <div class="equipment-item">
+            <div class="equipment-item coming-soon">
 
                 <strong>
                     More Equipment Categories — Coming Soon
                 </strong>
+
 
                 <span>
                     MRLD is actively expanding its manufacturer network.
@@ -733,7 +1211,7 @@
      CANADIAN IDENTITY
 ===================================================== -->
 
-<section class="bridge-section">
+<section class="bridge-section canadian-section">
 
     <div class="container">
 
@@ -945,7 +1423,7 @@
 
     <div class="footer-bottom">
 
-        <p>
+        <p class="footer-canada">
             🇨🇦 Canadian company. Global reach.
         </p>
 
@@ -961,7 +1439,7 @@
 
 
 <!-- =====================================================
-     Navigation Script
+     NAVIGATION SCRIPT
 ===================================================== -->
 
 <script>
@@ -971,18 +1449,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.querySelector(".nav-toggle");
     const nav = document.querySelector(".nav-links");
 
+
     if (!toggle || !nav) {
         return;
     }
+
 
     toggle.addEventListener("click", function () {
 
         const isOpen = nav.classList.toggle("is-open");
 
+
         toggle.setAttribute(
             "aria-expanded",
             isOpen ? "true" : "false"
         );
+
 
         toggle.setAttribute(
             "aria-label",
