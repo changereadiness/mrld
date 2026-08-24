@@ -10,16 +10,456 @@
 
 <title>Equipment Sourcing | MRLD</title>
 
-<meta name="description" content="MRLD helps organizations source industrial equipment through established supplier networks, market expertise, and structured acquisition support.">
+<meta
+    name="description"
+    content="MRLD connects buyers with industrial equipment manufacturers and sourcing opportunities across Canada and international markets."
+>
 
 <meta name="author" content="MRLD">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+>
 
 <link rel="stylesheet" href="../assets/css/style.css">
+
+
+<style>
+
+/* =====================================================
+   EQUIPMENT PAGE
+===================================================== */
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.equipment-hero {
+    padding: 5rem 0 5.5rem;
+}
+
+.equipment-hero .hero-content {
+    max-width: 980px;
+}
+
+.equipment-hero h1 {
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+}
+
+.equipment-hero p {
+    max-width: 760px;
+}
+
+
+/* =====================================================
+   SOURCING INTRO
+===================================================== */
+
+.sourcing-intro {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.sourcing-intro-header {
+    max-width: 780px;
+}
+
+
+/* =====================================================
+   EQUIPMENT CATEGORIES
+===================================================== */
+
+.equipment-categories {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    margin-top: 2.75rem;
+
+    border-top: 1px solid rgba(0,0,0,0.14);
+    border-left: 1px solid rgba(0,0,0,0.1);
+}
+
+
+.equipment-category {
+    padding: 1.75rem 1.5rem;
+
+    border-right: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.14);
+}
+
+
+.equipment-category-number {
+    display: block;
+
+    margin-bottom: 0.75rem;
+
+    font-size: 0.68rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.5;
+}
+
+
+.equipment-category h3 {
+    margin: 0 0 0.5rem;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 1rem;
+}
+
+
+.equipment-category p {
+    margin: 0;
+
+    font-size: 0.86rem;
+
+    line-height: 1.55;
+
+    opacity: 0.7;
+}
+
+
+/* =====================================================
+   SOURCING PROCESS
+===================================================== */
+
+.equipment-process {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+.equipment-process-header {
+    max-width: 760px;
+
+    margin-bottom: 2.75rem;
+}
+
+
+.sourcing-flow {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        70px
+        1fr
+        70px
+        1fr
+        70px
+        1fr;
+
+    align-items: center;
+
+    padding: 2rem;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+        #151819;
+
+    background-size: 34px 34px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    overflow: hidden;
+}
+
+
+.sourcing-flow::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(181,106,60,0.11) 0%,
+        transparent 68%
+    );
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+.sourcing-node {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 1rem 0.5rem;
+}
+
+
+.sourcing-number {
+    display: block;
+
+    margin-bottom: 0.6rem;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.12em;
+
+    color: rgba(255,255,255,0.4);
+}
+
+
+.sourcing-node strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 0.92rem;
+
+    line-height: 1.25;
+}
+
+
+.sourcing-node p {
+    margin: 0.55rem auto 0;
+
+    max-width: 170px;
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 0.78rem;
+
+    line-height: 1.45;
+}
+
+
+.sourcing-arrow {
+    position: relative;
+    z-index: 2;
+
+    height: 1px;
+
+    background: rgba(255,255,255,0.2);
+}
+
+
+.sourcing-arrow::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.5);
+
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+/* =====================================================
+   PROJECT SUPPORT
+===================================================== */
+
+.equipment-support {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+.equipment-support-content {
+    max-width: 820px;
+}
+
+
+/* =====================================================
+   MANUFACTURER CTA
+===================================================== */
+
+.manufacturer-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+.manufacturer-box {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        0.6fr;
+
+    gap: 3rem;
+
+    align-items: center;
+
+    padding: 3rem;
+
+    background: #151819;
+
+    color: #ffffff;
+}
+
+
+.manufacturer-box h2 {
+    color: #ffffff;
+}
+
+
+.manufacturer-box p {
+    color: rgba(255,255,255,0.68);
+}
+
+
+.manufacturer-box .eyebrow {
+    color: rgba(255,255,255,0.5);
+}
+
+
+.manufacturer-action {
+    text-align: right;
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.equipment-cta {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .equipment-categories {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .sourcing-flow {
+        grid-template-columns:
+            1fr
+            45px
+            1fr
+            45px
+            1fr
+            45px
+            1fr;
+    }
+
+
+    .manufacturer-box {
+        grid-template-columns: 1fr;
+    }
+
+
+    .manufacturer-action {
+        text-align: left;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .equipment-hero {
+        padding: 4rem 0 4.5rem;
+    }
+
+
+    .sourcing-intro,
+    .equipment-process,
+    .equipment-support,
+    .manufacturer-section,
+    .equipment-cta {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+
+    .equipment-categories {
+        grid-template-columns: 1fr;
+    }
+
+
+    .sourcing-flow {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .sourcing-node {
+        padding: 1rem;
+    }
+
+
+    .sourcing-arrow {
+        width: 1px;
+        height: 25px;
+
+        margin: 0 auto;
+
+        background: rgba(255,255,255,0.2);
+    }
+
+
+    .sourcing-arrow::after {
+        right: auto;
+        top: auto;
+        bottom: 0;
+        left: 50%;
+
+        transform:
+            translateX(-50%)
+            rotate(135deg);
+    }
+
+
+    .manufacturer-box {
+        padding: 2rem;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -28,613 +468,657 @@
 
 
 <!-- =====================================================
-     Header
+     HEADER
 ===================================================== -->
 
 <header>
 
-    <nav class="navbar">
+<nav class="navbar">
 
-        <a href="../index.html" class="logo">
-            MRLD
-        </a>
-
-
-        <button
-            class="nav-toggle"
-            type="button"
-            aria-label="Open navigation"
-            aria-expanded="false"
-            aria-controls="primary-navigation"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+<a
+    href="../index.html"
+    class="logo"
+    aria-label="MRLD Home"
+>
+    MRLD
+</a>
 
 
-        <ul class="nav-links" id="primary-navigation">
+<button
+    class="nav-toggle"
+    type="button"
+    aria-label="Open navigation"
+    aria-expanded="false"
+    aria-controls="primary-navigation"
+>
 
-            <li>
-                <a href="equipment.html">
-                    Equipment
-                </a>
-            </li>
+<span></span>
+<span></span>
+<span></span>
 
-            <li>
-                <a href="project-logistics.html">
-                    Project Logistics
-                </a>
-            </li>
+</button>
 
-            <li>
-                <a href="industries.html">
-                    Industries
-                </a>
-            </li>
 
-            <li>
-                <a href="about.html">
-                    About
-                </a>
-            </li>
+<ul
+    class="nav-links"
+    id="primary-navigation"
+>
 
-            <li>
-                <a href="contact.html">
-                    Contact
-                </a>
-            </li>
+<li>
+<a href="equipment.html">
+Equipment
+</a>
+</li>
 
-        </ul>
+<li>
+<a href="project-logistics.html">
+Project Logistics
+</a>
+</li>
 
-    </nav>
+<li>
+<a href="industries.html">
+Industries
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+
+</ul>
+
+</nav>
 
 </header>
 
 
-<!-- =====================================================
-     Main
-===================================================== -->
 
 <main>
 
 
-    <!-- =================================================
-         Interior Hero
-    ================================================== -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-    <section class="hero">
+<section class="hero equipment-hero">
 
-        <div class="container">
+<div class="container">
 
-            <div class="hero-content">
+<div class="hero-content">
 
-                <span class="eyebrow">
-                    EQUIPMENT SOURCING
-                </span>
+<span class="eyebrow">
+EQUIPMENT SOURCING
+</span>
 
-                <h1>
-                    Equipment Sourcing
-                </h1>
 
-                <p>
-                    MRLD helps organizations identify and acquire industrial equipment through established supplier networks, market expertise, and structured acquisition support.
-                </p>
+<h1>
+The right equipment starts with the right source.
+</h1>
 
-            </div>
 
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         Equipment Portfolio
-    ================================================== -->
-
-    <section class="capabilities">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <span class="eyebrow">
-                    EQUIPMENT PORTFOLIO
-                </span>
-
-                <h2>
-                    Industrial Equipment, Sourced for the Job
-                </h2>
-
-                <p>
-                    MRLD sources equipment across demanding industrial applications, matching operational requirements with suitable suppliers and equipment solutions.
-                </p>
-
-            </div>
-
-
-            <div class="service-grid">
-
-
-                <article class="service-card">
-
-                    <span class="service-number">
-                        01
-                    </span>
-
-                    <div class="service-card-content">
-
-                        <h3>
-                            Construction Equipment
-                        </h3>
-
-                        <p>
-                            Construction, earthmoving, and infrastructure.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="service-card">
-
-                    <span class="service-number">
-                        02
-                    </span>
-
-                    <div class="service-card-content">
-
-                        <h3>
-                            Mining Equipment
-                        </h3>
-
-                        <p>
-                            Equipment for demanding mining environments.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="service-card">
-
-                    <span class="service-number">
-                        03
-                    </span>
-
-                    <div class="service-card-content">
-
-                        <h3>
-                            Industrial Equipment
-                        </h3>
-
-                        <p>
-                            Manufacturing, processing, and industrial operations.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="service-card">
-
-                    <span class="service-number">
-                        04
-                    </span>
-
-                    <div class="service-card-content">
-
-                        <h3>
-                            Material Handling
-                        </h3>
-
-                        <p>
-                            Equipment for warehouses and industrial facilities.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="service-card">
-
-                    <span class="service-number">
-                        05
-                    </span>
-
-                    <div class="service-card-content">
-
-                        <h3>
-                            Infrastructure & Energy
-                        </h3>
-
-                        <p>
-                            Specialized equipment for large-scale projects.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="service-card">
-
-                    <span class="service-number">
-                        06
-                    </span>
-
-                    <div class="service-card-content">
-
-                        <h3>
-                            Specialized Machinery
-                        </h3>
-
-                        <p>
-                            Sourcing adapted to specific operational requirements.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-
-<!-- Portfolio Expansion -->
-
-<div class="section-header">
-
-    <h2>
-        More Equipment Categories
-        <br>
-        <span>Coming Soon</span>
-    </h2>
-
-    <p>
-        MRLD is expanding its equipment portfolio through new supplier relationships and additional industrial applications. Further categories and equipment will be introduced as the portfolio develops.
-    </p>
+<p>
+MRLD helps buyers identify suitable industrial equipment and connect with
+manufacturers and suppliers aligned with their operational requirements.
+</p>
 
 </div>
 
-        </div>
+</div>
 
-    </section>
+</section>
 
 
-        <!-- =================================================
-         Acquisition Process
-    ================================================== -->
 
-    <section class="process-section">
+<!-- =====================================================
+     SOURCING
+===================================================== -->
 
-        <div class="container">
+<section class="sourcing-intro">
 
-            <div class="process-intro">
+<div class="container">
 
-                <div>
+<div class="sourcing-intro-header">
 
-                    <span class="eyebrow">
-                        APPROACH
-                    </span>
+<span class="eyebrow">
+WHAT WE SOURCE
+</span>
 
-                    <h2>
-                        Our Equipment Acquisition Process
-                    </h2>
 
-                </div>
+<h2>
+Industrial equipment across demanding applications.
+</h2>
 
 
-                <p>
-                    MRLD simplifies complex equipment decisions through a structured sourcing approach.
-                </p>
+<p>
+MRLD is developing a focused network of manufacturers and suppliers across
+selected equipment categories. We source according to the requirement —
+not from a fixed online inventory.
+</p>
 
-            </div>
+</div>
 
 
-            <div class="process-grid">
 
+<div class="equipment-categories">
 
-                <article class="process-step">
 
-                    <div class="process-line"></div>
+<article class="equipment-category">
 
-                    <span class="process-number">
-                        01
-                    </span>
+<span class="equipment-category-number">
+01
+</span>
 
-                    <h3>
-                        Understand
-                    </h3>
+<h3>
+Construction Equipment
+</h3>
 
-                    <p>
-                        Define requirements, specifications, operating conditions, and project objectives.
-                    </p>
+<p>
+Earthmoving, infrastructure, and construction applications.
+</p>
 
-                </article>
+</article>
 
 
-                <article class="process-step">
 
-                    <div class="process-line"></div>
+<article class="equipment-category">
 
-                    <span class="process-number">
-                        02
-                    </span>
+<span class="equipment-category-number">
+02
+</span>
 
-                    <h3>
-                        Source
-                    </h3>
+<h3>
+Mining Equipment
+</h3>
 
-                    <p>
-                        Identify suitable equipment through established supplier relationships.
-                    </p>
+<p>
+Equipment for demanding extraction and mining environments.
+</p>
 
-                </article>
+</article>
 
 
-                <article class="process-step">
 
-                    <div class="process-line"></div>
+<article class="equipment-category">
 
-                    <span class="process-number">
-                        03
-                    </span>
+<span class="equipment-category-number">
+03
+</span>
 
-                    <h3>
-                        Evaluate
-                    </h3>
+<h3>
+Industrial Equipment
+</h3>
 
-                    <p>
-                        Compare options based on application, condition, availability, and value.
-                    </p>
+<p>
+Equipment supporting manufacturing and industrial operations.
+</p>
 
-                </article>
+</article>
 
 
-            </div>
 
-        </div>
+<article class="equipment-category">
 
-    </section>
+<span class="equipment-category-number">
+04
+</span>
 
+<h3>
+Material Handling
+</h3>
 
-    <!-- =================================================
-         Project Support
-    ================================================== -->
+<p>
+Equipment for warehouses, facilities, and industrial movement.
+</p>
 
-    <section>
+</article>
 
-        <div class="container">
 
-            <div class="section-header">
 
-                <span class="eyebrow">
-                    PROJECT SUPPORT
-                </span>
+<article class="equipment-category">
 
-                <h2>
-                    Beyond Equipment Selection
-                </h2>
+<span class="equipment-category-number">
+05
+</span>
 
-                <p>
-                    Equipment sourcing can extend beyond selection. MRLD can support supplier coordination, acquisition requirements, and delivery planning as part of the broader project.
-                </p>
+<h3>
+Energy & Infrastructure
+</h3>
 
-                <p>
-                    <a href="project-logistics.html">
-                        Explore Project Logistics →
-                    </a>
-                </p>
+<p>
+Equipment supporting power, infrastructure, and major projects.
+</p>
 
-            </div>
+</article>
 
-        </div>
 
-    </section>
 
+<article class="equipment-category">
 
-    <!-- =================================================
-         Manufacturer & Principal Partnerships
-    ================================================== -->
+<span class="equipment-category-number">
+06
+</span>
 
-    <section class="capabilities">
+<h3>
+Specialized Machinery
+</h3>
 
-        <div class="container">
+<p>
+Solutions identified around specific operational requirements.
+</p>
 
-            <div class="section-header">
+</article>
 
-                <span class="eyebrow">
-                    MANUFACTURER & PRINCIPAL PARTNERSHIPS
-                </span>
 
-                <h2>
-                    Looking for a Representative in New Markets?
-                </h2>
+</div>
 
-                <p>
-                    MRLD works with equipment manufacturers and principals seeking qualified commercial representation, market development, and customer access across industrial sectors.
-                </p>
+</div>
 
-                <p>
-                    <a href="contact.html">
-                        Discuss Representation →
-                    </a>
-                </p>
+</section>
 
-            </div>
 
-        </div>
 
-    </section>
+<!-- =====================================================
+     SOURCING PROCESS
+===================================================== -->
 
+<section class="process-section equipment-process">
 
-    <!-- =================================================
-         CTA
-    ================================================== -->
+<div class="container">
 
-    <section class="cta-section">
 
-        <div class="container">
+<div class="equipment-process-header">
 
-            <div class="cta-box">
+<span class="eyebrow eyebrow-light">
+OUR SOURCING APPROACH
+</span>
 
-                <div>
 
-                    <span class="eyebrow">
-                        GET STARTED
-                    </span>
+<h2>
+From requirement to equipment.
+</h2>
 
-                    <h2>
-                        Looking for a Specific Equipment Solution?
-                    </h2>
 
-                    <p>
-                        Share your requirements with MRLD and discover how we can support your next equipment acquisition.
-                    </p>
+<p>
+MRLD approaches sourcing as a structured commercial process rather than a
+catalogue search.
+</p>
 
-                </div>
+</div>
 
 
-                <a class="button" href="contact.html">
-                    Discuss Your Requirements
-                </a>
 
-            </div>
+<div class="sourcing-flow">
 
-        </div>
 
-    </section>
+<div class="sourcing-node">
+
+<span class="sourcing-number">
+01
+</span>
+
+<strong>
+UNDERSTAND
+</strong>
+
+<p>
+Application, specifications, timeline, and objectives.
+</p>
+
+</div>
+
+
+<div class="sourcing-arrow"></div>
+
+
+<div class="sourcing-node">
+
+<span class="sourcing-number">
+02
+</span>
+
+<strong>
+IDENTIFY
+</strong>
+
+<p>
+Relevant manufacturers and equipment solutions.
+</p>
+
+</div>
+
+
+<div class="sourcing-arrow"></div>
+
+
+<div class="sourcing-node">
+
+<span class="sourcing-number">
+03
+</span>
+
+<strong>
+EVALUATE
+</strong>
+
+<p>
+Fit, availability, commercial considerations, and requirements.
+</p>
+
+</div>
+
+
+<div class="sourcing-arrow"></div>
+
+
+<div class="sourcing-node">
+
+<span class="sourcing-number">
+04
+</span>
+
+<strong>
+CONNECT
+</strong>
+
+<p>
+Bring the right parties together and move the opportunity forward.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECT SUPPORT
+===================================================== -->
+
+<section class="equipment-support">
+
+<div class="container">
+
+<div class="equipment-support-content">
+
+<span class="eyebrow">
+BEYOND SOURCING
+</span>
+
+
+<h2>
+Equipment is only part of the project.
+</h2>
+
+
+<p>
+Once the right equipment has been identified, the requirements can extend
+to supplier coordination, commercial discussions, logistics planning,
+documentation, and delivery.
+</p>
+
+
+<p>
+MRLD can coordinate with specialized partners to help move equipment
+opportunities beyond the initial introduction.
+</p>
+
+
+<p>
+<a href="project-logistics.html">
+Explore Project Logistics →
+</a>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MANUFACTURER PARTNERSHIPS
+===================================================== -->
+
+<section class="manufacturer-section">
+
+<div class="container">
+
+<div class="manufacturer-box">
+
+
+<div>
+
+<span class="eyebrow">
+MANUFACTURER & PRINCIPAL PARTNERSHIPS
+</span>
+
+
+<h2>
+Looking to grow into a new market?
+</h2>
+
+
+<p>
+MRLD works with selected equipment manufacturers and principals seeking
+commercial representation, market development, and qualified buyer access.
+</p>
+
+</div>
+
+
+<div class="manufacturer-action">
+
+<a
+    class="button button-light"
+    href="contact.html"
+>
+Partner with MRLD
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="cta-section equipment-cta">
+
+<div class="container">
+
+<div class="cta-box">
+
+<div>
+
+<span class="eyebrow">
+FOR BUYERS
+</span>
+
+
+<h2>
+Looking for a new equipment source?
+</h2>
+
+
+<p>
+Tell us what you are looking for. MRLD can help identify potential
+manufacturers and sourcing opportunities aligned with your requirements.
+</p>
+
+</div>
+
+
+<a
+    class="button"
+    href="contact.html"
+>
+Discuss Your Requirements
+</a>
+
+</div>
+
+</div>
+
+</section>
 
 
 </main>
 
 
+
 <!-- =====================================================
-     Footer
+     FOOTER
 ===================================================== -->
 
 <footer>
 
-    <div class="footer-content">
+<div class="footer-content">
 
 
-        <div class="footer-brand">
+<div class="footer-brand">
 
-            <div class="footer-logo">
-                <h3>MRLD</h3>
-            </div>
-
-            <p class="footer-tagline">
-                Industrial equipment. Project delivery. Reliable execution.
-            </p>
-
-            <p class="footer-description">
-                Helping organizations acquire and deliver industrial equipment
-                through trusted networks and structured project support.
-            </p>
-
-        </div>
+<div class="footer-logo">
+<h3>
+MRLD
+</h3>
+</div>
 
 
+<p class="footer-tagline">
+Industrial equipment. Global supply. Market access.
+</p>
 
-        <div class="footer-links">
 
+<p class="footer-description">
+Connecting selected manufacturers with qualified buyers across Canada
+and international markets.
+</p>
 
-            <div class="footer-column">
-
-                <h4>
-                    Explore
-                </h4>
-
-                <a href="equipment.html">
-                    Equipment
-                </a>
-
-                <a href="project-logistics.html">
-                    Project Logistics
-                </a>
-
-                <a href="industries.html">
-                    Industries
-                </a>
-
-                <a href="about.html">
-                    About
-                </a>
-
-            </div>
+</div>
 
 
 
-            <div class="footer-column">
-
-                <h4>
-                    Connect
-                </h4>
-
-                <a
-                    href="https://www.linkedin.com/in/sayudi/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    LinkedIn
-                </a>
-
-                <a href="mailto:contact@sayudi.com">
-                    Email
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-            </div>
+<div class="footer-links">
 
 
+<div class="footer-column">
 
-            <div class="footer-column">
+<h4>
+Explore
+</h4>
 
-                <h4>
-                    Legal
-                </h4>
+<a href="equipment.html">
+Equipment
+</a>
 
-                <a href="privacy.html">
-                    Privacy Policy
-                </a>
+<a href="project-logistics.html">
+Project Logistics
+</a>
 
-                <a href="terms.html">
-                    Terms of Use
-                </a>
+<a href="industries.html">
+Industries
+</a>
 
-            </div>
+<a href="about.html">
+About
+</a>
 
-
-        </div>
-
-    </div>
+</div>
 
 
 
-    <div class="footer-bottom">
+<div class="footer-column">
 
-        <p>
-            © 2026 MRLD, a Sayudi Inc. company. All rights reserved.
-        </p>
+<h4>
+Connect
+</h4>
 
-    </div>
+<a
+    href="https://www.linkedin.com/in/sayudi/"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+LinkedIn
+</a>
+
+<a href="mailto:contact@sayudi.com">
+Email
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+
+
+<div class="footer-column">
+
+<h4>
+Legal
+</h4>
+
+<a href="privacy.htm">
+Privacy Policy
+</a>
+
+<a href="terms.html">
+Terms of Use
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+<p class="footer-canada">
+🇨🇦 Canadian company. Global reach.
+</p>
+
+
+<p>
+© 2026 MRLD, a Sayudi Inc. company. All rights reserved.
+</p>
+
+</div>
 
 </footer>
 
 
 
-
 <!-- =====================================================
-     Mobile Navigation
+     MOBILE NAVIGATION
 ===================================================== -->
 
 <script>
@@ -675,6 +1159,3 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
-```
-
-I deliberately kept the **manufacturer CTA separate from the final buyer CTA**. That's important: someone arriving as a manufacturer should immediately recognize that MRLD is also inviting *them* into the network, rather than assuming the whole page is aimed at equipment buyers.
