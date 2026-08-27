@@ -1,3 +1,5 @@
+MRLD BACKUP EQUIPMENT PAGE (08/27)
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,374 +74,63 @@
 
 
 /* =====================================================
-   EQUIPMENT SOURCING NETWORK
+   EQUIPMENT CATEGORIES
 ===================================================== */
 
 .equipment-categories {
-    position: relative;
+    display: grid;
 
-    height: 620px;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-    margin-top: 4rem;
+    margin-top: 2.75rem;
 
-    overflow: hidden;
+    border-top: 1px solid rgba(0,0,0,0.14);
+    border-left: 1px solid rgba(0,0,0,0.1);
 }
 
-
-/* =====================================================
-   NETWORK FIELD
-===================================================== */
-
-.equipment-network {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    pointer-events: none;
-}
-
-
-/* =====================================================
-   CONNECTIONS
-===================================================== */
-
-.network-line {
-    stroke: rgba(0,0,0,0.12);
-
-    stroke-width: 1;
-
-    transition:
-        stroke 0.45s ease,
-        stroke-width 0.45s ease;
-}
-
-
-.network-line.active {
-    stroke: rgba(0,0,0,0.48);
-
-    stroke-width: 1.5;
-}
-
-
-/* =====================================================
-   SIGNAL
-===================================================== */
-
-.network-signal {
-    fill: rgba(0,0,0,0);
-
-    transition:
-        fill 0.3s ease;
-}
-
-
-.network-signal.active {
-    fill: #7c9b88;
-}
-
-
-/* =====================================================
-   CATEGORY NODES
-===================================================== */
 
 .equipment-category {
-    position: absolute;
+    padding: 1.75rem 1.5rem;
 
-    width: 190px;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.14);
+}
 
-    padding: 0;
 
-    border: 0;
+.equipment-category-number {
+    display: block;
 
-    cursor: default;
+    margin-bottom: 0.75rem;
 
-    transition:
-        opacity 0.35s ease,
-        transform 0.35s ease;
+    font-size: 0.68rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.5;
 }
 
 
 .equipment-category h3 {
-    margin: 0;
+    margin: 0 0 0.5rem;
 
     font-family: "Manrope", sans-serif;
 
-    font-size: 0.92rem;
-
-    line-height: 1.3;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
+    font-size: 1rem;
 }
 
 
 .equipment-category p {
-    margin: 0.5rem 0 0;
+    margin: 0;
 
-    max-width: 190px;
+    font-size: 0.86rem;
 
-    font-size: 0.78rem;
+    line-height: 1.55;
 
-    line-height: 1.5;
-
-    opacity: 0.55;
-
-    transition:
-        opacity 0.35s ease,
-        transform 0.35s ease;
+    opacity: 0.7;
 }
 
-
-/* =====================================================
-   NODE POSITIONS
-===================================================== */
-
-.equipment-category:nth-child(2) {
-    top: 7%;
-    left: 8%;
-
-    text-align: right;
-}
-
-
-.equipment-category:nth-child(3) {
-    top: 7%;
-    right: 8%;
-
-    text-align: left;
-}
-
-
-.equipment-category:nth-child(4) {
-    top: 45%;
-    left: 2%;
-
-    text-align: right;
-}
-
-
-.equipment-category:nth-child(5) {
-    top: 45%;
-    right: 2%;
-
-    text-align: left;
-}
-
-
-.equipment-category:nth-child(6) {
-    bottom: 6%;
-    left: 18%;
-
-    text-align: right;
-}
-
-
-.equipment-category:nth-child(7) {
-    bottom: 6%;
-    right: 18%;
-
-    text-align: left;
-}
-
-
-/* =====================================================
-   HOVER STATE
-===================================================== */
-
-.equipment-categories.has-active
-.equipment-category:not(.is-active) {
-    opacity: 0.25;
-}
-
-
-.equipment-category.is-active {
-    opacity: 1;
-}
-
-
-.equipment-category.is-active h3 {
-    transform: translateY(-3px);
-}
-
-
-.equipment-category.is-active p {
-    opacity: 0.8;
-
-    transform: translateY(-2px);
-}
-
-
-/* =====================================================
-   MARKET REACH CENTER
-===================================================== */
-
-.market-reach-node {
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 116px;
-    height: 116px;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    transform: translate(-50%, -50%);
-
-    border: 1px solid rgba(0,0,0,0.22);
-
-    border-radius: 50%;
-
-    background: #ffffff;
-
-    z-index: 5;
-}
-
-
-.market-reach-node::before {
-    content: "";
-
-    position: absolute;
-
-    inset: -13px;
-
-    border: 1px solid rgba(0,0,0,0.07);
-
-    border-radius: 50%;
-
-    animation:
-        marketPulse 4s ease-in-out infinite;
-}
-
-
-.market-reach-label {
-    margin-bottom: 0.35rem;
-
-    font-size: 0.57rem;
-
-    font-weight: 600;
-
-    letter-spacing: 0.13em;
-
-    opacity: 0.45;
-}
-
-
-.market-reach-title {
-    font-family: "Manrope", sans-serif;
-
-    font-size: 0.8rem;
-
-    font-weight: 800;
-
-    letter-spacing: 0.04em;
-
-    text-align: center;
-
-    line-height: 1.15;
-}
-
-
-.market-reach-mrld {
-    margin-top: 0.3rem;
-
-    font-size: 0.58rem;
-
-    font-weight: 600;
-
-    letter-spacing: 0.14em;
-
-    opacity: 0.4;
-}
-
-
-@keyframes marketPulse {
-
-    0%,
-    100% {
-        transform: scale(0.94);
-
-        opacity: 0.35;
-    }
-
-    50% {
-        transform: scale(1.04);
-
-        opacity: 0.75;
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 700px) {
-
-    .equipment-categories {
-        height: auto;
-
-        overflow: visible;
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 0;
-
-        margin-top: 2.5rem;
-    }
-
-
-    .equipment-network,
-    .market-reach-node {
-        display: none;
-    }
-
-
-    .equipment-category,
-    .equipment-category:nth-child(2),
-    .equipment-category:nth-child(3),
-    .equipment-category:nth-child(4),
-    .equipment-category:nth-child(5),
-    .equipment-category:nth-child(6),
-    .equipment-category:nth-child(7) {
-
-        position: relative;
-
-        top: auto;
-        right: auto;
-        bottom: auto;
-        left: auto;
-
-        width: 100%;
-
-        padding: 1.25rem 0;
-
-        text-align: left;
-
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-
-        opacity: 1;
-    }
-
-
-    .equipment-category p {
-        max-width: 100%;
-
-        opacity: 0.65;
-
-        transform: none;
-    }
 
 /* =====================================================
    SOURCING PROCESS
@@ -928,233 +619,119 @@ not from a fixed online inventory.
 </div>
 
 
+
 <div class="equipment-categories">
 
 
-    <!-- NETWORK CONNECTIONS -->
+<article class="equipment-category">
 
-    <svg
-        class="equipment-network"
-        viewBox="0 0 1000 620"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-    >
+<span class="equipment-category-number">
+01
+</span>
 
-        <line
-            class="network-line"
-            data-category="construction"
-            x1="500"
-            y1="310"
-            x2="135"
-            y2="105"
-        />
+<h3>
+Construction Equipment
+</h3>
 
-        <line
-            class="network-line"
-            data-category="mining"
-            x1="500"
-            y1="310"
-            x2="865"
-            y2="105"
-        />
+<p>
+Earthmoving, infrastructure, and construction applications.
+</p>
 
-        <line
-            class="network-line"
-            data-category="industrial"
-            x1="500"
-            y1="310"
-            x2="65"
-            y2="330"
-        />
-
-        <line
-            class="network-line"
-            data-category="handling"
-            x1="500"
-            y1="310"
-            x2="935"
-            y2="330"
-        />
-
-        <line
-            class="network-line"
-            data-category="energy"
-            x1="500"
-            y1="310"
-            x2="230"
-            y2="545"
-        />
-
-        <line
-            class="network-line"
-            data-category="specialized"
-            x1="500"
-            y1="310"
-            x2="770"
-            y2="545"
-        />
+</article>
 
 
-        <!-- SIGNALS -->
 
-        <circle
-            class="network-signal"
-            data-category="construction"
-            r="4"
-        />
+<article class="equipment-category">
 
-        <circle
-            class="network-signal"
-            data-category="mining"
-            r="4"
-        />
+<span class="equipment-category-number">
+02
+</span>
 
-        <circle
-            class="network-signal"
-            data-category="industrial"
-            r="4"
-        />
+<h3>
+Mining Equipment
+</h3>
 
-        <circle
-            class="network-signal"
-            data-category="handling"
-            r="4"
-        />
+<p>
+Equipment for demanding extraction and mining environments.
+</p>
 
-        <circle
-            class="network-signal"
-            data-category="energy"
-            r="4"
-        />
-
-        <circle
-            class="network-signal"
-            data-category="specialized"
-            r="4"
-        />
-
-    </svg>
+</article>
 
 
-    <!-- CENTER -->
 
-    <div class="market-reach-node">
+<article class="equipment-category">
 
-        <span class="market-reach-label">
-            MARKET
-        </span>
+<span class="equipment-category-number">
+03
+</span>
 
-        <strong class="market-reach-title">
-            REACH
-        </strong>
+<h3>
+Industrial Equipment
+</h3>
 
-        <span class="market-reach-mrld">
-            MRLD
-        </span>
+<p>
+Equipment supporting manufacturing and industrial operations.
+</p>
 
-    </div>
-
-
-    <!-- CATEGORIES -->
-
-    <article
-        class="equipment-category"
-        data-category="construction"
-    >
-
-        <h3>
-            Construction Equipment
-        </h3>
-
-        <p>
-            Earthmoving, infrastructure, and construction applications.
-        </p>
-
-    </article>
+</article>
 
 
-    <article
-        class="equipment-category"
-        data-category="mining"
-    >
 
-        <h3>
-            Mining Equipment
-        </h3>
+<article class="equipment-category">
 
-        <p>
-            Equipment for demanding extraction and mining environments.
-        </p>
+<span class="equipment-category-number">
+04
+</span>
 
-    </article>
+<h3>
+Material Handling
+</h3>
 
+<p>
+Equipment for warehouses, facilities, and industrial movement.
+</p>
 
-    <article
-        class="equipment-category"
-        data-category="industrial"
-    >
-
-        <h3>
-            Industrial Equipment
-        </h3>
-
-        <p>
-            Equipment supporting manufacturing and industrial operations.
-        </p>
-
-    </article>
+</article>
 
 
-    <article
-        class="equipment-category"
-        data-category="handling"
-    >
 
-        <h3>
-            Material Handling
-        </h3>
+<article class="equipment-category">
 
-        <p>
-            Equipment for warehouses, facilities, and industrial movement.
-        </p>
+<span class="equipment-category-number">
+05
+</span>
 
-    </article>
+<h3>
+Energy & Infrastructure
+</h3>
 
+<p>
+Equipment supporting power, infrastructure, and major projects.
+</p>
 
-    <article
-        class="equipment-category"
-        data-category="energy"
-    >
-
-        <h3>
-            Energy & Infrastructure
-        </h3>
-
-        <p>
-            Equipment supporting power, infrastructure, and major projects.
-        </p>
-
-    </article>
+</article>
 
 
-    <article
-        class="equipment-category"
-        data-category="specialized"
-    >
 
-        <h3>
-            Specialized Machinery
-        </h3>
+<article class="equipment-category">
 
-        <p>
-            Solutions identified around specific operational requirements.
-        </p>
+<span class="equipment-category-number">
+06
+</span>
 
-    </article>
+<h3>
+Specialized Machinery
+</h3>
+
+<p>
+Solutions identified around specific operational requirements.
+</p>
+
+</article>
 
 
 </div>
-    
+
 </div>
 
 </section>
@@ -1589,250 +1166,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
-<script>
 
-/* =====================================================
-   EQUIPMENT CATEGORY INTERACTION
-===================================================== */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const categoryField =
-        document.querySelector(".equipment-categories");
-
-    const categories =
-        document.querySelectorAll(".equipment-category");
-
-
-    if (!categoryField || !categories.length) {
-        return;
-    }
-
-
-    categories.forEach(function (category) {
-
-        category.addEventListener("mouseenter", function () {
-
-            categoryField.classList.add("has-active");
-
-            category.classList.add("is-active");
-
-        });
-
-
-        category.addEventListener("mouseleave", function () {
-
-            categoryField.classList.remove("has-active");
-
-            category.classList.remove("is-active");
-
-        });
-
-    });
-
-});
-
-</script>
-
-    <script>
-
-/* =====================================================
-   EQUIPMENT SOURCING NETWORK
-===================================================== */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const field =
-        document.querySelector(".equipment-categories");
-
-    const categories =
-        document.querySelectorAll(".equipment-category");
-
-    const lines =
-        document.querySelectorAll(".network-line");
-
-    const signals =
-        document.querySelectorAll(".network-signal");
-
-
-    if (!field || !categories.length) {
-        return;
-    }
-
-
-    /* ---------------------------------------------
-       FIND SVG LINE
-    --------------------------------------------- */
-
-    function getLine(category) {
-
-        return Array.from(lines).find(function (line) {
-
-            return line.dataset.category === category;
-
-        });
-
-    }
-
-
-    /* ---------------------------------------------
-       FIND SIGNAL
-    --------------------------------------------- */
-
-    function getSignal(category) {
-
-        return Array.from(signals).find(function (signal) {
-
-            return signal.dataset.category === category;
-
-        });
-
-    }
-
-
-    /* ---------------------------------------------
-       MOVE SIGNAL
-    --------------------------------------------- */
-
-    function animateSignal(line, signal) {
-
-        if (!line || !signal) {
-            return;
-        }
-
-
-        const x1 =
-            parseFloat(line.getAttribute("x1"));
-
-        const y1 =
-            parseFloat(line.getAttribute("y1"));
-
-        const x2 =
-            parseFloat(line.getAttribute("x2"));
-
-        const y2 =
-            parseFloat(line.getAttribute("y2"));
-
-
-        const start = performance.now();
-
-        const duration = 1200;
-
-
-        function animate(time) {
-
-            const elapsed =
-                time - start;
-
-            const progress =
-                Math.min(elapsed / duration, 1);
-
-
-            const x =
-                x1 + ((x2 - x1) * progress);
-
-            const y =
-                y1 + ((y2 - y1) * progress);
-
-
-            signal.setAttribute("cx", x);
-            signal.setAttribute("cy", y);
-
-
-            if (progress < 1) {
-
-                requestAnimationFrame(animate);
-
-            }
-
-        }
-
-
-        requestAnimationFrame(animate);
-
-    }
-
-
-    /* ---------------------------------------------
-       HOVER
-    --------------------------------------------- */
-
-    categories.forEach(function (category) {
-
-        category.addEventListener("mouseenter", function () {
-
-            const name =
-                category.dataset.category;
-
-
-            field.classList.add("has-active");
-
-            category.classList.add("is-active");
-
-
-            const line =
-                getLine(name);
-
-            const signal =
-                getSignal(name);
-
-
-            if (line) {
-
-                line.classList.add("active");
-
-            }
-
-
-            if (signal) {
-
-                signal.classList.add("active");
-
-                animateSignal(line, signal);
-
-            }
-
-        });
-
-
-        category.addEventListener("mouseleave", function () {
-
-            const name =
-                category.dataset.category;
-
-
-            field.classList.remove("has-active");
-
-            category.classList.remove("is-active");
-
-
-            const line =
-                getLine(name);
-
-            const signal =
-                getSignal(name);
-
-
-            if (line) {
-
-                line.classList.remove("active");
-
-            }
-
-
-            if (signal) {
-
-                signal.classList.remove("active");
-
-            }
-
-        });
-
-    });
-
-});
-
-</script>
 </body>
 
 </html>
