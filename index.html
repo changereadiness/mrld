@@ -967,7 +967,92 @@
 
 </section>
 
+/* =====================================================
+   MARKET BRIDGE — ANIMATED FLOW
+===================================================== */
 
+.market-arrow {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Moving signal */
+
+.market-arrow::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: -8px;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    opacity: 0;
+
+    transform: translateY(-50%);
+
+    animation:
+        bridgeFlow 4s linear infinite;
+}
+
+
+/* Arrow line stays calm */
+
+.market-arrow::after {
+    opacity: 0.55;
+}
+
+
+/* -----------------------------------------------------
+   Forward / Reverse flow
+----------------------------------------------------- */
+
+@keyframes bridgeFlow {
+
+    0% {
+        left: -8px;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.55;
+    }
+
+    42% {
+        opacity: 0.55;
+    }
+
+    50% {
+        left: calc(100% + 8px);
+        opacity: 0;
+    }
+
+    50.1% {
+        left: calc(100% + 8px);
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0.55;
+    }
+
+    92% {
+        opacity: 0.55;
+    }
+
+    100% {
+        left: -8px;
+        opacity: 0;
+    }
+
+}
 
 <!-- =====================================================
      SELECTED EQUIPMENT
@@ -1418,6 +1503,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
+    .market-flow .market-arrow:nth-of-type(2)::before {
+    animation-delay: 1.2s;
+}
+    .market-arrow::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    right: -8px;
+
+    width: 5px;
+    height: 5px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    opacity: 0;
+
+    transform: translateY(-50%);
+
+    animation:
+        bridgeReverse 7s linear infinite;
+}
+
+
+@keyframes bridgeReverse {
+
+    0%,
+    35% {
+        right: -8px;
+        opacity: 0;
+    }
+
+    42% {
+        opacity: 0.35;
+    }
+
+    78% {
+        opacity: 0.35;
+    }
+
+    85% {
+        right: calc(100% + 8px);
+        opacity: 0;
+    }
+
+    100% {
+        right: calc(100% + 8px);
+        opacity: 0;
+    }
+
+}
 
 </body>
 
