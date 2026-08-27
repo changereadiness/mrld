@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -110,7 +109,6 @@
 
 .market-bridge::before {
     content: "";
-
     position: absolute;
 
     width: 360px;
@@ -288,40 +286,8 @@
     height: 1px;
 
     background: rgba(255,255,255,0.25);
-
-    overflow: hidden;
 }
 
-
-/* Moving signal */
-
-.market-arrow::before {
-    content: "";
-
-    position: absolute;
-
-    top: 50%;
-    left: -8px;
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background: currentColor;
-
-    color: rgba(255,255,255,0.7);
-
-    opacity: 0;
-
-    transform: translateY(-50%);
-
-    animation:
-        bridgeFlow 4s linear infinite;
-}
-
-
-/* Arrow head */
 
 .market-arrow::after {
     content: "";
@@ -338,58 +304,6 @@
     border-right: 1px solid rgba(255,255,255,0.6);
 
     transform: translateY(-50%) rotate(45deg);
-
-    z-index: 2;
-}
-
-
-/* Second arrow begins slightly later */
-
-.market-flow .market-arrow:nth-of-type(2)::before {
-    animation-delay: 1.2s;
-}
-
-
-/* Forward / reverse flow */
-
-@keyframes bridgeFlow {
-
-    0% {
-        left: -8px;
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 0.55;
-    }
-
-    42% {
-        opacity: 0.55;
-    }
-
-    50% {
-        left: calc(100% + 8px);
-        opacity: 0;
-    }
-
-    50.1% {
-        left: calc(100% + 8px);
-        opacity: 0;
-    }
-
-    60% {
-        opacity: 0.55;
-    }
-
-    92% {
-        opacity: 0.55;
-    }
-
-    100% {
-        left: -8px;
-        opacity: 0;
-    }
-
 }
 
 
@@ -685,17 +599,6 @@
         margin: 0 auto;
 
         background: rgba(255,255,255,0.25);
-
-        overflow: hidden;
-    }
-
-
-    .market-arrow::before {
-        top: -8px;
-        left: 50%;
-
-        animation:
-            bridgeFlowVertical 4s linear infinite;
     }
 
 
@@ -717,47 +620,6 @@
             repeat(2, 1fr);
 
         gap: 1rem;
-    }
-
-}
-
-
-@keyframes bridgeFlowVertical {
-
-    0% {
-        top: -8px;
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 0.55;
-    }
-
-    42% {
-        opacity: 0.55;
-    }
-
-    50% {
-        top: calc(100% + 8px);
-        opacity: 0;
-    }
-
-    50.1% {
-        top: calc(100% + 8px);
-        opacity: 0;
-    }
-
-    60% {
-        opacity: 0.55;
-    }
-
-    92% {
-        opacity: 0.55;
-    }
-
-    100% {
-        top: -8px;
-        opacity: 0;
     }
 
 }
@@ -858,9 +720,9 @@
 
         <div class="hero-content">
 
-            <span class="eyebrow">
-                INDUSTRIAL EQUIPMENT · CANADA <span class="text-arrow">↔︎</span> ASIA
-            </span>
+     <span class="eyebrow">
+    INDUSTRIAL EQUIPMENT · CANADA <span class="text-arrow">↔︎</span> ASIA
+</span>
 
 
             <h1>
@@ -1348,7 +1210,7 @@
 
 
                 <h2>
-                    Let's build the connection.
+                 Let's build the connection.
                 </h2>
 
 
@@ -1406,7 +1268,7 @@
 
 
             <p class="footer-description">
-                Connecting selected manufacturers with qualified buyers across established and emerging markets.
+Connecting selected manufacturers with qualified buyers across established and emerging markets.
             </p>
 
         </div>
