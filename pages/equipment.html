@@ -1416,7 +1416,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
+<script>
 
+/* =====================================================
+   EQUIPMENT CATEGORY INTERACTION
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const categoryField =
+        document.querySelector(".equipment-categories");
+
+    const categories =
+        document.querySelectorAll(".equipment-category");
+
+
+    if (!categoryField || !categories.length) {
+        return;
+    }
+
+
+    categories.forEach(function (category) {
+
+        category.addEventListener("mouseenter", function () {
+
+            categoryField.classList.add("has-active");
+
+            category.classList.add("is-active");
+
+        });
+
+
+        category.addEventListener("mouseleave", function () {
+
+            categoryField.classList.remove("has-active");
+
+            category.classList.remove("is-active");
+
+        });
+
+    });
+
+});
+
+</script>
 </body>
 
 </html>
