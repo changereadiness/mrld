@@ -1,5 +1,3 @@
-MRLD BACKUP EQUIPMENT PAGE (08/27)
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -619,15 +617,10 @@ not from a fixed online inventory.
 </div>
 
 
-
 <div class="equipment-categories">
 
 
 <article class="equipment-category">
-
-<span class="equipment-category-number">
-01
-</span>
 
 <h3>
 Construction Equipment
@@ -640,12 +633,7 @@ Earthmoving, infrastructure, and construction applications.
 </article>
 
 
-
 <article class="equipment-category">
-
-<span class="equipment-category-number">
-02
-</span>
 
 <h3>
 Mining Equipment
@@ -658,12 +646,7 @@ Equipment for demanding extraction and mining environments.
 </article>
 
 
-
 <article class="equipment-category">
-
-<span class="equipment-category-number">
-03
-</span>
 
 <h3>
 Industrial Equipment
@@ -676,12 +659,7 @@ Equipment supporting manufacturing and industrial operations.
 </article>
 
 
-
 <article class="equipment-category">
-
-<span class="equipment-category-number">
-04
-</span>
 
 <h3>
 Material Handling
@@ -694,12 +672,7 @@ Equipment for warehouses, facilities, and industrial movement.
 </article>
 
 
-
 <article class="equipment-category">
-
-<span class="equipment-category-number">
-05
-</span>
 
 <h3>
 Energy & Infrastructure
@@ -712,12 +685,7 @@ Equipment supporting power, infrastructure, and major projects.
 </article>
 
 
-
 <article class="equipment-category">
-
-<span class="equipment-category-number">
-06
-</span>
 
 <h3>
 Specialized Machinery
@@ -736,6 +704,101 @@ Solutions identified around specific operational requirements.
 
 </section>
 
+
+<style>
+
+/* =====================================================
+   CLEAN EQUIPMENT CATEGORIES
+===================================================== */
+
+.equipment-categories {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    column-gap: 5rem;
+
+    margin-top: 3rem;
+
+    border-top: 1px solid rgba(0,0,0,0.12);
+
+}
+
+
+.equipment-category {
+
+    padding: 1.5rem 0 1.6rem;
+
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+
+}
+
+
+.equipment-category h3 {
+
+    margin: 0 0 0.45rem;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.3;
+
+}
+
+
+.equipment-category p {
+
+    margin: 0;
+
+    max-width: 360px;
+
+    font-size: 0.82rem;
+
+    line-height: 1.5;
+
+    opacity: 0.62;
+
+}
+
+
+/* =====================================================
+   SUBTLE HOVER
+===================================================== */
+
+.equipment-category h3 {
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+
+}
+
+
+.equipment-category:hover h3 {
+
+    transform: translateX(4px);
+
+}
+
+
+@media (max-width: 700px) {
+
+    .equipment-categories {
+
+        grid-template-columns: 1fr;
+
+        column-gap: 0;
+
+        margin-top: 2.5rem;
+
+    }
+
+}
+
+</style>
 
 
 <!-- =====================================================
