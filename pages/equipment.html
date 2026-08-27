@@ -72,67 +72,93 @@
 
 
 /* =====================================================
-   EQUIPMENT SOURCING CONSTELLATION
+   EQUIPMENT SOURCING NETWORK
 ===================================================== */
 
 .equipment-categories {
     position: relative;
 
-    display: grid;
+    height: 620px;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    margin-top: 4rem;
 
-    grid-template-rows:
-        repeat(3, 130px);
-
-    gap: 0;
-
-    margin-top: 3.5rem;
-
-    border: 0;
+    overflow: hidden;
 }
 
 
-/* -------------------------
-   CATEGORY NODE
-------------------------- */
+/* =====================================================
+   NETWORK FIELD
+===================================================== */
+
+.equipment-network {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   CONNECTIONS
+===================================================== */
+
+.network-line {
+    stroke: rgba(0,0,0,0.12);
+
+    stroke-width: 1;
+
+    transition:
+        stroke 0.45s ease,
+        stroke-width 0.45s ease;
+}
+
+
+.network-line.active {
+    stroke: rgba(0,0,0,0.48);
+
+    stroke-width: 1.5;
+}
+
+
+/* =====================================================
+   SIGNAL
+===================================================== */
+
+.network-signal {
+    fill: rgba(0,0,0,0);
+
+    transition:
+        fill 0.3s ease;
+}
+
+
+.network-signal.active {
+    fill: #7c9b88;
+}
+
+
+/* =====================================================
+   CATEGORY NODES
+===================================================== */
 
 .equipment-category {
-    position: relative;
+    position: absolute;
 
-    display: flex;
-    flex-direction: column;
+    width: 190px;
 
-    justify-content: center;
-
-    padding: 1rem;
+    padding: 0;
 
     border: 0;
 
     cursor: default;
 
     transition:
-        transform 0.3s ease,
-        opacity 0.3s ease;
-}
-
-
-.equipment-category-number {
-    display: block;
-
-    margin-bottom: 0.45rem;
-
-    font-size: 0.62rem;
-    font-weight: 600;
-
-    letter-spacing: 0.14em;
-
-    opacity: 0.4;
-
-    transition:
-        opacity 0.3s ease,
-        color 0.3s ease;
+        opacity 0.35s ease,
+        transform 0.35s ease;
 }
 
 
@@ -141,185 +167,92 @@
 
     font-family: "Manrope", sans-serif;
 
-    font-size: 0.95rem;
+    font-size: 0.92rem;
 
-    line-height: 1.25;
+    line-height: 1.3;
 
     transition:
-        transform 0.3s ease,
-        color 0.3s ease;
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 
 .equipment-category p {
-    max-width: 220px;
+    margin: 0.5rem 0 0;
 
-    margin: 0.55rem 0 0;
+    max-width: 190px;
 
     font-size: 0.78rem;
 
     line-height: 1.5;
 
-    opacity: 0;
-
-    transform: translateY(6px);
+    opacity: 0.55;
 
     transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
+        opacity 0.35s ease,
+        transform 0.35s ease;
 }
 
 
-/* -------------------------
-   POSITIONING
-------------------------- */
-
-.equipment-category:nth-child(1) {
-    grid-column: 1;
-    grid-row: 1;
-
-    text-align: right;
-    align-items: flex-end;
-}
-
+/* =====================================================
+   NODE POSITIONS
+===================================================== */
 
 .equipment-category:nth-child(2) {
-    grid-column: 3;
-    grid-row: 1;
+    top: 7%;
+    left: 8%;
 
-    text-align: left;
-    align-items: flex-start;
+    text-align: right;
 }
 
 
 .equipment-category:nth-child(3) {
-    grid-column: 1;
-    grid-row: 3;
+    top: 7%;
+    right: 8%;
 
-    text-align: right;
-    align-items: flex-end;
+    text-align: left;
 }
 
 
 .equipment-category:nth-child(4) {
-    grid-column: 3;
-    grid-row: 3;
+    top: 45%;
+    left: 2%;
 
-    text-align: left;
-    align-items: flex-start;
+    text-align: right;
 }
 
 
 .equipment-category:nth-child(5) {
-    grid-column: 2;
-    grid-row: 1;
+    top: 45%;
+    right: 2%;
 
-    text-align: center;
-    align-items: center;
+    text-align: left;
 }
 
 
 .equipment-category:nth-child(6) {
-    grid-column: 2;
-    grid-row: 3;
+    bottom: 6%;
+    left: 18%;
 
-    text-align: center;
-    align-items: center;
+    text-align: right;
 }
 
 
-/* -------------------------
-   CENTER MRLD NODE
-------------------------- */
+.equipment-category:nth-child(7) {
+    bottom: 6%;
+    right: 18%;
 
-.equipment-categories::before {
-    content: "MRLD";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 82px;
-    height: 82px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    transform: translate(-50%, -50%);
-
-    border: 1px solid rgba(0,0,0,0.2);
-
-    border-radius: 50%;
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: 0.8rem;
-    font-weight: 800;
-
-    letter-spacing: 0.08em;
-
-    background: #ffffff;
-
-    z-index: 3;
+    text-align: left;
 }
 
 
-/* -------------------------
-   CONNECTING LINES
-------------------------- */
-
-.equipment-categories::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 50%;
-
-    width: 72%;
-    height: 72%;
-
-    transform: translate(-50%, -50%);
-
-    border: 1px solid rgba(0,0,0,0.08);
-
-    border-radius: 50%;
-
-    pointer-events: none;
-}
-
-
-/* -------------------------
-   HOVER
-------------------------- */
-
-.equipment-category:hover h3 {
-    transform: translateY(-2px);
-}
-
-
-.equipment-category:hover p {
-    opacity: 0.7;
-
-    transform: translateY(0);
-}
-
-
-.equipment-category:hover .equipment-category-number {
-    opacity: 0.8;
-}
-
-
-/* -------------------------
-   DIM OTHER NODES
-------------------------- */
+/* =====================================================
+   HOVER STATE
+===================================================== */
 
 .equipment-categories.has-active
 .equipment-category:not(.is-active) {
-    opacity: 0.35;
+    opacity: 0.25;
 }
 
 
@@ -329,24 +262,134 @@
 
 
 .equipment-category.is-active h3 {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
 
 .equipment-category.is-active p {
-    opacity: 0.7;
+    opacity: 0.8;
 
-    transform: translateY(0);
+    transform: translateY(-2px);
 }
 
 
-/* -------------------------
-   RESPONSIVE
-------------------------- */
+/* =====================================================
+   MARKET REACH CENTER
+===================================================== */
+
+.market-reach-node {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 116px;
+    height: 116px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(0,0,0,0.22);
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    z-index: 5;
+}
+
+
+.market-reach-node::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -13px;
+
+    border: 1px solid rgba(0,0,0,0.07);
+
+    border-radius: 50%;
+
+    animation:
+        marketPulse 4s ease-in-out infinite;
+}
+
+
+.market-reach-label {
+    margin-bottom: 0.35rem;
+
+    font-size: 0.57rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.13em;
+
+    opacity: 0.45;
+}
+
+
+.market-reach-title {
+    font-family: "Manrope", sans-serif;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.04em;
+
+    text-align: center;
+
+    line-height: 1.15;
+}
+
+
+.market-reach-mrld {
+    margin-top: 0.3rem;
+
+    font-size: 0.58rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    opacity: 0.4;
+}
+
+
+@keyframes marketPulse {
+
+    0%,
+    100% {
+        transform: scale(0.94);
+
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: scale(1.04);
+
+        opacity: 0.75;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 700px) {
 
     .equipment-categories {
+        height: auto;
+
+        overflow: visible;
+
         display: flex;
 
         flex-direction: column;
@@ -357,37 +400,46 @@
     }
 
 
-    .equipment-categories::before,
-    .equipment-categories::after {
+    .equipment-network,
+    .market-reach-node {
         display: none;
     }
 
 
     .equipment-category,
-    .equipment-category:nth-child(1),
     .equipment-category:nth-child(2),
     .equipment-category:nth-child(3),
     .equipment-category:nth-child(4),
     .equipment-category:nth-child(5),
-    .equipment-category:nth-child(6) {
+    .equipment-category:nth-child(6),
+    .equipment-category:nth-child(7) {
 
-        display: block;
+        position: relative;
 
-        text-align: left;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+
+        width: 100%;
 
         padding: 1.25rem 0;
 
+        text-align: left;
+
         border-bottom: 1px solid rgba(0,0,0,0.1);
+
+        opacity: 1;
     }
 
 
     .equipment-category p {
+        max-width: 100%;
+
         opacity: 0.65;
 
         transform: none;
     }
-
-}
 
 /* =====================================================
    SOURCING PROCESS
@@ -876,14 +928,139 @@ not from a fixed online inventory.
 </div>
 
 
-
 <div class="equipment-categories">
 
-    <article class="equipment-category">
 
-        <span class="equipment-category-number">
-            01
+    <!-- NETWORK CONNECTIONS -->
+
+    <svg
+        class="equipment-network"
+        viewBox="0 0 1000 620"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+    >
+
+        <line
+            class="network-line"
+            data-category="construction"
+            x1="500"
+            y1="310"
+            x2="135"
+            y2="105"
+        />
+
+        <line
+            class="network-line"
+            data-category="mining"
+            x1="500"
+            y1="310"
+            x2="865"
+            y2="105"
+        />
+
+        <line
+            class="network-line"
+            data-category="industrial"
+            x1="500"
+            y1="310"
+            x2="65"
+            y2="330"
+        />
+
+        <line
+            class="network-line"
+            data-category="handling"
+            x1="500"
+            y1="310"
+            x2="935"
+            y2="330"
+        />
+
+        <line
+            class="network-line"
+            data-category="energy"
+            x1="500"
+            y1="310"
+            x2="230"
+            y2="545"
+        />
+
+        <line
+            class="network-line"
+            data-category="specialized"
+            x1="500"
+            y1="310"
+            x2="770"
+            y2="545"
+        />
+
+
+        <!-- SIGNALS -->
+
+        <circle
+            class="network-signal"
+            data-category="construction"
+            r="4"
+        />
+
+        <circle
+            class="network-signal"
+            data-category="mining"
+            r="4"
+        />
+
+        <circle
+            class="network-signal"
+            data-category="industrial"
+            r="4"
+        />
+
+        <circle
+            class="network-signal"
+            data-category="handling"
+            r="4"
+        />
+
+        <circle
+            class="network-signal"
+            data-category="energy"
+            r="4"
+        />
+
+        <circle
+            class="network-signal"
+            data-category="specialized"
+            r="4"
+        />
+
+    </svg>
+
+
+    <!-- CENTER -->
+
+    <div class="market-reach-node">
+
+        <span class="market-reach-label">
+            MARKET
         </span>
+
+        <strong class="market-reach-title">
+            REACH
+        </strong>
+
+        <span class="market-reach-mrld">
+            MRLD
+        </span>
+
+    </div>
+
+
+    <!-- CATEGORIES -->
+
+    <article
+        class="equipment-category"
+        data-category="construction"
+    >
 
         <h3>
             Construction Equipment
@@ -896,11 +1073,10 @@ not from a fixed online inventory.
     </article>
 
 
-    <article class="equipment-category">
-
-        <span class="equipment-category-number">
-            02
-        </span>
+    <article
+        class="equipment-category"
+        data-category="mining"
+    >
 
         <h3>
             Mining Equipment
@@ -913,11 +1089,10 @@ not from a fixed online inventory.
     </article>
 
 
-    <article class="equipment-category">
-
-        <span class="equipment-category-number">
-            03
-        </span>
+    <article
+        class="equipment-category"
+        data-category="industrial"
+    >
 
         <h3>
             Industrial Equipment
@@ -930,11 +1105,10 @@ not from a fixed online inventory.
     </article>
 
 
-    <article class="equipment-category">
-
-        <span class="equipment-category-number">
-            04
-        </span>
+    <article
+        class="equipment-category"
+        data-category="handling"
+    >
 
         <h3>
             Material Handling
@@ -947,11 +1121,10 @@ not from a fixed online inventory.
     </article>
 
 
-    <article class="equipment-category">
-
-        <span class="equipment-category-number">
-            05
-        </span>
+    <article
+        class="equipment-category"
+        data-category="energy"
+    >
 
         <h3>
             Energy & Infrastructure
@@ -964,11 +1137,10 @@ not from a fixed online inventory.
     </article>
 
 
-    <article class="equipment-category">
-
-        <span class="equipment-category-number">
-            06
-        </span>
+    <article
+        class="equipment-category"
+        data-category="specialized"
+    >
 
         <h3>
             Specialized Machinery
@@ -979,6 +1151,7 @@ not from a fixed online inventory.
         </p>
 
     </article>
+
 
 </div>
     
@@ -1452,6 +1625,206 @@ document.addEventListener("DOMContentLoaded", function () {
             categoryField.classList.remove("has-active");
 
             category.classList.remove("is-active");
+
+        });
+
+    });
+
+});
+
+</script>
+
+    <script>
+
+/* =====================================================
+   EQUIPMENT SOURCING NETWORK
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const field =
+        document.querySelector(".equipment-categories");
+
+    const categories =
+        document.querySelectorAll(".equipment-category");
+
+    const lines =
+        document.querySelectorAll(".network-line");
+
+    const signals =
+        document.querySelectorAll(".network-signal");
+
+
+    if (!field || !categories.length) {
+        return;
+    }
+
+
+    /* ---------------------------------------------
+       FIND SVG LINE
+    --------------------------------------------- */
+
+    function getLine(category) {
+
+        return Array.from(lines).find(function (line) {
+
+            return line.dataset.category === category;
+
+        });
+
+    }
+
+
+    /* ---------------------------------------------
+       FIND SIGNAL
+    --------------------------------------------- */
+
+    function getSignal(category) {
+
+        return Array.from(signals).find(function (signal) {
+
+            return signal.dataset.category === category;
+
+        });
+
+    }
+
+
+    /* ---------------------------------------------
+       MOVE SIGNAL
+    --------------------------------------------- */
+
+    function animateSignal(line, signal) {
+
+        if (!line || !signal) {
+            return;
+        }
+
+
+        const x1 =
+            parseFloat(line.getAttribute("x1"));
+
+        const y1 =
+            parseFloat(line.getAttribute("y1"));
+
+        const x2 =
+            parseFloat(line.getAttribute("x2"));
+
+        const y2 =
+            parseFloat(line.getAttribute("y2"));
+
+
+        const start = performance.now();
+
+        const duration = 1200;
+
+
+        function animate(time) {
+
+            const elapsed =
+                time - start;
+
+            const progress =
+                Math.min(elapsed / duration, 1);
+
+
+            const x =
+                x1 + ((x2 - x1) * progress);
+
+            const y =
+                y1 + ((y2 - y1) * progress);
+
+
+            signal.setAttribute("cx", x);
+            signal.setAttribute("cy", y);
+
+
+            if (progress < 1) {
+
+                requestAnimationFrame(animate);
+
+            }
+
+        }
+
+
+        requestAnimationFrame(animate);
+
+    }
+
+
+    /* ---------------------------------------------
+       HOVER
+    --------------------------------------------- */
+
+    categories.forEach(function (category) {
+
+        category.addEventListener("mouseenter", function () {
+
+            const name =
+                category.dataset.category;
+
+
+            field.classList.add("has-active");
+
+            category.classList.add("is-active");
+
+
+            const line =
+                getLine(name);
+
+            const signal =
+                getSignal(name);
+
+
+            if (line) {
+
+                line.classList.add("active");
+
+            }
+
+
+            if (signal) {
+
+                signal.classList.add("active");
+
+                animateSignal(line, signal);
+
+            }
+
+        });
+
+
+        category.addEventListener("mouseleave", function () {
+
+            const name =
+                category.dataset.category;
+
+
+            field.classList.remove("has-active");
+
+            category.classList.remove("is-active");
+
+
+            const line =
+                getLine(name);
+
+            const signal =
+                getSignal(name);
+
+
+            if (line) {
+
+                line.classList.remove("active");
+
+            }
+
+
+            if (signal) {
+
+                signal.classList.remove("active");
+
+            }
 
         });
 
