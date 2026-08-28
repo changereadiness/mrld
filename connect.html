@@ -1,0 +1,723 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#151819">
+  <meta
+    name="description"
+    content="Connect with Ali Saïd, Founder & Director of MRLD. Industrial Equipment & Global Project Delivery."
+  >
+
+  <title>Connect | MRLD</title>
+
+  <style>
+    :root {
+      --graphite: #202426;
+      --graphite-dark: #151819;
+      --background: #f2f1ed;
+      --white: #fafaf8;
+      --copper: #b56a3c;
+      --steel: #687278;
+      --emerald: #16806b;
+      --border: rgba(104, 114, 120, 0.22);
+      --soft: #e9e8e3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--graphite);
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      min-height: 100vh;
+      padding: 18px;
+    }
+
+    .page {
+      width: min(100%, 520px);
+      margin: 0 auto;
+    }
+
+    /* ─────────────────────────
+       HEADER
+    ───────────────────────── */
+
+    .header {
+      position: relative;
+
+      background: var(--graphite-dark);
+      color: var(--white);
+
+      padding: 28px 26px 25px;
+
+      overflow: hidden;
+    }
+
+    .header::after {
+      content: "";
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 48%;
+      height: 3px;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--emerald)
+      );
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+    }
+
+    .brand-mark {
+      width: 9px;
+      height: 9px;
+
+      background: var(--emerald);
+
+      transform: rotate(45deg);
+    }
+
+    .eyebrow {
+      margin-top: 25px;
+
+      color: #9da6aa;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .header h1 {
+      margin: 7px 0 0;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(31px, 9vw, 42px);
+      line-height: 1;
+
+      font-weight: 500;
+      letter-spacing: -0.035em;
+    }
+
+    .header p {
+      max-width: 390px;
+
+      margin: 13px 0 0;
+
+      color: #c0c6c8;
+
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* ─────────────────────────
+       INTRO
+    ───────────────────────── */
+
+    .intro {
+      padding: 27px 26px 20px;
+    }
+
+    .intro-label {
+      color: var(--copper);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .intro h2 {
+      margin: 7px 0 0;
+
+      font-size: 20px;
+      line-height: 1.25;
+
+      font-weight: 700;
+    }
+
+    .intro p {
+      margin: 9px 0 0;
+
+      color: var(--steel);
+
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* ─────────────────────────
+       CONNECTION PATHS
+    ───────────────────────── */
+
+    .paths {
+      display: grid;
+      gap: 10px;
+
+      padding: 0 26px;
+    }
+
+    .path {
+      position: relative;
+
+      display: grid;
+      grid-template-columns: 43px 1fr 18px;
+      align-items: center;
+      gap: 13px;
+
+      min-height: 82px;
+
+      padding: 15px 15px;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+
+      color: var(--graphite);
+      text-decoration: none;
+
+      transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+    }
+
+    .path:hover {
+      transform: translateY(-2px);
+
+      border-color: rgba(181, 106, 60, 0.55);
+
+      box-shadow:
+        0 10px 28px rgba(21, 24, 25, 0.08);
+    }
+
+    .path-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 43px;
+      height: 43px;
+
+      background: var(--graphite-dark);
+
+      color: var(--white);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: 0.04em;
+    }
+
+    .path:nth-child(2) .path-icon {
+      background: var(--emerald);
+    }
+
+    .path:nth-child(3) .path-icon {
+      background: var(--steel);
+    }
+
+    .path:nth-child(4) .path-icon {
+      background: var(--copper);
+    }
+
+    .path-title {
+      font-size: 13px;
+      font-weight: 800;
+
+      letter-spacing: 0.025em;
+    }
+
+    .path-description {
+      margin-top: 4px;
+
+      color: var(--steel);
+
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .arrow {
+      color: var(--steel);
+
+      font-size: 17px;
+      font-weight: 300;
+
+      text-align: right;
+    }
+
+    /* ─────────────────────────
+       DIRECT CONNECTION
+    ───────────────────────── */
+
+    .direct {
+      margin: 25px 26px 0;
+
+      padding: 20px;
+
+      background: var(--soft);
+
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .direct-label {
+      color: var(--steel);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 15px;
+
+      margin-top: 11px;
+    }
+
+    .person-name {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .person-title {
+      margin-top: 5px;
+
+      color: var(--steel);
+
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .linkedin {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 42px;
+      height: 42px;
+
+      background: var(--graphite-dark);
+
+      color: var(--white);
+
+      text-decoration: none;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      transition:
+        background 0.18s ease,
+        transform 0.18s ease;
+    }
+
+    .linkedin:hover {
+      background: var(--copper);
+      transform: translateY(-1px);
+    }
+
+    /* ─────────────────────────
+       CONTACT ACTIONS
+    ───────────────────────── */
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10px;
+
+      margin-top: 10px;
+    }
+
+    .action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 45px;
+
+      border: 1px solid var(--graphite);
+
+      color: var(--graphite);
+
+      text-decoration: none;
+
+      font-size: 9px;
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      transition:
+        background 0.18s ease,
+        color 0.18s ease;
+    }
+
+    .action:hover {
+      background: var(--graphite);
+      color: var(--white);
+    }
+
+    .action.primary {
+      background: var(--graphite);
+      color: var(--white);
+    }
+
+    .action.primary:hover {
+      background: var(--copper);
+      border-color: var(--copper);
+    }
+
+    /* ─────────────────────────
+       FOOTER
+    ───────────────────────── */
+
+    .footer {
+      padding: 20px 26px 24px;
+
+      text-align: center;
+
+      color: var(--steel);
+
+      font-size: 8px;
+      line-height: 1.6;
+
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .footer strong {
+      color: var(--graphite);
+    }
+
+    /* ─────────────────────────
+       MOBILE
+    ───────────────────────── */
+
+    @media (max-width: 390px) {
+      body {
+        padding: 0;
+      }
+
+      .header,
+      .intro,
+      .paths,
+      .direct,
+      .footer {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .intro,
+      .paths {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .direct {
+        margin-left: 18px;
+        margin-right: 18px;
+      }
+
+      .footer {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <!-- ─────────────────────────
+         HEADER
+    ───────────────────────── -->
+
+    <header class="header">
+
+      <div class="brand">
+        <span class="brand-mark"></span>
+        MRLD
+      </div>
+
+      <div class="eyebrow">
+        Trade Show Connection
+      </div>
+
+      <h1>Let's connect.</h1>
+
+      <p>
+        Industrial Equipment &amp; Global Project Delivery.
+        Choose the path that best describes what you're looking for.
+      </p>
+
+    </header>
+
+
+    <!-- ─────────────────────────
+         INTRO
+    ───────────────────────── -->
+
+    <section class="intro">
+
+      <div class="intro-label">
+        Start here
+      </div>
+
+      <h2>
+        What brings you to MRLD?
+      </h2>
+
+      <p>
+        Whether you're looking to enter a market, source equipment,
+        or strengthen project delivery, there's a direct way to connect.
+      </p>
+
+    </section>
+
+
+    <!-- ─────────────────────────
+         CONNECTION PATHS
+    ───────────────────────── -->
+
+    <section class="paths">
+
+      <!-- MANUFACTURER -->
+
+      <a
+        class="path"
+        href="mailto:contact@sayudi.com?subject=MRLD%20Manufacturer%20Partnership"
+      >
+
+        <div class="path-icon">
+          MFR
+        </div>
+
+        <div>
+          <div class="path-title">
+            I represent equipment
+          </div>
+
+          <div class="path-description">
+            Manufacturer, supplier, or brand looking to reach new markets.
+          </div>
+        </div>
+
+        <div class="arrow">
+          →
+        </div>
+
+      </a>
+
+
+      <!-- BUYER -->
+
+      <a
+        class="path"
+        href="mailto:contact@sayudi.com?subject=MRLD%20Equipment%20Inquiry"
+      >
+
+        <div class="path-icon">
+          BUY
+        </div>
+
+        <div>
+          <div class="path-title">
+            I need equipment
+          </div>
+
+          <div class="path-description">
+            Looking to source machinery, equipment, or a project solution.
+          </div>
+        </div>
+
+        <div class="arrow">
+          →
+        </div>
+
+      </a>
+
+
+      <!-- LOGISTICS -->
+
+      <a
+        class="path"
+        href="mailto:contact@sayudi.com?subject=MRLD%20Logistics%20Partnership"
+      >
+
+        <div class="path-icon">
+          LOG
+        </div>
+
+        <div>
+          <div class="path-title">
+            I move equipment
+          </div>
+
+          <div class="path-description">
+            Freight forwarder, carrier, customs, or specialized logistics partner.
+          </div>
+        </div>
+
+        <div class="arrow">
+          →
+        </div>
+
+      </a>
+
+
+      <!-- GENERAL -->
+
+      <a
+        class="path"
+        href="mailto:contact@sayudi.com?subject=MRLD%20General%20Inquiry"
+      >
+
+        <div class="path-icon">
+          MRLD
+        </div>
+
+        <div>
+          <div class="path-title">
+            Let's talk
+          </div>
+
+          <div class="path-description">
+            Something else in mind? Start a conversation with MRLD.
+          </div>
+        </div>
+
+        <div class="arrow">
+          →
+        </div>
+
+      </a>
+
+    </section>
+
+
+    <!-- ─────────────────────────
+         DIRECT CONNECTION
+    ───────────────────────── -->
+
+    <section class="direct">
+
+      <div class="direct-label">
+        Direct connection
+      </div>
+
+      <div class="person">
+
+        <div>
+          <div class="person-name">
+            Ali Saïd
+          </div>
+
+          <div class="person-title">
+            Founder &amp; Director · MRLD
+          </div>
+        </div>
+
+        <a
+          class="linkedin"
+          href="https://www.linkedin.com/in/sayudi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Connect with Ali Saïd on LinkedIn"
+        >
+          IN
+        </a>
+
+      </div>
+
+      <div class="actions">
+
+        <a
+          class="action primary"
+          href="tel:+14389699697"
+        >
+          Call Ali
+        </a>
+
+        <a
+          class="action"
+          href="mailto:contact@sayudi.com?subject=Connecting%20with%20MRLD"
+        >
+          Email Ali
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ─────────────────────────
+         FOOTER
+    ───────────────────────── -->
+
+    <footer class="footer">
+
+      <strong>MRLD</strong> · Montreal, Quebec, Canada<br>
+
+      Industrial Equipment · Project Delivery · Reliable Execution<br><br>
+
+      A Sayudi Inc. company
+
+    </footer>
+
+  </main>
+
+</body>
+</html>
+```
