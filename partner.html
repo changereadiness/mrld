@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+<title>MRLD | Partner Information</title>
+
+<meta
+    name="description"
+    content="MRLD company and partnership information for prospective manufacturers, logistics providers, and project partners."
+>
+
+<meta name="author" content="MRLD">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+
+<style>
+
+/* =====================================================
+   MRLD PARTNER INFORMATION
+   Page-specific styles
+===================================================== */
+
+
+/* =====================================================
+   ACCESS GATE
+===================================================== */
+
+.partner-gate {
+    min-height: calc(100vh - 90px);
+
+    display: flex;
+    align-items: center;
+
+    padding: 5rem 0;
+}
+
+
+.partner-gate-inner {
+    width: 100%;
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.partner-gate .eyebrow {
+    display: block;
+
+    margin-bottom: 1.5rem;
+}
+
+
+.partner-gate h1 {
+    margin-bottom: 1.25rem;
+}
+
+
+.partner-gate-intro {
+    max-width: 520px;
+
+    margin: 0 auto 2.5rem;
+
+    font-size: 1.05rem;
+}
+
+
+.access-panel {
+    max-width: 460px;
+
+    margin: 0 auto;
+
+    padding: 2.25rem;
+
+    border: 1px solid rgba(0,0,0,0.12);
+
+    background: rgba(255,255,255,0.35);
+
+    text-align: left;
+}
+
+
+.access-label {
+    display: block;
+
+    margin-bottom: 0.65rem;
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+
+.access-row {
+    display: flex;
+
+    gap: 0.75rem;
+}
+
+
+.access-input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 0.9rem 1rem;
+
+    border: 1px solid rgba(0,0,0,0.2);
+
+    background: rgba(255,255,255,0.65);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.95rem;
+}
+
+
+.access-input:focus {
+    outline: none;
+
+    border-color: rgba(0,0,0,0.5);
+}
+
+
+.access-button {
+    padding: 0.9rem 1.4rem;
+
+    border: 0;
+
+    background: #151819;
+
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.access-button:hover {
+    opacity: 0.9;
+}
+
+
+.access-error {
+    display: none;
+
+    margin-top: 1rem;
+
+    font-size: 0.82rem;
+
+    color: #8b3f32;
+}
+
+
+.access-note {
+    margin-top: 1.5rem;
+
+    font-size: 0.76rem;
+
+    opacity: 0.58;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   PARTNER CONTENT
+===================================================== */
+
+.partner-content {
+    display: none;
+
+    padding: 5.5rem 0 6rem;
+}
+
+
+.partner-content.is-visible {
+    display: block;
+}
+
+
+.partner-header {
+    max-width: 850px;
+
+    margin-bottom: 4rem;
+}
+
+
+.partner-header h1 {
+    max-width: 800px;
+}
+
+
+.partner-header p {
+    max-width: 720px;
+
+    font-size: 1.1rem;
+}
+
+
+/* =====================================================
+   INFORMATION GRID
+===================================================== */
+
+.partner-section {
+    padding: 3.5rem 0;
+
+    border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+
+.partner-section:first-of-type {
+    border-top: 0;
+}
+
+
+.partner-section-header {
+    display: grid;
+
+    grid-template-columns: 0.7fr 1.3fr;
+
+    gap: 3rem;
+
+    margin-bottom: 2rem;
+}
+
+
+.partner-section-header h2 {
+    margin: 0;
+}
+
+
+.partner-section-header p {
+    max-width: 650px;
+
+    margin: 0;
+}
+
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1px;
+
+    background: rgba(0,0,0,0.12);
+
+    border: 1px solid rgba(0,0,0,0.12);
+}
+
+
+.info-item {
+    padding: 1.4rem 1.5rem;
+
+    background: rgba(255,255,255,0.42);
+}
+
+
+.info-label {
+    display: block;
+
+    margin-bottom: 0.45rem;
+
+    font-size: 0.68rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    opacity: 0.55;
+}
+
+
+.info-value {
+    display: block;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 1rem;
+
+    line-height: 1.45;
+}
+
+
+.info-value a {
+    color: inherit;
+
+    text-decoration: underline;
+
+    text-decoration-color: rgba(0,0,0,0.25);
+
+    text-underline-offset: 3px;
+}
+
+
+/* =====================================================
+   SCOPE CARDS
+===================================================== */
+
+.scope-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 1.25rem;
+}
+
+
+.scope-card {
+    padding: 2rem;
+
+    border: 1px solid rgba(0,0,0,0.12);
+
+    background: rgba(255,255,255,0.35);
+}
+
+
+.scope-number {
+    display: block;
+
+    margin-bottom: 1.5rem;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    opacity: 0.5;
+}
+
+
+.scope-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+
+.scope-card p {
+    margin: 0;
+}
+
+
+/* =====================================================
+   PARTNERSHIP MODEL
+===================================================== */
+
+.model-box {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1.5rem;
+}
+
+
+.model-item {
+    padding: 2rem;
+
+    border: 1px solid rgba(0,0,0,0.12);
+
+    background: rgba(255,255,255,0.35);
+}
+
+
+.model-item h3 {
+    margin-bottom: 0.75rem;
+}
+
+
+.model-item p {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   AGREEMENT CHECKLIST
+===================================================== */
+
+.checklist {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 0.75rem;
+
+    max-width: 900px;
+}
+
+
+.check-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 0.9rem;
+
+    padding: 1rem 1.15rem;
+
+    border: 1px solid rgba(0,0,0,0.1);
+
+    background: rgba(255,255,255,0.3);
+}
+
+
+.check-mark {
+    flex: 0 0 auto;
+
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0,0,0,0.22);
+
+    font-size: 0.7rem;
+}
+
+
+.check-item span:last-child {
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   DOCUMENTS NOTE
+===================================================== */
+
+.document-note {
+    max-width: 850px;
+
+    padding: 2rem;
+
+    border-left: 2px solid rgba(181,106,60,0.75);
+
+    background: rgba(181,106,60,0.055);
+}
+
+
+.document-note p {
+    margin: 0;
+}
+
+
+/* =====================================================
+   CONTACT CTA
+===================================================== */
+
+.partner-cta {
+    margin-top: 2rem;
+
+    padding: 3rem;
+
+    background: #151819;
+
+    color: #ffffff;
+}
+
+
+.partner-cta h2 {
+    max-width: 650px;
+
+    color: #ffffff;
+}
+
+
+.partner-cta p {
+    max-width: 650px;
+
+    color: rgba(255,255,255,0.72);
+}
+
+
+.partner-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 1rem;
+
+    margin-top: 1.75rem;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .partner-section-header {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+
+
+    .scope-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .model-box {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .partner-gate {
+        min-height: calc(100vh - 75px);
+
+        padding: 4rem 0;
+    }
+
+
+    .access-panel {
+        padding: 1.5rem;
+    }
+
+
+    .access-row {
+        flex-direction: column;
+    }
+
+
+    .access-button {
+        width: 100%;
+    }
+
+
+    .partner-content {
+        padding: 4rem 0;
+    }
+
+
+    .info-grid,
+    .checklist {
+        grid-template-columns: 1fr;
+    }
+
+
+    .partner-cta {
+        padding: 2rem;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header>
+
+    <nav class="navbar">
+
+        <a
+            href="../index.html"
+            class="logo"
+            aria-label="MRLD Home"
+        >
+            MRLD
+        </a>
+
+
+        <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <ul
+            class="nav-links"
+            id="primary-navigation"
+        >
+
+            <li>
+                <a href="equipment.html">
+                    Equipment
+                </a>
+            </li>
+
+            <li>
+                <a href="project-logistics.html">
+                    Project Logistics
+                </a>
+            </li>
+
+            <li>
+                <a href="industries.html">
+                    Industries
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+     ACCESS GATE
+===================================================== -->
+
+<section
+    class="partner-gate"
+    id="partner-gate"
+>
+
+    <div class="container">
+
+        <div class="partner-gate-inner">
+
+            <span class="eyebrow">
+                PARTNER ACCESS
+            </span>
+
+
+            <h1>
+                MRLD company information.
+            </h1>
+
+
+            <p class="partner-gate-intro">
+                This page provides the company information required
+                by prospective manufacturers, logistics providers,
+                and project partners when moving forward with MRLD.
+            </p>
+
+
+            <div class="access-panel">
+
+                <label
+                    class="access-label"
+                    for="access-code"
+                >
+                    Access Code
+                </label>
+
+
+                <div class="access-row">
+
+                    <input
+                        type="password"
+                        id="access-code"
+                        class="access-input"
+                        placeholder="Enter access code"
+                        autocomplete="off"
+                    >
+
+
+                    <button
+                        type="button"
+                        class="access-button"
+                        id="access-button"
+                    >
+                        Continue
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="access-error"
+                    id="access-error"
+                >
+                    Access code not recognized.
+                </div>
+
+
+                <p class="access-note">
+                    If you received this page from an MRLD representative,
+                    use the access code provided with the invitation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PARTNER CONTENT
+===================================================== -->
+
+<section
+    class="partner-content"
+    id="partner-content"
+>
+
+    <div class="container">
+
+
+        <!-- HEADER -->
+
+        <div class="partner-header">
+
+            <span class="eyebrow">
+                MRLD · PARTNER INFORMATION
+            </span>
+
+
+            <h1>
+                The information you need to work with us.
+            </h1>
+
+
+            <p>
+                MRLD is a Canadian company focused on industrial equipment
+                sourcing, market representation, and global project delivery.
+                The information below provides the standard corporate details
+                required when establishing a business relationship with MRLD.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             COMPANY
+        ================================================= -->
+
+        <section class="partner-section">
+
+            <div class="partner-section-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        01 · COMPANY
+                    </span>
+
+                    <h2>
+                        Corporate information.
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Standard company information for agreements,
+                    quotations, purchase documentation, and
+                    business correspondence.
+                </p>
+
+            </div>
+
+
+            <div class="info-grid">
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Legal Company Name
+                    </span>
+
+                    <span class="info-value">
+                        Sayudi Inc.
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Business / Brand
+                    </span>
+
+                    <span class="info-value">
+                        MRLD
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Company Type
+                    </span>
+
+                    <span class="info-value">
+                        Canadian Corporation
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Headquarters
+                    </span>
+
+                    <span class="info-value">
+                        Montreal, Quebec, Canada
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Website
+                    </span>
+
+                    <span class="info-value">
+                        <a
+                            href="https://mrldx.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            mrldx.com
+                        </a>
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        General Email
+                    </span>
+
+                    <span class="info-value">
+                        <a href="mailto:contact@sayudi.com">
+                            contact@sayudi.com
+                        </a>
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PRIMARY CONTACT
+        ================================================= -->
+
+        <section class="partner-section">
+
+            <div class="partner-section-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        02 · CONTACT
+                    </span>
+
+                    <h2>
+                        Primary contact.
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Direct contact information for commercial,
+                    partnership, and business development matters.
+                </p>
+
+            </div>
+
+
+            <div class="info-grid">
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Name
+                    </span>
+
+                    <span class="info-value">
+                        Ali Saïd
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Position
+                    </span>
+
+                    <span class="info-value">
+                        Founder &amp; Director
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Direct Phone
+                    </span>
+
+                    <span class="info-value">
+                        +1 (438) 969-9697
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Email
+                    </span>
+
+                    <span class="info-value">
+                        <a href="mailto:ali@sayudi.com">
+                            ali@sayudi.com
+                        </a>
+                    </span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        LinkedIn
+                    </span>
+
+                    <span class="info-value">
+                        <a
+                            href="https://www.linkedin.com/in/sayudi/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            LinkedIn Profile
+                        </a>
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BUSINESS SCOPE
+        ================================================= -->
+
+        <section class="partner-section">
+
+            <div class="partner-section-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        03 · BUSINESS
+                    </span>
+
+                    <h2>
+                        What MRLD does.
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    MRLD operates between selected industrial equipment
+                    manufacturers and qualified buyers, supporting the
+                    commercial path from market opportunity through delivery.
+                </p>
+
+            </div>
+
+
+            <div class="scope-grid">
+
+
+                <article class="scope-card">
+
+                    <span class="scope-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Market Representation
+                    </h3>
+
+                    <p>
+                        Represent selected manufacturers and develop
+                        commercial opportunities in target markets.
+                    </p>
+
+                </article>
+
+
+                <article class="scope-card">
+
+                    <span class="scope-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Equipment Sourcing
+                    </h3>
+
+                    <p>
+                        Identify suitable equipment and alternative
+                        supply sources for qualified buyers.
+                    </p>
+
+                </article>
+
+
+                <article class="scope-card">
+
+                    <span class="scope-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Project Delivery
+                    </h3>
+
+                    <p>
+                        Coordinate suppliers, logistics providers,
+                        documentation, and project requirements.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MARKETS & EQUIPMENT
+        ================================================= -->
+
+        <section class="partner-section">
+
+            <div class="partner-section-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        04 · SCOPE
+                    </span>
+
+                    <h2>
+                        Markets &amp; equipment.
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    MRLD is building a focused network rather than
+                    maintaining an open supplier directory.
+                </p>
+
+            </div>
+
+
+            <div class="model-box">
+
+
+                <div class="model-item">
+
+                    <h3>
+                        Primary Market
+                    </h3>
+
+                    <p>
+                        Canada, with opportunities across international
+                        markets where appropriate.
+                    </p>
+
+                </div>
+
+
+                <div class="model-item">
+
+                    <h3>
+                        Current Equipment Focus
+                    </h3>
+
+                    <p>
+                        Power generation, construction machinery,
+                        industrial equipment, and related infrastructure
+                        solutions.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PARTNERSHIP
+        ================================================= -->
+
+        <section class="partner-section">
+
+            <div class="partner-section-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        05 · PARTNERSHIP
+                    </span>
+
+                    <h2>
+                        How we work.
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    MRLD develops selective commercial relationships
+                    based on product fit, market opportunity, and the
+                    ability to execute.
+                </p>
+
+            </div>
+
+
+            <div class="model-box">
+
+
+                <div class="model-item">
+
+                    <h3>
+                        Manufacturer Representation
+                    </h3>
+
+                    <p>
+                        MRLD may represent selected manufacturers in
+                        defined markets and develop qualified commercial
+                        opportunities on their behalf.
+                    </p>
+
+                </div>
+
+
+                <div class="model-item">
+
+                    <h3>
+                        Project &amp; Transaction Support
+                    </h3>
+
+                    <p>
+                        Depending on the opportunity, MRLD may coordinate
+                        equipment sourcing, commercial discussions,
+                        logistics, documentation, and delivery.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             AGREEMENT CHECKLIST
+        ================================================= -->
+
+        <section class="partner-section">
+
+            <div class="partner-section-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        06 · AGREEMENT
+                    </span>
+
+                    <h2>
+                        Information required to move forward.
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    When preparing a partnership or representation agreement,
+                    the following information is typically required.
+                </p>
+
+            </div>
+
+
+            <div class="checklist">
+
+
+                <div class="check-item">
+
+                    <span class="check-mark">
+                        ✓
+                    </span>
+
+                    <span>
+                        Full legal company name
+                    </span>
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <span class="check-mark">
+                        ✓
+                    </span>
+
+                    <span>
+                        Registered company address
+                    </span>
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <span class="check-mark">
+                        ✓
+                    </span>
+
+                    <span>
+                        Company registration information
+                    </span>
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <span class="check-mark">
+                        ✓
+                    </span>
+
+                    <span>
+                        Authorized representative
+                    </span>
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <span class="check-mark">
+                        ✓
+                    </span>
+
+                    <span>
+                        Representative's title and contact information
+                    </span>
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <span class="check-mark">
+                        ✓
+                    </span>
+
+                    <span>
+                        Commercial / partnership scope
+                    </span>
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <span class="check-mark">
+                        ✓
+                    </span>
+
+                    <span>
+                        Relevant product categories
+                    </span>
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <span class="check-mark">
+                        ✓
+                    </span>
+
+                    <span>
+                        Payment and commission information, where applicable
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DOCUMENTS
+        ================================================= -->
+
+        <section class="partner-section">
+
+            <div class="partner-section-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        07 · DOCUMENTS
+                    </span>
+
+                    <h2>
+                        Corporate documents.
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Certain documents may be requested during formal
+                    onboarding or agreement preparation.
+                </p>
+
+            </div>
+
+
+            <div class="document-note">
+
+                <p>
+                    Corporate registration documents, tax information,
+                    banking information, and other supporting documentation
+                    are provided separately when required for a specific
+                    commercial relationship. This page is not intended
+                    to replace formal corporate documentation.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA
+        ================================================= -->
+
+        <div class="partner-cta">
+
+            <span class="eyebrow eyebrow-light">
+                NEXT STEP
+            </span>
+
+
+            <h2>
+                Ready to move forward?
+            </h2>
+
+
+            <p>
+                Send the required company information and MRLD can prepare
+                the appropriate commercial documentation or next step.
+            </p>
+
+
+            <div class="partner-actions">
+
+                <a
+                    class="button button-light"
+                    href="mailto:ali@sayudi.com"
+                >
+                    Contact MRLD
+                </a>
+
+
+                <a
+                    class="button button-light"
+                    href="contact.html"
+                >
+                    Visit Contact Page
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-content">
+
+
+        <div class="footer-brand">
+
+            <h3>
+                MRLD
+            </h3>
+
+
+            <p class="footer-tagline">
+                Market Reach. Leverage. Development.
+            </p>
+
+
+            <p class="footer-description">
+                Connecting selected manufacturers with qualified buyers
+                across established and emerging markets.
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-links">
+
+
+            <div>
+
+                <h4>
+                    Explore
+                </h4>
+
+
+                <a href="equipment.html">
+                    Equipment
+                </a>
+
+
+                <a href="project-logistics.html">
+                    Project Logistics
+                </a>
+
+
+                <a href="industries.html">
+                    Industries
+                </a>
+
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </div>
+
+
+
+            <div>
+
+                <h4>
+                    Connect
+                </h4>
+
+
+                <a
+                    href="https://www.linkedin.com/in/sayudi/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+
+                <a href="mailto:contact@sayudi.com">
+                    Email
+                </a>
+
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <div>
+
+                <h4>
+                    Legal
+                </h4>
+
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+
+                <a href="terms.html">
+                    Terms of Use
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        <p class="footer-canada">
+            🇨🇦 Canadian company. Global reach.
+        </p>
+
+
+        <p>
+            © 2026 MRLD, a Sayudi Inc. company. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     NAVIGATION + ACCESS SCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* ================================================
+       MOBILE NAVIGATION
+    ================================================ */
+
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav-links");
+
+
+    if (toggle && nav) {
+
+        toggle.addEventListener("click", function () {
+
+            const isOpen = nav.classList.toggle("is-open");
+
+
+            toggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+
+            toggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation" : "Open navigation"
+            );
+
+        });
+
+    }
+
+
+
+    /* ================================================
+       PARTNER ACCESS
+    ================================================ */
+
+    const accessButton =
+        document.getElementById("access-button");
+
+    const accessInput =
+        document.getElementById("access-code");
+
+    const accessError =
+        document.getElementById("access-error");
+
+    const accessGate =
+        document.getElementById("partner-gate");
+
+    const partnerContent =
+        document.getElementById("partner-content");
+
+
+    /*
+       Current single access code.
+
+       This is a convenience gate, not a secure
+       authentication system. Because this is a
+       static client-side page, the code can be
+       discovered by inspecting the source.
+    */
+
+    const ACCESS_CODE = "MRLD2026";
+
+
+    function unlockPartnerPage() {
+
+        const enteredCode =
+            accessInput.value.trim();
+
+
+        if (enteredCode === ACCESS_CODE) {
+
+            accessGate.style.display = "none";
+
+            partnerContent.classList.add("is-visible");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        } else {
+
+            accessError.style.display = "block";
+
+            accessInput.value = "";
+
+            accessInput.focus();
+
+        }
+
+    }
+
+
+    accessButton.addEventListener(
+        "click",
+        unlockPartnerPage
+    );
+
+
+    accessInput.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Enter") {
+
+                unlockPartnerPage();
+
+            }
+
+        }
+    );
+
+
+});
+
+</script>
+
+
+</body>
+
+</html>
