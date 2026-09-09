@@ -23,6 +23,9 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 
 
+
+<link rel="stylesheet" href="../assets/css/interactions.css">
+
 </head>
 
 
@@ -32,6 +35,17 @@
 <header>
 
 <nav class="navbar">
+
+<button
+    class="nav-toggle"
+    type="button"
+    aria-label="Open navigation"
+    aria-expanded="false"
+>
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 
 <a href="../index.html" class="logo">
 MRLD
@@ -402,44 +416,11 @@ Discuss Your Requirements
      Mobile Navigation
 ===================================================== -->
 
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav-links");
-
-    if (!toggle || !nav) {
-        return;
-    }
 
 
-    toggle.addEventListener("click", function () {
-
-        const isOpen = nav.classList.toggle("is-open");
 
 
-        toggle.setAttribute(
-            "aria-expanded",
-            isOpen ? "true" : "false"
-        );
-
-
-        toggle.setAttribute(
-            "aria-label",
-            isOpen ? "Close navigation" : "Open navigation"
-        );
-
-    });
-
-});
-
-</script>
-
-
-</body>
-
-</html>
+<script src="../assets/js/site.js" defer></script>
 
 </body>
 

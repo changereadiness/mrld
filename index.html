@@ -626,10 +626,13 @@
 
 </style>
 
+
+<link rel="stylesheet" href="assets/css/interactions.css">
+
 </head>
 
 
-<body>
+<body class="home-page">
 
 
 <!-- =====================================================
@@ -1383,41 +1386,11 @@ Connecting selected manufacturers with qualified buyers across established and e
      NAVIGATION SCRIPT
 ===================================================== -->
 
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav-links");
 
 
-    if (!toggle || !nav) {
-        return;
-    }
 
 
-    toggle.addEventListener("click", function () {
-
-        const isOpen = nav.classList.toggle("is-open");
-
-
-        toggle.setAttribute(
-            "aria-expanded",
-            isOpen ? "true" : "false"
-        );
-
-
-        toggle.setAttribute(
-            "aria-label",
-            isOpen ? "Close navigation" : "Open navigation"
-        );
-
-    });
-
-});
-
-</script>
-
+<script src="assets/js/site.js" defer></script>
 
 </body>
 

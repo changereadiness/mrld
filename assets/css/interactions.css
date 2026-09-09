@@ -1,0 +1,232 @@
+/* =====================================================
+   MRLD — STAGE 1 INTERACTION LAYER
+   Shared motion and behavioural polish aligned with Sayudi.
+   Content and core page structure remain controlled by style.css
+   and existing page-specific styles.
+===================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --motion-ease: cubic-bezier(.2,.75,.25,1);
+    --motion-fast: 220ms;
+    --motion-medium: 620ms;
+}
+
+/* Scroll progress */
+.site-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1200;
+    width: 100%;
+    height: 2px;
+    background: var(--copper, #B56A3C);
+    transform: scaleX(0);
+    transform-origin: left center;
+    opacity: 0;
+    transition: opacity var(--motion-fast) ease;
+    pointer-events: none;
+}
+.site-progress.is-active { opacity: .82; }
+
+/* Navigation refinement */
+.mrld-js .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 280ms ease, box-shadow 280ms ease, backdrop-filter 280ms ease;
+}
+.mrld-js .site-header .navbar {
+    transition: min-height 280ms var(--motion-ease), background-color 280ms ease;
+}
+.mrld-js .site-header.is-scrolled {
+    background: rgba(242, 241, 237, .92);
+    box-shadow: 0 1px 0 rgba(32, 36, 38, .10);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+.mrld-js .site-header.is-scrolled .navbar { min-height: 82px; }
+.mrld-js .nav-links a[aria-current="page"] { color: var(--copper, #B56A3C); }
+.mrld-js .nav-toggle span {
+    transform-origin: center;
+    transition: transform 220ms ease, opacity 180ms ease;
+}
+.mrld-js .nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mrld-js .nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+.mrld-js .nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Reveal motion */
+.mrld-js .motion-item {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity var(--motion-medium) var(--motion-ease), transform var(--motion-medium) var(--motion-ease);
+    transition-delay: var(--motion-delay, 0ms);
+    will-change: opacity, transform;
+}
+.mrld-js .motion-item.motion-hero { transform: translateY(16px); }
+.mrld-js .motion-item.is-visible { opacity: 1; transform: translateY(0); will-change: auto; }
+
+/* Responsive surfaces */
+.mrld-js .interactive-surface {
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    position: relative;
+    isolation: isolate;
+    transition: transform 260ms var(--motion-ease), border-color 260ms ease, box-shadow 260ms ease, opacity 260ms ease;
+}
+.mrld-js .interactive-surface::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(181, 106, 60, .10), transparent 42%);
+    transition: opacity 260ms ease;
+}
+.mrld-js .interactive-surface.is-pointer-active::after { opacity: 1; }
+.mrld-js .service-card.is-pointer-active,
+.mrld-js .bridge-card.is-pointer-active,
+.mrld-js .industry-card.is-pointer-active,
+.mrld-js .scope-card.is-pointer-active,
+.mrld-js .equipment-card.is-pointer-active,
+.mrld-js .logistics-card.is-pointer-active,
+.mrld-js .process-step.is-pointer-active {
+    transform: translateY(-4px);
+}
+
+/* Homepage hero — mature spatial bridge treatment */
+.mrld-js .home-page .bridge-hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: clamp(5rem, 8vw, 7.5rem);
+    padding-bottom: clamp(5.5rem, 8vw, 8rem);
+}
+.mrld-js .home-page .bridge-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 52%;
+    background: linear-gradient(135deg, rgba(32,36,38,.025), rgba(181,106,60,.055));
+    pointer-events: none;
+}
+.mrld-js .home-page .bridge-hero .hero-layout {
+    position: relative;
+    z-index: 1;
+    grid-template-columns: minmax(0, 1.08fr) minmax(460px, .92fr);
+    gap: clamp(3.5rem, 6vw, 7rem);
+}
+.mrld-js .home-page .bridge-hero h1 {
+    font-size: clamp(3.1rem, 5.9vw, 5.85rem);
+    letter-spacing: -.045em;
+    max-width: 820px;
+}
+.mrld-js .home-page .bridge-hero .hero-lead {
+    margin-top: 1.6rem;
+    color: #5f686d;
+    max-width: 650px;
+}
+.mrld-js .home-page .market-bridge {
+    min-height: 490px;
+    border-color: rgba(255,255,255,.12);
+    box-shadow: 0 34px 90px rgba(21,24,25,.16);
+    transform: translateZ(0);
+}
+.mrld-js .home-page .market-bridge::before {
+    width: 420px;
+    height: 420px;
+    opacity: .95;
+}
+.mrld-js .home-page .market-bridge::after {
+    width: 340px;
+    height: 340px;
+}
+.mrld-js .home-page .market-node,
+.mrld-js .home-page .market-capabilities span {
+    transition: transform 320ms var(--motion-ease), border-color 320ms ease, background-color 320ms ease;
+}
+.mrld-js .home-page .market-node.is-bridge-active {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,.30);
+}
+.mrld-js .home-page .market-node.mrld.is-bridge-active {
+    border-color: rgba(181,106,60,.92);
+    box-shadow: 0 0 0 1px rgba(181,106,60,.12), 0 0 58px rgba(181,106,60,.14);
+}
+.mrld-js .home-page .market-arrow::before {
+    content: "";
+    position: absolute;
+    inset: -1px 100% -1px 0;
+    background: linear-gradient(90deg, transparent, rgba(181,106,60,.95));
+    opacity: 0;
+}
+.mrld-js .home-page .market-arrow.is-bridge-active::before {
+    animation: mrld-flow 1.6s var(--motion-ease) forwards;
+    opacity: 1;
+}
+@keyframes mrld-flow {
+    0% { left: 0; right: 100%; opacity: 0; }
+    20% { opacity: 1; }
+    72% { left: 0; right: 0; opacity: 1; }
+    100% { left: 100%; right: 0; opacity: 0; }
+}
+
+/* Forms */
+.mrld-js input,
+.mrld-js select,
+.mrld-js textarea {
+    transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+.mrld-js input:focus,
+.mrld-js select:focus,
+.mrld-js textarea:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px rgba(32,36,38,.06);
+}
+.mrld-js .is-submitting { opacity: .72; pointer-events: none; }
+
+/* Standalone connect page */
+.mrld-js .connect-page .intro { position: relative; overflow: hidden; }
+.mrld-js .connect-page .action,
+.mrld-js .connect-page .website-button {
+    transition: transform 220ms var(--motion-ease), background-color 220ms ease, border-color 220ms ease, color 220ms ease;
+}
+.mrld-js .connect-page .action:hover,
+.mrld-js .connect-page .website-button:hover { transform: translateY(-2px); }
+
+/* Standalone card page */
+.mrld-js .card-page .card {
+    opacity: 0;
+    transform: translateY(12px) scale(.992);
+    transition: opacity 520ms var(--motion-ease), transform 520ms var(--motion-ease), box-shadow 300ms ease, border-color 300ms ease;
+}
+.mrld-js .card-page .card.is-ready { opacity: 1; transform: translateY(0) scale(1); }
+.mrld-js .card-page .card:hover { box-shadow: 0 30px 84px rgba(21,24,25,.20); }
+.mrld-js .card-page .contact a { transition: padding-left 220ms var(--motion-ease), background-color 220ms ease, border-color 220ms ease; }
+.mrld-js .card-page .contact a:hover { padding-left: 8px; }
+
+@media (max-width: 1049px) {
+    .mrld-js .home-page .bridge-hero::before { inset: 48% 0 0; }
+    .mrld-js .home-page .bridge-hero .hero-layout { grid-template-columns: 1fr; }
+    .mrld-js .home-page .market-bridge { min-height: 440px; }
+}
+
+@media (max-width: 700px) {
+    .mrld-js body.nav-open { overflow: hidden; }
+    .mrld-js .site-header.is-scrolled .navbar { min-height: 72px; }
+    .mrld-js .home-page .bridge-hero h1 { font-size: clamp(2.75rem, 14vw, 4.25rem); }
+    .mrld-js .home-page .market-bridge { min-height: 0; box-shadow: 0 24px 54px rgba(21,24,25,.13); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mrld-js *, .mrld-js *::before, .mrld-js *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+    .mrld-js .motion-item,
+    .mrld-js .card-page .card { opacity: 1 !important; transform: none !important; }
+}
