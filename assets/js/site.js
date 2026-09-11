@@ -51,14 +51,14 @@
             toggle.classList.remove("is-open");
             document.body.classList.remove("nav-open");
             toggle.setAttribute("aria-expanded", "false");
-            toggle.setAttribute("aria-label", "Open navigation");
+            toggle.setAttribute("aria-label", window.MRLD_I18N?.t("Open navigation") || "Open navigation");
         };
         const openNavigation = () => {
             nav.classList.add("is-open");
             toggle.classList.add("is-open");
             document.body.classList.add("nav-open");
             toggle.setAttribute("aria-expanded", "true");
-            toggle.setAttribute("aria-label", "Close navigation");
+            toggle.setAttribute("aria-label", window.MRLD_I18N?.t("Close navigation") || "Close navigation");
         };
 
         toggle.addEventListener("click", () => nav.classList.contains("is-open") ? closeNavigation() : openNavigation());
@@ -223,7 +223,7 @@
         }
     }
 
-    onReady(() => {
+    const startSite = () => onReady(() => {
         initNavigation();
         initScrollProgress();
         initRevealSystem();
@@ -232,4 +232,10 @@
         initCardEntry();
         initHomeBridge();
     });
+
+    if (window.MRLD_I18N_READY) {
+        Promise.resolve(window.MRLD_I18N_READY).catch(() => {}).finally(startSite);
+    } else {
+        startSite();
+    }
 })();

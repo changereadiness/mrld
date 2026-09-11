@@ -1,0 +1,79 @@
+/* =====================================================
+   MRLD — LOCALIZATION LAYER
+   Shared across every language. No translated copy lives here.
+===================================================== */
+
+.nav-language {
+    display: inline-flex;
+    align-items: center;
+    gap: .42rem;
+    margin-inline-start: .65rem;
+    padding-inline-start: 1.05rem;
+    border-inline-start: 1px solid rgba(32,36,38,.20);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .10em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.nav-language .lang-current,
+.nav-language .lang-option {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: none;
+}
+
+.nav-language .lang-current {
+    color: var(--graphite, #202426);
+}
+
+.nav-language .lang-separator {
+    color: rgba(32,36,38,.30);
+    font-weight: 400;
+}
+
+.nav-language .lang-option {
+    opacity: .45;
+    text-decoration: none;
+    transition: color .2s ease, opacity .2s ease;
+}
+
+.nav-language .lang-option:hover {
+    color: var(--copper, #b56a3c);
+    opacity: 1;
+}
+
+/* Direction infrastructure for future Arabic support. */
+html[dir="rtl"] body {
+    direction: rtl;
+}
+
+html[dir="rtl"] .text-arrow,
+html[dir="rtl"] .card-link > span:last-child,
+html[dir="rtl"] .equipment-arrow {
+    display: inline-block;
+    transform: scaleX(-1);
+}
+
+@media (max-width: 760px) {
+    .nav-language {
+        margin: .7rem 0 0;
+        padding: 1.15rem 0 0;
+        border-inline-start: 0;
+        border-top: 1px solid rgba(32,36,38,.15);
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* Prevent a visible English-to-localized flash while a non-English locale loads. */
+html[data-locale]:not([data-locale="en"]):not([data-i18n-ready="true"]) body {
+    visibility: hidden;
+}
