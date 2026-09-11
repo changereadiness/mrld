@@ -8,11 +8,11 @@
 
 <link rel="icon" type="image/png" href="../assets/images/favicon.png">
 
-<title>Contact MRLD | Global Equipment & Market Access</title>
+<title>Contact MRLD | Start a Conversation</title>
 
 <meta
     name="description"
-    content="Contact MRLD to discuss equipment sourcing, market representation, manufacturer partnerships, and industrial project opportunities."
+    content="Contact MRLD about an industrial equipment requirement, manufacturer representation, project logistics, or another commercial opportunity."
 >
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,10 +28,242 @@
 
 <link rel="stylesheet" href="../assets/css/interactions.css">
 
+
+<style>
+/* =====================================================
+   MRLD — STAGE 2 CONTACT
+   One entry point. One form. One clear next step.
+===================================================== */
+.contact-stage2 .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: .68rem;
+    letter-spacing: .19em;
+}
+.contact-stage2 .logo img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+.contact-stage2 .logo span { transform: translateY(1px); }
+
+.contact-hero {
+    padding: clamp(6rem, 10vw, 9rem) 0 clamp(4.7rem, 7vw, 6.5rem);
+    border-bottom: 1px solid var(--border);
+}
+.contact-hero .hero-content { max-width: 970px; }
+.contact-hero h1 {
+    max-width: 930px;
+    margin: 0 0 1.55rem;
+    font-size: clamp(3.45rem, 7vw, 6.8rem);
+    line-height: .96;
+    letter-spacing: -.055em;
+}
+.contact-hero .hero-lead {
+    max-width: 760px;
+    margin: 0;
+    color: #596267;
+    font-size: 1.08rem;
+    line-height: 1.72;
+}
+
+.contact-inquiry-stage2 {
+    padding: clamp(5.8rem, 9vw, 8.5rem) 0;
+    background: var(--white);
+}
+.contact-inquiry-grid {
+    display: grid;
+    grid-template-columns: minmax(250px, .65fr) minmax(0, 1.35fr);
+    gap: clamp(3.5rem, 8vw, 8rem);
+    align-items: start;
+}
+.contact-inquiry-intro { position: sticky; top: 120px; }
+.contact-inquiry-intro h2 {
+    margin: 0 0 1.2rem;
+    max-width: 470px;
+    font-size: clamp(2.5rem, 4.5vw, 4.6rem);
+    line-height: 1.02;
+    letter-spacing: -.045em;
+}
+.contact-inquiry-intro > p {
+    max-width: 460px;
+    color: #5d666a;
+    line-height: 1.75;
+}
+.direct-channels {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    display: grid;
+    gap: .8rem;
+}
+.direct-channels a {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    color: var(--graphite);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .22s ease, transform .22s ease;
+}
+.direct-channels a:hover { color: var(--copper); transform: translateX(3px); }
+.direct-channels small {
+    display: block;
+    margin-bottom: .25rem;
+    color: #7c8589;
+    font-size: .66rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+.contact-stage2 .contact-form {
+    max-width: none;
+    padding: clamp(2rem, 4vw, 3.7rem);
+    border: 1px solid var(--border);
+    box-shadow: none;
+}
+.contact-stage2 .form-grid { gap: 1.45rem; }
+.contact-stage2 .form-group { gap: .62rem; }
+.contact-stage2 .form-group label {
+    font-size: .76rem;
+    letter-spacing: .055em;
+    text-transform: uppercase;
+}
+.contact-stage2 .form-group input,
+.contact-stage2 .form-group select,
+.contact-stage2 .form-group textarea {
+    background: var(--background);
+    border-radius: 0;
+}
+.contact-stage2 .form-group input,
+.contact-stage2 .form-group select { min-height: 56px; }
+.contact-stage2 .form-group textarea { min-height: 185px; }
+.contact-stage2 .contact-form .button { margin-top: 2rem; }
+
+.what-next-stage2 {
+    padding: clamp(5.8rem, 9vw, 8.2rem) 0;
+    background: var(--graphite-dark);
+    color: rgba(250,250,248,.72);
+}
+.what-next-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, .62fr);
+    gap: clamp(3rem, 7vw, 7rem);
+    align-items: end;
+    margin-bottom: clamp(3.5rem, 6vw, 5.5rem);
+}
+.what-next-header .eyebrow { color: rgba(250,250,248,.46); }
+.what-next-header h2 {
+    max-width: 720px;
+    margin: 0;
+    color: var(--white);
+    font-size: clamp(2.55rem, 4.7vw, 4.8rem);
+    line-height: 1.01;
+    letter-spacing: -.045em;
+}
+.what-next-header p {
+    max-width: 450px;
+    margin: 0;
+    color: rgba(250,250,248,.55);
+    line-height: 1.7;
+}
+.next-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    border-top: 1px solid rgba(250,250,248,.16);
+}
+.next-track::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 25%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--copper), transparent);
+    opacity: .72;
+    animation: nextTravel 7s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes nextTravel {
+    0%,100% { transform: translateX(0); opacity:.12; }
+    45% { opacity:.75; }
+    78% { transform: translateX(300%); opacity:.32; }
+}
+.next-step {
+    appearance: none;
+    width: 100%;
+    min-height: 158px;
+    padding: 1.7rem 1.3rem;
+    text-align: left;
+    color: rgba(250,250,248,.62);
+    background: transparent;
+    border: 0;
+    border-right: 1px solid rgba(250,250,248,.11);
+    cursor: pointer;
+    transition: background .22s ease, color .22s ease, transform .22s ease, opacity .22s ease;
+}
+.next-step:last-child { border-right: 0; }
+.next-step span {
+    display: block;
+    margin-bottom: 2rem;
+    color: rgba(250,250,248,.34);
+    font-size: .67rem;
+    font-weight: 600;
+    letter-spacing: .15em;
+}
+.next-step strong {
+    display: block;
+    color: inherit;
+    font-family: var(--heading-font);
+    font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+}
+.next-track.has-active .next-step:not(.is-active) { opacity: .44; }
+.next-step.is-active,
+.next-step:hover,
+.next-step:focus-visible {
+    color: var(--white);
+    background: rgba(250,250,248,.04);
+    transform: translateY(-2px);
+    outline: none;
+}
+.next-step.is-active span { color: var(--copper); }
+.next-detail {
+    min-height: 88px;
+    padding: 2rem 1.3rem 0;
+    border-top: 1px solid rgba(250,250,248,.09);
+}
+.next-detail p {
+    max-width: 740px;
+    margin: 0;
+    color: rgba(250,250,248,.64);
+    font-size: 1.02rem;
+    line-height: 1.75;
+}
+
+@media (max-width: 800px) {
+    .contact-inquiry-grid { grid-template-columns: 1fr; gap: 2.8rem; }
+    .contact-inquiry-intro { position: static; }
+    .what-next-header { grid-template-columns: 1fr; gap: 1.5rem; }
+    .next-track { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .next-step:nth-child(2) { border-right: 0; }
+    .next-step:nth-child(-n+2) { border-bottom: 1px solid rgba(250,250,248,.11); }
+    .next-track::before { display:none; }
+}
+@media (max-width: 520px) {
+    .contact-hero { padding-top: 5rem; }
+    .contact-hero h1 { font-size: clamp(3rem, 14vw, 4.2rem); }
+    .next-track { grid-template-columns: 1fr; }
+    .next-step { min-height: 110px; border-right: 0; border-bottom: 1px solid rgba(250,250,248,.11); }
+    .next-step:last-child { border-bottom: 0; }
+    .next-step span { margin-bottom: 1rem; }
+}
+</style>
+
 </head>
 
 
-<body>
+<body class="contact-stage2">
 
 
 <!-- =====================================================
@@ -47,7 +279,8 @@
     class="logo"
     aria-label="MRLD Home"
 >
-    MRLD
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTkgMjY5Ij4KCjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0ibGVmdEdyYWQiIHgxPSIyMCIgeTE9IjI0NSIgeDI9IjgwIiB5Mj0iMTUwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTUxODE5Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjcyJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KCiAgPGxpbmVhckdyYWRpZW50IGlkPSJtaWRHcmFkIiB4MT0iNTUiIHkxPSIyNDUiIHgyPSIxMjUiIHkyPSIxMDUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxNTE4MTkiLz4KICAgIDxzdG9wIG9mZnNldD0iNTglIiBzdG9wLWNvbG9yPSIjMjAyNDI2Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Im91dEdyYWQiIHgxPSIxMjUiIHkxPSIyMzAiIHgyPSIyMzIiIHkyPSIyNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MiUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICAgIDxzdG9wIG9mZnNldD0iODQlIiBzdG9wLWNvbG9yPSIjOEI3NTZBIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNCNTZBM0MiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Imxvd2VyR3JhZCIgeDE9IjEyNSIgeTE9IjI0NSIgeDI9IjIzNSIgeTI9IjEwNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE1MTgxOSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiMyMDI0MjYiLz4KICAgIDxzdG9wIG9mZnNldD0iODYlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4Qjc1NkEiLz4KICA8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIj4KCjxnPgogIDwhLS0gbGVmdCByaXNpbmcgc3BhbiAtLT4KICA8cGF0aCBkPSIKICAgIE0gMjYsMjQ1CiAgICBMIDI2LDE5OQogICAgQyAyNiwxOTAgMzEsMTg1IDM4LDE4MQogICAgQyA0MywxNzggNDgsMTc2IDUyLDE3MwogICAgTCA1MiwyNDUKICAgIFoiIGZpbGw9InVybCgjbGVmdEdyYWQpIi8+CgogIDwhLS0gbWlkZGxlIHJpc2luZyBzcGFuIC0tPgogIDxwYXRoIGQ9IgogICAgTSA2MywyNDUKICAgIEwgNjMsMTYwCiAgICBDIDYzLDE0OSA3MCwxNDMgODAsMTM4CiAgICBDIDk0LDEzMSAxMDcsMTI0IDExNiwxMTUKICAgIEwgMTE2LDI0NQogICAgWiIgZmlsbD0idXJsKCNtaWRHcmFkKSIvPgoKICA8IS0tIHVwcGVyIHVuZm9sZGluZyBibGFkZSAtLT4KICA8cGF0aCBkPSIKICAgIE0gMTI4LDE2NgogICAgTCAxMjgsMTE5CiAgICBDIDEyOCwxMDIgMTM4LDkxIDE1Myw4MgogICAgQyAxNzgsNjcgMjAyLDQ5IDIyNCwyMwogICAgTCAyMjQsMTAyCiAgICBDIDIwNSwxMTUgMTg0LDEyNiAxNjUsMTM3CiAgICBDIDE0OCwxNDcgMTM2LDE1NyAxMjgsMTY2CiAgICBaIiBmaWxsPSJ1cmwoI291dEdyYWQpIi8+CgogIDwhLS0gbG93ZXIgdW5mb2xkaW5nIGJsYWRlIC0tPgogIDxwYXRoIGQ9IgogICAgTSAxMjgsMjQ1CiAgICBMIDEyOCwxOTkKICAgIEMgMTM2LDE4NCAxNDksMTcxIDE2NSwxNjEKICAgIEMgMTg3LDE0NyAyMTEsMTM1IDIzMywxMDYKICAgIEwgMjMzLDE3NwogICAgQyAyMzMsMTkzIDIyNCwyMDQgMjEwLDIxNAogICAgQyAxOTEsMjI3IDE2MiwyMzcgMTI4LDI0NQogICAgWiIgZmlsbD0idXJsKCNsb3dlckdyYWQpIi8+CjwvZz4KCjwvZz4KPC9zdmc+" alt="" aria-hidden="true">
+    <span>MRLD</span>
 </a>
 
 
@@ -111,549 +344,141 @@ Contact
 
 <main>
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero">
-
-<div class="container">
-
-<div class="hero-content">
-
-<span class="eyebrow">
-CONNECT WITH MRLD
-</span>
-
-
-<h1>
-Looking for a new source or a new market?
-</h1>
-
-
-<p>
-MRLD connects selected industrial equipment manufacturers with qualified
-buyers across Canada and international markets. Tell us what you are
-looking for — or what you are looking to bring to market.
-</p>
-
-</div>
-
-</div>
-
+<section class="hero contact-hero">
+    <div class="container">
+        <div class="hero-content">
+            <span class="eyebrow">START HERE</span>
+            <h1>Bring us the requirement. Or the opportunity.</h1>
+            <p class="hero-lead">
+                Equipment sourcing, market representation or project logistics — tell us what you are trying to move forward.
+            </p>
+        </div>
+    </div>
 </section>
 
+<section class="contact-inquiry-stage2" id="inquiry">
+    <div class="container">
+        <div class="contact-inquiry-grid">
+            <div class="contact-inquiry-intro">
+                <span class="eyebrow">START A CONVERSATION</span>
+                <h2>Tell us what you’re working on.</h2>
+                <p>A few useful details are enough. We’ll take it from there.</p>
 
+                <div class="direct-channels" aria-label="Direct contact options">
+                    <div>
+                        <small>Email</small>
+                        <a href="mailto:contact@sayudi.com">contact@sayudi.com</a>
+                    </div>
+                    <div>
+                        <small>LinkedIn</small>
+                        <a href="https://www.linkedin.com/in/sayudi/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+                    </div>
+                </div>
+            </div>
 
-<!-- =====================================================
-     TWO SIDES OF THE BRIDGE
-===================================================== -->
+            <form
+                class="contact-form"
+                action="https://formspree.io/f/meeyyygg"
+                method="POST"
+            >
+                <input type="hidden" name="_subject" value="MRLD Business Inquiry">
 
-<section>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+                    </div>
 
-<div class="container">
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company" autocomplete="organization">
+                    </div>
 
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </div>
 
-<div class="section-header">
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel">
+                    </div>
 
-<span class="eyebrow">
-TWO SIDES. ONE NETWORK.
-</span>
+                    <div class="form-group">
+                        <label for="inquiry-type">I’m interested in</label>
+                        <select id="inquiry-type" name="inquiry_type" required>
+                            <option value="" selected disabled>Select an option</option>
+                            <option value="equipment-sourcing">Equipment requirement</option>
+                            <option value="manufacturer-representation">Manufacturer representation</option>
+                            <option value="project-logistics">Project logistics</option>
+                            <option value="other">Other opportunity</option>
+                        </select>
+                    </div>
 
+                    <div class="form-group">
+                        <label for="industry">Industry / Sector</label>
+                        <select id="industry" name="industry">
+                            <option value="" selected disabled>Select a sector</option>
+                            <option value="construction">Construction</option>
+                            <option value="mining">Mining</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="energy">Energy</option>
+                            <option value="infrastructure">Infrastructure</option>
+                            <option value="material-handling">Material Handling</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
 
-<h2>
-Where do you fit?
-</h2>
+                    <div class="form-group form-group-full">
+                        <label for="message">Tell us more</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="8"
+                            placeholder="What are you trying to accomplish?"
+                            required
+                        ></textarea>
+                    </div>
+                </div>
 
-
-<p>
-Whether you are looking to source equipment or expand the reach of your
-products, MRLD is interested in understanding the opportunity.
-</p>
-
-</div>
-
-
-
-<div class="service-grid">
-
-
-<article class="service-card">
-
-<span class="service-number">
-01
-</span>
-
-
-<div class="service-card-content">
-
-<h3>
-I'm looking for equipment.
-</h3>
-
-
-<p>
-Tell us what you need, where it will be used, and what the project requires.
-MRLD can help identify potential equipment and sourcing opportunities.
-</p>
-
-
-<a
-    class="text-link"
-    href="#inquiry"
->
-Discuss a Requirement
-<span>→</span>
-</a>
-
-</div>
-
-</article>
-
-
-
-<article class="service-card">
-
-<span class="service-number">
-02
-</span>
-
-
-<div class="service-card-content">
-
-<h3>
-I'm looking for a market.
-</h3>
-
-
-<p>
-If you manufacture industrial equipment and are looking to expand into
-Canada or other markets, tell us about your products and ambitions.
-</p>
-
-
-<a
-    class="text-link"
-    href="#inquiry"
->
-Discuss Representation
-<span>→</span>
-</a>
-
-</div>
-
-</article>
-
-
-</div>
-
-</div>
-
+                <button class="button" type="submit">Send Inquiry</button>
+            </form>
+        </div>
+    </div>
 </section>
 
-
-
-<!-- =====================================================
-     INQUIRY
-===================================================== -->
-
-<section id="inquiry">
-
-<div class="container">
-
-
-<div class="section-header">
-
-<span class="eyebrow">
-START A CONVERSATION
-</span>
-
-
-<h2>
-Tell us about the opportunity.
-</h2>
-
-
-<p>
-A few details will help us understand where MRLD may be able to add value.
-</p>
-
-</div>
-
-
-
-<form
-    class="contact-form"
-    action="https://formspree.io/f/meeyyygg"
-    method="POST"
->
-
-<input
-    type="hidden"
-    name="_subject"
-    value="MRLD Business Inquiry"
->
-
-
-<div class="form-grid">
-
-
-<!-- =================================================
-     CONTACT
-================================================== -->
-
-<div class="form-group">
-
-<label for="name">
-Name
-</label>
-
-<input
-    type="text"
-    id="name"
-    name="name"
-    autocomplete="name"
-    required
->
-
-</div>
-
-
-
-<div class="form-group">
-
-<label for="company">
-Company
-</label>
-
-<input
-    type="text"
-    id="company"
-    name="company"
-    autocomplete="organization"
->
-
-</div>
-
-
-
-<div class="form-group">
-
-<label for="email">
-Email
-</label>
-
-<input
-    type="email"
-    id="email"
-    name="email"
-    autocomplete="email"
-    required
->
-
-</div>
-
-
-
-<div class="form-group">
-
-<label for="phone">
-Phone
-</label>
-
-<input
-    type="tel"
-    id="phone"
-    name="phone"
-    autocomplete="tel"
->
-
-</div>
-
-
-
-<!-- =================================================
-     INQUIRY TYPE
-================================================== -->
-
-<div class="form-group">
-
-<label for="inquiry-type">
-I'm interested in
-</label>
-
-<select
-    id="inquiry-type"
-    name="inquiry_type"
-    required
->
-
-<option value="" selected disabled>
-Select an option
-</option>
-
-<option value="equipment-sourcing">
-Sourcing equipment
-</option>
-
-<option value="manufacturer-representation">
-Manufacturer representation
-</option>
-
-<option value="project-logistics">
-Project logistics
-</option>
-
-<option value="other">
-Other opportunity
-</option>
-
-</select>
-
-</div>
-
-
-
-<div class="form-group">
-
-<label for="industry">
-Industry
-</label>
-
-<select
-    id="industry"
-    name="industry"
->
-
-<option value="" selected disabled>
-Select an industry
-</option>
-
-<option value="construction">
-Construction
-</option>
-
-<option value="mining">
-Mining
-</option>
-
-<option value="manufacturing">
-Manufacturing
-</option>
-
-<option value="energy">
-Energy
-</option>
-
-<option value="infrastructure">
-Infrastructure
-</option>
-
-<option value="material-handling">
-Material Handling
-</option>
-
-<option value="other">
-Other
-</option>
-
-</select>
-
-</div>
-
-
-
-<!-- =================================================
-     MESSAGE
-================================================== -->
-
-<div class="form-group form-group-full">
-
-<label for="message">
-Tell us more
-</label>
-
-<textarea
-    id="message"
-    name="message"
-    rows="8"
-    placeholder="Describe the equipment, product, market opportunity, project, location, timeline, or other relevant details."
-    required
-></textarea>
-
-</div>
-
-
-</div>
-
-
-
-<button
-    class="button"
-    type="submit"
->
-Submit Inquiry
-</button>
-
-
-</form>
-
-</div>
-
+<section class="what-next-stage2">
+    <div class="container">
+        <div class="what-next-header">
+            <div>
+                <span class="eyebrow">WHAT HAPPENS NEXT</span>
+                <h2>From first conversation to execution.</h2>
+            </div>
+            <p>
+                A simple commercial path. The details depend on the requirement; the logic does not.
+            </p>
+        </div>
+
+        <div class="next-track" id="next-track" aria-label="MRLD commercial process">
+            <button class="next-step is-active" type="button" data-detail="Understand the requirement or opportunity.">
+                <span>01</span><strong>Identify</strong>
+            </button>
+            <button class="next-step" type="button" data-detail="Bring the relevant parties together.">
+                <span>02</span><strong>Connect</strong>
+            </button>
+            <button class="next-step" type="button" data-detail="Align the commercial and operational path.">
+                <span>03</span><strong>Coordinate</strong>
+            </button>
+            <button class="next-step" type="button" data-detail="Support execution through the appropriate partners.">
+                <span>04</span><strong>Deliver</strong>
+            </button>
+        </div>
+
+        <div class="next-detail" aria-live="polite">
+            <p id="next-detail-text">Understand the requirement or opportunity.</p>
+        </div>
+    </div>
 </section>
-
-
-
-<!-- =====================================================
-     WHAT MRLD LOOKS FOR
-===================================================== -->
-
-<section class="process-section">
-
-<div class="container">
-
-
-<div class="process-intro">
-
-<div>
-
-<span class="eyebrow eyebrow-light">
-GOOD FIT MATTERS
-</span>
-
-
-<h2>
-Focused relationships. Credible opportunities.
-</h2>
-
-</div>
-
-
-<p>
-MRLD is intentionally selective about the manufacturers, buyers, and
-projects it takes into its network.
-</p>
-
-</div>
-
-
-
-<div class="process-grid">
-
-
-<article class="process-step">
-
-<div class="process-line"></div>
-
-<span class="process-number">
-01
-</span>
-
-<h3>
-Clear Requirement
-</h3>
-
-<p>
-A defined equipment, market, or project need gives us a starting point.
-</p>
-
-</article>
-
-
-
-<article class="process-step">
-
-<div class="process-line"></div>
-
-<span class="process-number">
-02
-</span>
-
-<h3>
-Commercial Fit
-</h3>
-
-<p>
-We look for genuine alignment between the opportunity, the parties, and
-the markets involved.
-</p>
-
-</article>
-
-
-
-<article class="process-step">
-
-<div class="process-line"></div>
-
-<span class="process-number">
-03
-</span>
-
-<h3>
-Next Step
-</h3>
-
-<p>
-If there is a credible opportunity to work together, we determine the most
-practical path forward.
-</p>
-
-</article>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FINAL CTA
-===================================================== -->
-
-<section class="cta-section">
-
-<div class="container">
-
-<div class="cta-box">
-
-<div>
-
-<span class="eyebrow">
-CANADA → GLOBAL
-</span>
-
-
-<h2>
-Let's find the connection.
-</h2>
-
-
-<p>
-MRLD is building a focused network connecting manufacturers, buyers, and
-specialized partners across borders.
-</p>
-
-</div>
-
-
-<a
-    class="button button-light"
-    href="#inquiry"
->
-Start a Conversation
-</a>
-
-</div>
-
-</div>
-
-</section>
-
 
 </main>
 
@@ -793,6 +618,30 @@ Terms of Use
 
 
 
+
+
+<script>
+(function () {
+    const track = document.getElementById('next-track');
+    const detail = document.getElementById('next-detail-text');
+    if (!track || !detail) return;
+
+    const steps = Array.from(track.querySelectorAll('.next-step'));
+    const activate = (step) => {
+        steps.forEach((item) => item.classList.toggle('is-active', item === step));
+        track.classList.add('has-active');
+        detail.textContent = step.dataset.detail || '';
+    };
+
+    steps.forEach((step) => {
+        step.addEventListener('mouseenter', () => activate(step));
+        step.addEventListener('focus', () => activate(step));
+        step.addEventListener('click', () => activate(step));
+    });
+
+    track.classList.add('has-active');
+})();
+</script>
 
 <script src="../assets/js/site.js" defer></script>
 

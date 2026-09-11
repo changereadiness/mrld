@@ -30,10 +30,107 @@
 
 <link rel="stylesheet" href="../assets/css/interactions.css">
 
+
+<style>
+/* =====================================================
+   MRLD — STAGE 2 LEGAL
+   Visual normalization only. Legal copy is unchanged.
+===================================================== */
+.legal-stage2 .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: .68rem;
+    letter-spacing: .19em;
+}
+.legal-stage2 .logo img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+.legal-stage2 .logo span { transform: translateY(1px); }
+
+.legal-stage2 main > .hero {
+    padding: clamp(5.6rem, 9vw, 8rem) 0 clamp(4.2rem, 6vw, 5.8rem);
+    border-bottom: 1px solid var(--border);
+}
+.legal-stage2 main > .hero .hero-content { max-width: 820px; }
+.legal-stage2 main > .hero h1 {
+    max-width: 760px;
+    margin-bottom: 1.3rem;
+    font-size: clamp(3.2rem, 6vw, 5.7rem);
+    line-height: .98;
+    letter-spacing: -.05em;
+}
+.legal-stage2 main > .hero p {
+    max-width: 700px;
+    color: #5e676b;
+    font-size: 1.04rem;
+    line-height: 1.75;
+}
+.legal-stage2 main > section:not(.hero):not(.cta-section) {
+    padding: clamp(5rem, 8vw, 7.2rem) 0;
+}
+.legal-stage2 main > section:not(.hero):not(.cta-section) > .container {
+    max-width: 980px;
+}
+.legal-stage2 main > section:not(.hero):not(.cta-section) .section-header {
+    max-width: 760px;
+    margin-bottom: clamp(3.8rem, 6vw, 5.5rem);
+}
+.legal-stage2 main > section:not(.hero):not(.cta-section) .section-header h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(2.25rem, 4vw, 3.8rem);
+    line-height: 1.04;
+    letter-spacing: -.038em;
+}
+.legal-stage2 main > section:not(.hero):not(.cta-section) .section-header p {
+    color: #636c70;
+    line-height: 1.8;
+}
+.legal-stage2 .legal-section {
+    max-width: 860px;
+    padding: clamp(2.5rem, 4vw, 3.6rem) 0;
+    border-top: 1px solid var(--border);
+}
+.legal-stage2 .legal-section:last-child { border-bottom: 1px solid var(--border); }
+.legal-stage2 .legal-section h2 {
+    margin: 0 0 1.45rem;
+    color: var(--graphite);
+    font-size: clamp(1.35rem, 2vw, 1.72rem);
+    line-height: 1.25;
+    letter-spacing: -.018em;
+}
+.legal-stage2 .legal-section p,
+.legal-stage2 .legal-section li {
+    color: #566064;
+    font-size: 1rem;
+    line-height: 1.82;
+}
+.legal-stage2 .legal-section p { margin-bottom: 1.15rem; }
+.legal-stage2 .legal-section ul,
+.legal-stage2 .legal-section ol {
+    margin: 1.15rem 0 1.45rem;
+    padding-left: 1.25rem;
+}
+.legal-stage2 .legal-section li + li { margin-top: .48rem; }
+.legal-stage2 .legal-section a {
+    color: var(--graphite);
+    text-decoration-color: rgba(181,106,60,.55);
+    text-underline-offset: 3px;
+}
+.legal-stage2 .cta-section { padding-top: clamp(4rem, 7vw, 6.5rem); }
+.legal-stage2 .cta-box { border-radius: 0; }
+
+@media (max-width: 600px) {
+    .legal-stage2 main > .hero { padding-top: 5rem; }
+    .legal-stage2 .legal-section { padding: 2.25rem 0; }
+}
+</style>
+
 </head>
 
 
-<body>
+<body class="legal-stage2">
 
 
 <!-- =====================================================
@@ -49,8 +146,9 @@
             class="logo"
             aria-label="MRLD Home"
         >
-            MRLD
-        </a>
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTkgMjY5Ij4KCjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0ibGVmdEdyYWQiIHgxPSIyMCIgeTE9IjI0NSIgeDI9IjgwIiB5Mj0iMTUwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTUxODE5Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjcyJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KCiAgPGxpbmVhckdyYWRpZW50IGlkPSJtaWRHcmFkIiB4MT0iNTUiIHkxPSIyNDUiIHgyPSIxMjUiIHkyPSIxMDUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxNTE4MTkiLz4KICAgIDxzdG9wIG9mZnNldD0iNTglIiBzdG9wLWNvbG9yPSIjMjAyNDI2Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Im91dEdyYWQiIHgxPSIxMjUiIHkxPSIyMzAiIHgyPSIyMzIiIHkyPSIyNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MiUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICAgIDxzdG9wIG9mZnNldD0iODQlIiBzdG9wLWNvbG9yPSIjOEI3NTZBIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNCNTZBM0MiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Imxvd2VyR3JhZCIgeDE9IjEyNSIgeTE9IjI0NSIgeDI9IjIzNSIgeTI9IjEwNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE1MTgxOSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiMyMDI0MjYiLz4KICAgIDxzdG9wIG9mZnNldD0iODYlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4Qjc1NkEiLz4KICA8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIj4KCjxnPgogIDwhLS0gbGVmdCByaXNpbmcgc3BhbiAtLT4KICA8cGF0aCBkPSIKICAgIE0gMjYsMjQ1CiAgICBMIDI2LDE5OQogICAgQyAyNiwxOTAgMzEsMTg1IDM4LDE4MQogICAgQyA0MywxNzggNDgsMTc2IDUyLDE3MwogICAgTCA1MiwyNDUKICAgIFoiIGZpbGw9InVybCgjbGVmdEdyYWQpIi8+CgogIDwhLS0gbWlkZGxlIHJpc2luZyBzcGFuIC0tPgogIDxwYXRoIGQ9IgogICAgTSA2MywyNDUKICAgIEwgNjMsMTYwCiAgICBDIDYzLDE0OSA3MCwxNDMgODAsMTM4CiAgICBDIDk0LDEzMSAxMDcsMTI0IDExNiwxMTUKICAgIEwgMTE2LDI0NQogICAgWiIgZmlsbD0idXJsKCNtaWRHcmFkKSIvPgoKICA8IS0tIHVwcGVyIHVuZm9sZGluZyBibGFkZSAtLT4KICA8cGF0aCBkPSIKICAgIE0gMTI4LDE2NgogICAgTCAxMjgsMTE5CiAgICBDIDEyOCwxMDIgMTM4LDkxIDE1Myw4MgogICAgQyAxNzgsNjcgMjAyLDQ5IDIyNCwyMwogICAgTCAyMjQsMTAyCiAgICBDIDIwNSwxMTUgMTg0LDEyNiAxNjUsMTM3CiAgICBDIDE0OCwxNDcgMTM2LDE1NyAxMjgsMTY2CiAgICBaIiBmaWxsPSJ1cmwoI291dEdyYWQpIi8+CgogIDwhLS0gbG93ZXIgdW5mb2xkaW5nIGJsYWRlIC0tPgogIDxwYXRoIGQ9IgogICAgTSAxMjgsMjQ1CiAgICBMIDEyOCwxOTkKICAgIEMgMTM2LDE4NCAxNDksMTcxIDE2NSwxNjEKICAgIEMgMTg3LDE0NyAyMTEsMTM1IDIzMywxMDYKICAgIEwgMjMzLDE3NwogICAgQyAyMzMsMTkzIDIyNCwyMDQgMjEwLDIxNAogICAgQyAxOTEsMjI3IDE2MiwyMzcgMTI4LDI0NQogICAgWiIgZmlsbD0idXJsKCNsb3dlckdyYWQpIi8+CjwvZz4KCjwvZz4KPC9zdmc+" alt="" aria-hidden="true">
+    <span>MRLD</span>
+</a>
 
 
         <button
