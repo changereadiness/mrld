@@ -1,476 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link rel="icon" type="image/png" href="../assets/images/favicon.png">
-
-<title>Industries | MRLD</title>
-
-<meta
-    name="description"
-    content="MRLD connects industrial equipment manufacturers and buyers across construction, mining, infrastructure, energy, manufacturing, and other demanding sectors."
->
-
+<title>Sectors | MRLD</title>
+<meta name="description" content="MRLD works across industrial environments including construction, mining, energy, manufacturing, infrastructure, and material handling.">
 <meta name="author" content="MRLD">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
-    rel="stylesheet"
->
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
-
-
 <style>
-
 /* =====================================================
-   INDUSTRIES PAGE
+   MRLD — STAGE 2 SECTORS
+   Recognition, not explanation.
 ===================================================== */
 
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.industries-hero {
-    padding: 5rem 0 5.5rem;
-}
-
-.industries-hero .hero-content {
-    max-width: 980px;
-}
-
-.industries-hero h1 {
-    max-width: 900px;
-    margin-bottom: 1.5rem;
-}
-
-.industries-hero p {
-    max-width: 760px;
-}
-
-
-/* =====================================================
-   INTRO
-===================================================== */
-
-.industries-intro {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-.industries-intro-content {
-    max-width: 820px;
-}
-
-
-/* =====================================================
-   INDUSTRY GRID
-===================================================== */
-
-.industry-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    margin-top: 2.75rem;
-
-    border-top: 1px solid rgba(0,0,0,0.14);
-    border-left: 1px solid rgba(0,0,0,0.1);
-}
-
-
-.industry-card {
-
-    min-height: 180px;
-
-    padding: 1.75rem 1.5rem;
-
-    border-right: 1px solid rgba(0,0,0,0.1);
-    border-bottom: 1px solid rgba(0,0,0,0.14);
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-}
-
-
-.industry-card:hover {
-    background: rgba(0,0,0,0.025);
-}
-
-
-.industry-number {
-
-    display: block;
-
-    margin-bottom: 2rem;
-
-    font-size: 0.68rem;
-    font-weight: 600;
-
-    letter-spacing: 0.12em;
-
-    opacity: 0.45;
-}
-
-
-.industry-card h3 {
-
-    margin: 0 0 0.5rem;
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: 1.05rem;
-
-}
-
-
-.industry-card p {
-
-    max-width: 300px;
-
-    margin: 0;
-
-    font-size: 0.86rem;
-
-    line-height: 1.55;
-
-    opacity: 0.68;
-
-}
-
-
-/* =====================================================
-   POSITIONING
-===================================================== */
-
-.industry-positioning {
-
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-
-.industry-positioning-content {
-
-    max-width: 820px;
-
-}
-
-
-.industry-positioning-content p {
-    margin-bottom: 20px;
-}
-
-.industry-positioning-content p:last-of-type {
-    margin-bottom: 0;
-}
-
-
-.industry-positioning-content h2 {
-
-    max-width: 760px;
-
-}
-
-
-/* =====================================================
-   SIMPLE FLOW
-===================================================== */
-
-.industry-flow-section {
-
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-
-}
-
-
-.industry-flow-header {
-
-    max-width: 760px;
-
-    margin-bottom: 2.5rem;
-
-}
-
-.industry-flow-header h2 {
-    margin-bottom: 24px;
-}
-
-.industry-flow-header p {
-    margin: 0;
-}
-    
-.industry-flow {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        70px
-        1fr
-        70px
-        1fr;
-
+/* Navigation mark */
+.sectors-page .logo {
+    display: inline-flex;
     align-items: center;
-
-    padding: 2.5rem;
-
-    background: #151819;
-
-    color: #ffffff;
-
-    border: 1px solid rgba(255,255,255,0.1);
-
+    gap: 0.68rem;
+    letter-spacing: 0.19em;
 }
 
-
-.industry-flow-node {
-
-    text-align: center;
-
+.sectors-page .logo img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
 }
 
-
-.industry-flow-node span {
-
-    display: block;
-
-    margin-bottom: 0.65rem;
-
-    font-size: 0.65rem;
-
-    letter-spacing: 0.12em;
-
-    color: rgba(255,255,255,0.4);
-
+.sectors-page .logo span {
+    transform: translateY(1px);
 }
 
-
-.industry-flow-node strong {
-
-    display: block;
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: 1rem;
-
-}
-
-
-.industry-flow-node p {
-
-    max-width: 190px;
-
-    margin: 0.6rem auto 0;
-
-    font-size: 0.78rem;
-
-    line-height: 1.45;
-
-    color: rgba(255,255,255,0.62);
-
-}
-
-
-.industry-flow-arrow {
-
-    height: 1px;
-
-    background: rgba(255,255,255,0.2);
-
+/* Hero — same family, deliberately less explanatory */
+.sectors-hero {
     position: relative;
-
+    overflow: hidden;
+    padding: clamp(5.5rem, 9vw, 8.5rem) 0 clamp(5rem, 8vw, 7.5rem);
 }
 
-
-.industry-flow-arrow::after {
-
+.sectors-hero::after {
     content: "";
-
     position: absolute;
-
-    right: 0;
+    width: min(40vw, 560px);
+    aspect-ratio: 1;
+    right: clamp(-13rem, -8vw, -3rem);
     top: 50%;
-
-    width: 7px;
-    height: 7px;
-
-    border-top: 1px solid rgba(255,255,255,0.5);
-    border-right: 1px solid rgba(255,255,255,0.5);
-
-    transform:
-        translateY(-50%)
-        rotate(45deg);
-
+    transform: translateY(-50%);
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTkgMjY5Ij4KCjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0ibGVmdEdyYWQiIHgxPSIyMCIgeTE9IjI0NSIgeDI9IjgwIiB5Mj0iMTUwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTUxODE5Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjcyJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KCiAgPGxpbmVhckdyYWRpZW50IGlkPSJtaWRHcmFkIiB4MT0iNTUiIHkxPSIyNDUiIHgyPSIxMjUiIHkyPSIxMDUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxNTE4MTkiLz4KICAgIDxzdG9wIG9mZnNldD0iNTglIiBzdG9wLWNvbG9yPSIjMjAyNDI2Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Im91dEdyYWQiIHgxPSIxMjUiIHkxPSIyMzAiIHgyPSIyMzIiIHkyPSIyNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MiUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICAgIDxzdG9wIG9mZnNldD0iODQlIiBzdG9wLWNvbG9yPSIjOEI3NTZBIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNCNTZBM0MiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Imxvd2VyR3JhZCIgeDE9IjEyNSIgeTE9IjI0NSIgeDI9IjIzNSIgeTI9IjEwNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE1MTgxOSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiMyMDI0MjYiLz4KICAgIDxzdG9wIG9mZnNldD0iODYlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4Qjc1NkEiLz4KICA8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIj4KCjxnPgogIDwhLS0gbGVmdCByaXNpbmcgc3BhbiAtLT4KICA8cGF0aCBkPSIKICAgIE0gMjYsMjQ1CiAgICBMIDI2LDE5OQogICAgQyAyNiwxOTAgMzEsMTg1IDM4LDE4MQogICAgQyA0MywxNzggNDgsMTc2IDUyLDE3MwogICAgTCA1MiwyNDUKICAgIFoiIGZpbGw9InVybCgjbGVmdEdyYWQpIi8+CgogIDwhLS0gbWlkZGxlIHJpc2luZyBzcGFuIC0tPgogIDxwYXRoIGQ9IgogICAgTSA2MywyNDUKICAgIEwgNjMsMTYwCiAgICBDIDYzLDE0OSA3MCwxNDMgODAsMTM4CiAgICBDIDk0LDEzMSAxMDcsMTI0IDExNiwxMTUKICAgIEwgMTE2LDI0NQogICAgWiIgZmlsbD0idXJsKCNtaWRHcmFkKSIvPgoKICA8IS0tIHVwcGVyIHVuZm9sZGluZyBibGFkZSAtLT4KICA8cGF0aCBkPSIKICAgIE0gMTI4LDE2NgogICAgTCAxMjgsMTE5CiAgICBDIDEyOCwxMDIgMTM4LDkxIDE1Myw4MgogICAgQyAxNzgsNjcgMjAyLDQ5IDIyNCwyMwogICAgTCAyMjQsMTAyCiAgICBDIDIwNSwxMTUgMTg0LDEyNiAxNjUsMTM3CiAgICBDIDE0OCwxNDcgMTM2LDE1NyAxMjgsMTY2CiAgICBaIiBmaWxsPSJ1cmwoI291dEdyYWQpIi8+CgogIDwhLS0gbG93ZXIgdW5mb2xkaW5nIGJsYWRlIC0tPgogIDxwYXRoIGQ9IgogICAgTSAxMjgsMjQ1CiAgICBMIDEyOCwxOTkKICAgIEMgMTM2LDE4NCAxNDksMTcxIDE2NSwxNjEKICAgIEMgMTg3LDE0NyAyMTEsMTM1IDIzMywxMDYKICAgIEwgMjMzLDE3NwogICAgQyAyMzMsMTkzIDIyNCwyMDQgMjEwLDIxNAogICAgQyAxOTEsMjI3IDE2MiwyMzcgMTI4LDI0NQogICAgWiIgZmlsbD0idXJsKCNsb3dlckdyYWQpIi8+CjwvZz4KCjwvZz4KPC9zdmc+") center / contain no-repeat;
+    opacity: .026;
+    pointer-events: none;
 }
 
-
-/* =====================================================
-   OPEN NETWORK
-===================================================== */
-
-.industry-network {
-
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-
+.sectors-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 825px;
 }
 
-
-.industry-network-content {
-
-    max-width: 820px;
-
+.sectors-hero h1 {
+    max-width: 825px;
+    margin-bottom: 2rem;
+    font-size: clamp(3.15rem, 6.1vw, 6.15rem);
+    line-height: 1;
+    letter-spacing: -.05em;
 }
 
-
-.industry-network-content strong {
-
-    font-weight: 600;
-
+.sector-list {
+    max-width: 760px;
+    margin: 0;
+    color: #596267;
+    font-size: 1.04rem;
+    line-height: 1.75;
 }
 
-
-/* =====================================================
-   CTA
-===================================================== */
-
-.industry-cta {
-
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-
+/* Industrial environments — visual recognition only */
+.sector-visuals {
+    padding: clamp(4.5rem, 7vw, 6.75rem) 0;
+    background: var(--graphite-dark);
 }
 
+.sector-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid rgba(250,250,248,.12);
+    border-left: 1px solid rgba(250,250,248,.12);
+}
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+.sector-card {
+    position: relative;
+    min-height: 245px;
+    padding: clamp(1.8rem, 3vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(250,250,248,.12);
+    border-bottom: 1px solid rgba(250,250,248,.12);
+    color: rgba(250,250,248,.78);
+    overflow: hidden;
+    transition: opacity .24s ease, background-color .24s ease, transform .24s ease;
+}
+
+.sector-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -25% -55% 35%;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181,106,60,.12), transparent 68%);
+    opacity: 0;
+    transition: opacity .24s ease;
+    pointer-events: none;
+}
+
+.sector-grid:hover .sector-card {
+    opacity: .38;
+}
+
+.sector-grid .sector-card:hover {
+    opacity: 1;
+    background: rgba(250,250,248,.025);
+    transform: translateY(-2px);
+}
+
+.sector-card:hover::after {
+    opacity: 1;
+}
+
+.sector-icon {
+    width: 86px;
+    height: 86px;
+    color: rgba(250,250,248,.58);
+    transition: color .24s ease, transform .24s ease;
+}
+
+.sector-card:hover .sector-icon {
+    color: var(--copper);
+    transform: scale(1.08);
+}
+
+.sector-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.sector-icon * {
+    vector-effect: non-scaling-stroke;
+}
+
+.sector-card h2 {
+    position: relative;
+    z-index: 1;
+    margin: 2.4rem 0 0;
+    color: var(--white);
+    font-size: clamp(1.25rem, 2vw, 1.7rem);
+    line-height: 1.15;
+    letter-spacing: -.025em;
+}
+
+/* CTA */
+.sectors-cta {
+    padding: clamp(5rem, 8vw, 7rem) 0;
+}
+
+.sectors-cta .cta-box h2 {
+    max-width: 650px;
+}
+
+.sectors-cta .cta-box p {
+    max-width: 540px;
+}
 
 @media (max-width: 900px) {
-
-    .industry-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
+    .sector-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
-
-    .industry-flow {
-
-        grid-template-columns:
-            1fr
-            45px
-            1fr
-            45px
-            1fr;
-
-        padding: 2rem;
-
-    }
-
 }
-
 
 @media (max-width: 700px) {
-
-    .industries-hero {
-
-        padding: 4rem 0 4.5rem;
-
+    .sectors-hero {
+        padding: 4.5rem 0 4.75rem;
     }
 
-
-    .industries-intro,
-    .industry-positioning,
-    .industry-flow-section,
-    .industry-network,
-    .industry-cta {
-
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-
+    .sectors-hero::after {
+        width: 430px;
+        right: -230px;
+        opacity: .022;
     }
 
+    .sectors-hero h1 {
+        max-width: 92%;
+        font-size: clamp(2.7rem, 13vw, 4.3rem);
+    }
 
-    .industry-grid {
+    .sector-list {
+        max-width: 88%;
+        font-size: .98rem;
+    }
 
+    .sector-grid {
         grid-template-columns: 1fr;
-
     }
 
-
-    .industry-card {
-
-        min-height: auto;
-
+    .sector-card {
+        min-height: 205px;
     }
 
-
-    .industry-flow {
-
-        grid-template-columns: 1fr;
-
-        gap: 0;
-
+    .sector-grid:hover .sector-card {
+        opacity: 1;
     }
 
-
-    .industry-flow-node {
-
-        padding: 1rem 0;
-
+    .sector-icon {
+        width: 76px;
+        height: 76px;
     }
-
-
-    .industry-flow-arrow {
-
-        width: 1px;
-        height: 28px;
-
-        margin: 0 auto;
-
-    }
-
-
-    .industry-flow-arrow::after {
-
-        right: auto;
-        top: auto;
-        bottom: 0;
-        left: 50%;
-
-        transform:
-            translateX(-50%)
-            rotate(135deg);
-
-    }
-
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .sector-card,
+    .sector-icon {
+        transition: none;
+    }
+}
 </style>
-
-
 <link rel="stylesheet" href="../assets/css/interactions.css">
-
 </head>
-
-
-<body>
-
+<body class="sectors-page">
 
 <!-- =====================================================
      HEADER
@@ -485,7 +244,8 @@
     class="logo"
     aria-label="MRLD Home"
 >
-    MRLD
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTkgMjY5Ij4KCjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0ibGVmdEdyYWQiIHgxPSIyMCIgeTE9IjI0NSIgeDI9IjgwIiB5Mj0iMTUwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTUxODE5Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjcyJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KCiAgPGxpbmVhckdyYWRpZW50IGlkPSJtaWRHcmFkIiB4MT0iNTUiIHkxPSIyNDUiIHgyPSIxMjUiIHkyPSIxMDUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxNTE4MTkiLz4KICAgIDxzdG9wIG9mZnNldD0iNTglIiBzdG9wLWNvbG9yPSIjMjAyNDI2Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Im91dEdyYWQiIHgxPSIxMjUiIHkxPSIyMzAiIHgyPSIyMzIiIHkyPSIyNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MiUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICAgIDxzdG9wIG9mZnNldD0iODQlIiBzdG9wLWNvbG9yPSIjOEI3NTZBIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNCNTZBM0MiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Imxvd2VyR3JhZCIgeDE9IjEyNSIgeTE9IjI0NSIgeDI9IjIzNSIgeTI9IjEwNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE1MTgxOSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiMyMDI0MjYiLz4KICAgIDxzdG9wIG9mZnNldD0iODYlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4Qjc1NkEiLz4KICA8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIj4KCjxnPgogIDwhLS0gbGVmdCByaXNpbmcgc3BhbiAtLT4KICA8cGF0aCBkPSIKICAgIE0gMjYsMjQ1CiAgICBMIDI2LDE5OQogICAgQyAyNiwxOTAgMzEsMTg1IDM4LDE4MQogICAgQyA0MywxNzggNDgsMTc2IDUyLDE3MwogICAgTCA1MiwyNDUKICAgIFoiIGZpbGw9InVybCgjbGVmdEdyYWQpIi8+CgogIDwhLS0gbWlkZGxlIHJpc2luZyBzcGFuIC0tPgogIDxwYXRoIGQ9IgogICAgTSA2MywyNDUKICAgIEwgNjMsMTYwCiAgICBDIDYzLDE0OSA3MCwxNDMgODAsMTM4CiAgICBDIDk0LDEzMSAxMDcsMTI0IDExNiwxMTUKICAgIEwgMTE2LDI0NQogICAgWiIgZmlsbD0idXJsKCNtaWRHcmFkKSIvPgoKICA8IS0tIHVwcGVyIHVuZm9sZGluZyBibGFkZSAtLT4KICA8cGF0aCBkPSIKICAgIE0gMTI4LDE2NgogICAgTCAxMjgsMTE5CiAgICBDIDEyOCwxMDIgMTM4LDkxIDE1Myw4MgogICAgQyAxNzgsNjcgMjAyLDQ5IDIyNCwyMwogICAgTCAyMjQsMTAyCiAgICBDIDIwNSwxMTUgMTg0LDEyNiAxNjUsMTM3CiAgICBDIDE0OCwxNDcgMTM2LDE1NyAxMjgsMTY2CiAgICBaIiBmaWxsPSJ1cmwoI291dEdyYWQpIi8+CgogIDwhLS0gbG93ZXIgdW5mb2xkaW5nIGJsYWRlIC0tPgogIDxwYXRoIGQ9IgogICAgTSAxMjgsMjQ1CiAgICBMIDEyOCwxOTkKICAgIEMgMTM2LDE4NCAxNDksMTcxIDE2NSwxNjEKICAgIEMgMTg3LDE0NyAyMTEsMTM1IDIzMywxMDYKICAgIEwgMjMzLDE3NwogICAgQyAyMzMsMTkzIDIyNCwyMDQgMjEwLDIxNAogICAgQyAxOTEsMjI3IDE2MiwyMzcgMTI4LDI0NQogICAgWiIgZmlsbD0idXJsKCNsb3dlckdyYWQpIi8+CjwvZz4KCjwvZz4KPC9zdmc+" alt="" aria-hidden="true">
+    <span>MRLD</span>
 </a>
 
 
@@ -545,426 +305,82 @@ Contact
 
 </header>
 
-
-
 <main>
-
 
 <!-- =====================================================
      HERO
 ===================================================== -->
+<section class="hero sectors-hero">
+    <div class="container">
+        <div class="hero-content">
+            <span class="eyebrow">INDUSTRIAL ENVIRONMENTS</span>
 
-<section class="hero industries-hero">
+            <h1>The machine either fits the job or it doesn’t.</h1>
 
-<div class="container">
-
-<div class="hero-content">
-
-<span class="eyebrow">
-INDUSTRIES
-</span>
-
-
-<h1>
-Where industrial equipment reaches real markets.
-</h1>
-
-
-<p>
-MRLD works across industries where equipment, market access, and reliable
-execution matter — connecting manufacturers with buyers around practical
-commercial opportunities.
-</p>
-
-</div>
-
-</div>
-
+            <p class="sector-list">
+                Construction, mining, energy, manufacturing, infrastructure and material handling.
+            </p>
+        </div>
+    </div>
 </section>
-
-
 
 <!-- =====================================================
-     INDUSTRIES
+     SECTORS
 ===================================================== -->
+<section class="sector-visuals" aria-label="Industrial sectors">
+    <div class="container">
+        <div class="sector-grid">
+            <article class="sector-card">
+                <div class="sector-icon"><svg viewBox="0 0 96 96" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 67h48l11-17h13v17"/><path d="M20 67V51h25l8 16"/><path d="M39 51l9-22h8l13 21"/><path d="M51 29l18-9 7 4"/><circle cx="27" cy="72" r="8"/><circle cx="72" cy="72" r="8"/><path d="M10 80h76"/></svg></div>
+                <h2>Construction</h2>
+            </article>
 
-<section class="industries-intro">
+            <article class="sector-card">
+                <div class="sector-icon"><svg viewBox="0 0 96 96" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 72h74"/><path d="M18 65h47l10-20H45l-7-10H26l-5 30"/><path d="M49 45l7-17h21l8 17"/><circle cx="29" cy="69" r="10"/><circle cx="67" cy="69" r="10"/><path d="M58 28l7-10M64 18h13"/></svg></div>
+                <h2>Mining</h2>
+            </article>
 
-<div class="container">
+            <article class="sector-card">
+                <div class="sector-icon"><svg viewBox="0 0 96 96" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="15" y="26" width="66" height="45" rx="3"/><path d="M22 71v8M74 71v8M27 36h19v22H27z"/><circle cx="64" cy="47" r="10"/><path d="M64 41v12M58 47h12M34 31v-6h28v6"/><path d="M15 62h66"/></svg></div>
+                <h2>Energy</h2>
+            </article>
 
-<div class="industries-intro-content">
+            <article class="sector-card">
+                <div class="sector-icon"><svg viewBox="0 0 96 96" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 76V41l20 10V37l21 12V31l31 17v28z"/><path d="M68 31V17h9v19"/><path d="M22 61h9v8h-9zM41 61h9v8h-9zM60 61h9v8h-9z"/><path d="M12 76h72"/></svg></div>
+                <h2>Manufacturing</h2>
+            </article>
 
-<span class="eyebrow">
-MARKETS WE SERVE
-</span>
+            <article class="sector-card">
+                <div class="sector-icon"><svg viewBox="0 0 96 96" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 72h76"/><path d="M17 63h62"/><path d="M23 63V39M73 63V39"/><path d="M23 42c10 0 13-15 25-15s15 15 25 15"/><path d="M23 48h50"/><path d="M18 72l5-9M78 72l-5-9"/></svg></div>
+                <h2>Infrastructure</h2>
+            </article>
 
-
-<h2>
-Selected industries. Broad opportunities.
-</h2>
-
-
-<p>
-MRLD does not limit its network to a single industry. We focus on equipment
-categories and commercial opportunities where the right manufacturer and
-the right buyer can create value together.
-</p>
-
-
-</div>
-
-
-
-<div class="industry-grid">
-
-
-<article class="industry-card">
-
-<span class="industry-number">
-01
-</span>
-
-<h3>
-Construction
-</h3>
-
-<p>
-Earthmoving, infrastructure, and heavy construction equipment requirements.
-</p>
-
-</article>
-
-
-
-<article class="industry-card">
-
-<span class="industry-number">
-02
-</span>
-
-<h3>
-Mining
-</h3>
-
-<p>
-Equipment requirements for demanding extraction and resource environments.
-</p>
-
-</article>
-
-
-
-<article class="industry-card">
-
-<span class="industry-number">
-03
-</span>
-
-<h3>
-Energy
-</h3>
-
-<p>
-Power generation and equipment supporting energy-related projects.
-</p>
-
-</article>
-
-
-
-<article class="industry-card">
-
-<span class="industry-number">
-04
-</span>
-
-<h3>
-Manufacturing
-</h3>
-
-<p>
-Industrial equipment supporting production, processing, and operations.
-</p>
-
-</article>
-
-
-
-<article class="industry-card">
-
-<span class="industry-number">
-05
-</span>
-
-<h3>
-Infrastructure
-</h3>
-
-<p>
-Equipment requirements associated with large-scale infrastructure projects.
-</p>
-
-</article>
-
-
-
-<article class="industry-card">
-
-<span class="industry-number">
-06
-</span>
-
-<h3>
-Material Handling
-</h3>
-
-<p>
-Equipment supporting warehouses, facilities, and industrial operations.
-</p>
-
-</article>
-
-
-</div>
-
-</div>
-
+            <article class="sector-card">
+                <div class="sector-icon"><svg viewBox="0 0 96 96" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 68h41V45H40V30H27v38"/><path d="M59 68h12V25h5v43h10"/><path d="M76 59h11"/><circle cx="31" cy="72" r="8"/><circle cx="62" cy="72" r="8"/><path d="M41 45h18M18 68v-9h9"/></svg></div>
+                <h2>Material Handling</h2>
+            </article>
+        </div>
+    </div>
 </section>
-
-
-
-<!-- =====================================================
-     POSITIONING
-===================================================== -->
-
-<section class="industry-positioning">
-
-<div class="container">
-
-<div class="industry-positioning-content">
-
-<span class="eyebrow">
-OUR PERSPECTIVE
-</span>
-
-
-<h2>
-We start with the requirement — not the industry.
-</h2>
-
-
-<p>
-The same equipment category can serve very different industries, while
-similar operational requirements can appear across completely different
-sectors.
-</p>
-
-
-<p>
-That is why MRLD approaches opportunities from the application outward:
-understanding what the buyer needs, identifying where the right equipment
-and manufacturer may be found, and building the commercial connection
-between them.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     SIMPLE FLOW
-===================================================== -->
-
-<section class="process-section industry-flow-section">
-
-<div class="container">
-
-
-<div class="industry-flow-header">
-
-<span class="eyebrow eyebrow-light">
-HOW WE THINK
-</span>
-
-
-<h2>
-The industry is the context. The opportunity is the focus.
-</h2>
-
-
-<p>
-MRLD connects operational requirements with equipment, manufacturers, and
-markets rather than forcing opportunities into predefined categories.
-</p>
-
-</div>
-
-
-
-<div class="industry-flow">
-
-
-<div class="industry-flow-node">
-
-<span>
-01
-</span>
-
-<strong>
-REQUIREMENT
-</strong>
-
-<p>
-What does the project actually need?
-</p>
-
-</div>
-
-
-
-<div class="industry-flow-arrow"></div>
-
-
-
-<div class="industry-flow-node">
-
-<span>
-02
-</span>
-
-<strong>
-EQUIPMENT
-</strong>
-
-<p>
-What equipment can solve the requirement?
-</p>
-
-</div>
-
-
-
-<div class="industry-flow-arrow"></div>
-
-
-
-<div class="industry-flow-node">
-
-<span>
-03
-</span>
-
-<strong>
-MARKET CONNECTION
-</strong>
-
-<p>
-Where is the right manufacturer or buyer?
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     OPEN NETWORK
-===================================================== -->
-
-<section class="industry-network">
-
-<div class="container">
-
-<div class="industry-network-content">
-
-<span class="eyebrow">
-A GROWING NETWORK
-</span>
-
-
-<h2>
-Our network will evolve with the opportunities we pursue.
-</h2>
-
-
-<p>
-As MRLD develops relationships with additional manufacturers, buyers, and
-specialized partners, the industries and applications represented across
-the network will continue to expand.
-</p>
-
-
-<p>
-<strong>
-The objective is to build a network that connects the right equipment, markets, and people.
-</strong>
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
 
 <!-- =====================================================
      CTA
 ===================================================== -->
+<section class="cta-section sectors-cta">
+    <div class="container">
+        <div class="cta-box">
+            <div>
+                <span class="eyebrow">YOUR INDUSTRY ISN’T THE LIMIT</span>
+                <h2>Have an equipment requirement?</h2>
+                <p>Tell us what needs to be done.</p>
+            </div>
 
-<section class="cta-section industry-cta">
-
-<div class="container">
-
-<div class="cta-box">
-
-<div>
-
-<span class="eyebrow">
-START A CONVERSATION
-</span>
-
-
-<h2>
-Have an equipment opportunity?
-</h2>
-
-
-<p>
-Whether you are looking for a new source or looking to enter a new market,
-MRLD wants to understand the opportunity.
-</p>
-
-</div>
-
-
-<a
-    class="button"
-    href="contact.html"
->
-Connect with MRLD
-</a>
-
-</div>
-
-</div>
-
+            <a class="button" href="contact.html">Discuss Your Requirement</a>
+        </div>
+    </div>
 </section>
 
-
 </main>
-
-
 
 <!-- =====================================================
      FOOTER
@@ -1091,18 +507,6 @@ Terms of Use
 
 </footer>
 
-
-
-<!-- =====================================================
-     MOBILE NAVIGATION
-===================================================== -->
-
-
-
-
-
 <script src="../assets/js/site.js" defer></script>
-
 </body>
-
 </html>
