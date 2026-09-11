@@ -26,6 +26,25 @@
    Page-specific styles
 ===================================================== */
 
+/* Navigation mark — match primary MRLD site */
+.partner-page .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.68rem;
+    letter-spacing: 0.19em;
+}
+
+.partner-page .logo img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.partner-page .logo span {
+    transform: translateY(1px);
+}
+
+
 
 /* =====================================================
    ACCESS GATE
@@ -529,6 +548,16 @@
 
 @media (max-width: 650px) {
 
+    .partner-page .logo {
+        gap: .55rem;
+    }
+
+    .partner-page .logo img {
+        width: 26px;
+        height: 26px;
+    }
+
+
     .partner-gate {
         min-height: calc(100vh - 75px);
 
@@ -576,7 +605,7 @@
 </head>
 
 
-<body>
+<body class="partner-page">
 
 
 <!-- =====================================================
@@ -592,7 +621,8 @@
             class="logo"
             aria-label="MRLD Home"
         >
-            MRLD
+            <img src="assets/images/mrld-symbol-web.png" alt="" aria-hidden="true">
+            <span>MRLD</span>
         </a>
 
 
