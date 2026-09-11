@@ -461,6 +461,53 @@
    STAGE 2.5 FOOTER + LANGUAGE CONTROL
 ===================================================== */
 
+/* Desktop language control */
+.nav-language {
+    display: inline-flex;
+    align-items: center;
+    gap: .42rem;
+    margin-left: .65rem;
+    padding-left: 1.05rem;
+    border-left: 1px solid rgba(32,36,38,.20);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .10em;
+    line-height: 1;
+}
+
+.nav-language .lang-current,
+.nav-language .lang-option {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: none;
+}
+
+.nav-language .lang-current {
+    color: var(--graphite, #202426);
+}
+
+.nav-language .lang-separator {
+    color: rgba(32,36,38,.30);
+    font-weight: 400;
+}
+
+.nav-language .lang-option {
+    opacity: .45;
+    text-decoration: none;
+    transition: color .2s ease, opacity .2s ease;
+}
+
+.nav-language .lang-option:hover {
+    color: var(--copper, #b56a3c);
+    opacity: 1;
+}
+
 /* New footer */
 .footer-stage25 {
     margin: 0;
@@ -612,6 +659,15 @@
 }
 
 @media (max-width: 760px) {
+    .nav-language {
+        margin: .7rem 0 0;
+        padding: 1.15rem 0 0;
+        border-left: 0;
+        border-top: 1px solid rgba(32,36,38,.15);
+        width: 100%;
+        justify-content: flex-start;
+    }
+
     .footer-stage25-inner {
         width: min(100% - 2.25rem, 1240px);
         padding-top: 4.25rem;
@@ -638,12 +694,6 @@
     }
 }
 </style>
-
-
-<!-- Shared localization infrastructure -->
-<script src="assets/js/locale-loader.js"></script>
-<script src="assets/js/i18n.js" defer></script>
-<link rel="stylesheet" href="assets/css/i18n.css">
 
 </head>
 
@@ -717,6 +767,14 @@
                 <a href="pages/contact.html">
                     Contact
                 </a>
+            </li>
+
+            <li class="nav-language" aria-label="Language selector">
+                <span class="lang-current" aria-current="page">EN</span>
+                <span class="lang-separator" aria-hidden="true">/</span>
+                <a class="lang-option" href="#" onclick="return false;" lang="fr" aria-label="Français">FR</a>
+                <span class="lang-separator" aria-hidden="true">/</span>
+                <a class="lang-option" href="#" onclick="return false;" lang="th" aria-label="ภาษาไทย">ไทย</a>
             </li>
 
         </ul>
