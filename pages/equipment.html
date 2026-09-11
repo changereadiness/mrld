@@ -297,6 +297,12 @@
     flex: 0 0 auto;
     font-weight: 600;
     text-decoration: none;
+    transition: color .22s ease;
+}
+
+.logistics-bridge a:hover,
+.logistics-bridge a:focus-visible {
+    color: var(--copper);
 }
 
 /* Closing commercial exits */
@@ -359,6 +365,59 @@
 
 .path-panel.manufacturer-path .eyebrow {
     color: rgba(250,250,248,.45);
+}
+
+.path-panel,
+.path-panel .path-link {
+    transition: opacity .28s ease, filter .28s ease, color .22s ease;
+}
+
+.path-panel .path-link:hover,
+.path-panel .path-link:focus-visible,
+.path-panel.manufacturer-path .path-link:hover,
+.path-panel.manufacturer-path .path-link:focus-visible {
+    color: var(--copper);
+}
+
+.path-grid.has-path-hover .path-panel:not(.is-path-hovered) {
+    opacity: .34;
+    filter: grayscale(1);
+}
+
+/* Sourcing-flow focus interaction */
+.flow-side,
+.flow-core,
+.flow-core-mark {
+    transition: transform .32s cubic-bezier(.2,.7,.2,1), opacity .28s ease,
+                border-color .28s ease, box-shadow .28s ease;
+    transform-origin: center;
+}
+
+.requirement-flow.has-flow-focus .flow-side,
+.requirement-flow.has-flow-focus .flow-core {
+    opacity: .42;
+}
+
+.requirement-flow.has-flow-focus .flow-side.is-flow-focus,
+.requirement-flow.has-flow-focus .flow-core.is-flow-focus {
+    opacity: 1;
+    z-index: 4;
+}
+
+.requirement-flow.has-flow-focus .flow-side.is-flow-focus {
+    transform: scale(1.035);
+    border-color: rgba(181,106,60,.48);
+    box-shadow: 0 20px 55px rgba(0,0,0,.18);
+}
+
+.requirement-flow.has-flow-focus .flow-core.is-flow-focus {
+    transform: scale(1.08);
+}
+
+.requirement-flow.has-flow-focus .flow-core.is-flow-focus .flow-core-mark {
+    transform: scale(1.08);
+    border-color: rgba(181,106,60,.5);
+    box-shadow: 0 22px 70px rgba(0,0,0,.42);
 }
 
 /* Responsive */
@@ -585,7 +644,7 @@ Contact
             <article class="flow-side">
                 <span class="flow-kicker">YOUR REQUIREMENT</span>
 
-                <h3>Start with the right equipment</h3>
+                <h3>What must the equipment actually do?</h3>
 
                 <ul class="flow-factors">
                     <li>Application</li>
@@ -829,6 +888,42 @@ Terms of Use
 
 
 
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const pathGrid = document.querySelector('.path-grid');
+    const pathPanels = pathGrid ? [...pathGrid.querySelectorAll('.path-panel')] : [];
+
+    pathPanels.forEach((panel) => {
+        panel.addEventListener('pointerenter', () => {
+            pathGrid.classList.add('has-path-hover');
+            pathPanels.forEach((item) => item.classList.toggle('is-path-hovered', item === panel));
+        });
+
+        panel.addEventListener('pointerleave', () => {
+            pathGrid.classList.remove('has-path-hover');
+            pathPanels.forEach((item) => item.classList.remove('is-path-hovered'));
+        });
+    });
+
+    const flow = document.querySelector('.requirement-flow');
+    const flowNodes = flow ? [...flow.querySelectorAll('.flow-side, .flow-core')] : [];
+
+    if (flow && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        flowNodes.forEach((node) => {
+            node.addEventListener('mouseenter', () => {
+                flow.classList.add('has-flow-focus');
+                flowNodes.forEach((item) => item.classList.toggle('is-flow-focus', item === node));
+            });
+
+            node.addEventListener('mouseleave', () => {
+                flow.classList.remove('has-flow-focus');
+                flowNodes.forEach((item) => item.classList.remove('is-flow-focus'));
+            });
+        });
+    }
+});
+</script>
 
 <script src="../assets/js/site.js" defer></script>
 
