@@ -412,6 +412,49 @@ Design language:
 - no generic corporate iconography unless it earns its place;
 - restrained motion.
 
+### Stage 2.5 global footer
+
+The primary public site now uses the Stage 2.5 footer on:
+
+- `index.html`;
+- Equipment;
+- Project Logistics;
+- Sectors / `industries.html`;
+- About;
+- Contact;
+- Privacy;
+- Terms;
+- Partner;
+- legacy Bridge page.
+
+The footer is intentionally architectural rather than explanatory. It contains:
+
+- the MRLD symbol + wordmark;
+- a subtle acronym expansion: `MARKET REACH · LEVERAGE · DEVELOPMENT`;
+- three navigation groups: Explore, Company, Connect;
+- Privacy / Terms and copyright in the utility row.
+
+The old footer description and `Canadian company. Global reach.` line were intentionally removed. Canadian identity remains present elsewhere in site content and should not be reintroduced into the footer without a deliberate content decision.
+
+The footer label uses **Sectors** even though the current primary navigation still uses **Industries** and the physical file remains `industries.html`. This is intentional during the transition period.
+
+### Language control
+
+The primary navbar now includes the visual language selector:
+
+```text
+EN / FR / ไทย
+```
+
+Current state:
+
+- English is the active language;
+- French and Thai controls are presentation placeholders only;
+- their links currently use `href="#"` and cancel navigation;
+- localized routing should be introduced only when the translated site structure is implemented.
+
+Do not use flags or a globe icon for this control unless the design direction is explicitly revisited.
+
 ### Typography
 
 The site no longer calls Google Fonts.
@@ -881,7 +924,8 @@ Current state:
 
 - page title/content: Sectors;
 - filename: `industries.html`;
-- nav/footer: Industries.
+- primary navigation: Industries;
+- Stage 2.5 footer: Sectors.
 
 If changed, preserve compatibility for existing indexed/shared URLs.
 

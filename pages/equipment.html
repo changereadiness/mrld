@@ -504,6 +504,245 @@
 
 <link rel="stylesheet" href="../assets/css/interactions.css">
 
+
+
+<style>
+/* =====================================================
+   STAGE 2.5 FOOTER + LANGUAGE CONTROL
+===================================================== */
+
+.nav-language {
+    display: inline-flex;
+    align-items: center;
+    gap: .42rem;
+    margin-left: .65rem;
+    padding-left: 1.05rem;
+    border-left: 1px solid rgba(32,36,38,.20);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .10em;
+    line-height: 1;
+}
+
+.nav-language .lang-current,
+.nav-language .lang-option {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: none;
+}
+
+.nav-language .lang-current {
+    color: var(--graphite, #202426);
+}
+
+.nav-language .lang-separator {
+    color: rgba(32,36,38,.30);
+    font-weight: 400;
+}
+
+.nav-language .lang-option {
+    opacity: .45;
+    text-decoration: none;
+    transition: color .2s ease, opacity .2s ease;
+}
+
+.nav-language .lang-option:hover {
+    color: var(--copper, #b56a3c);
+    opacity: 1;
+}
+
+.footer-stage25 {
+    margin: 0;
+    padding: 0;
+    background: #151819;
+    color: #f4f3ef;
+}
+
+.footer-stage25-inner {
+    width: min(100% - 3rem, 1240px);
+    margin: 0 auto;
+    padding: clamp(4.75rem, 7vw, 7rem) 0 2rem;
+}
+
+.footer-identity {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: end;
+}
+
+.footer-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(.75rem, 1.5vw, 1.2rem);
+    min-width: 0;
+}
+
+.footer-symbol {
+    display: inline-block;
+    flex: 0 0 auto;
+    width: clamp(33px, 3.2vw, 46px);
+    height: clamp(33px, 3.2vw, 46px);
+    background: #faf9f6;
+    -webkit-mask: url("../assets/images/mrld-symbol-web.png") center / contain no-repeat;
+    mask: url("../assets/images/mrld-symbol-web.png") center / contain no-repeat;
+}
+
+.footer-wordmark {
+    font-family: var(--heading-font, system-ui, sans-serif);
+    font-size: clamp(2.95rem, 6.2vw, 5.35rem);
+    font-weight: 700;
+    line-height: .82;
+    letter-spacing: -.055em;
+    color: #faf9f6;
+}
+
+.footer-acronym {
+    margin: 0 0 .35rem;
+    color: var(--copper, #b56a3c);
+    font-size: .68rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.footer-rule {
+    height: 1px;
+    margin: clamp(2.75rem, 5vw, 4.5rem) 0 clamp(2.75rem, 4vw, 3.75rem);
+    background: rgba(255,255,255,.13);
+}
+
+.footer-nav-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1fr;
+    gap: clamp(2.5rem, 8vw, 8rem);
+    max-width: 820px;
+}
+
+.footer-nav-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .62rem;
+}
+
+.footer-nav-group h4 {
+    margin: 0 0 .8rem;
+    color: rgba(244,243,239,.43);
+    font-size: .66rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.footer-nav-group a,
+.footer-legal-links a {
+    color: rgba(250,249,246,.82);
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.footer-nav-group a {
+    font-size: .96rem;
+}
+
+.footer-nav-group a:hover,
+.footer-legal-links a:hover {
+    color: var(--copper, #b56a3c);
+}
+
+.footer-rule-bottom {
+    margin-top: clamp(3.5rem, 6vw, 5.5rem);
+    margin-bottom: 1.55rem;
+}
+
+.footer-utility {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    color: rgba(244,243,239,.38);
+    font-size: .74rem;
+}
+
+.footer-utility p {
+    margin: 0;
+    color: inherit;
+}
+
+.footer-legal-links {
+    display: inline-flex;
+    gap: 1.25rem;
+}
+
+.footer-legal-links a {
+    color: rgba(244,243,239,.52);
+    font-size: .74rem;
+}
+
+@media (max-width: 840px) {
+    .footer-identity {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 1.8rem;
+    }
+
+    .footer-acronym {
+        margin: 0;
+        white-space: normal;
+    }
+
+    .footer-nav-grid {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 760px) {
+    .nav-language {
+        margin: .7rem 0 0;
+        padding: 1.15rem 0 0;
+        border-left: 0;
+        border-top: 1px solid rgba(32,36,38,.15);
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .footer-stage25-inner {
+        width: min(100% - 2.25rem, 1240px);
+        padding-top: 4.25rem;
+    }
+
+    .footer-symbol {
+        width: 29px;
+        height: 29px;
+    }
+
+    .footer-wordmark {
+        font-size: clamp(2.55rem, 13vw, 3.75rem);
+    }
+
+    .footer-nav-grid {
+        grid-template-columns: 1fr;
+        gap: 2.65rem;
+    }
+
+    .footer-utility {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+</style>
+
 </head>
 
 
@@ -578,7 +817,16 @@ Contact
 </a>
 </li>
 
-</ul>
+
+            <li class="nav-language" aria-label="Language selector">
+                <span class="lang-current" aria-current="page">EN</span>
+                <span class="lang-separator" aria-hidden="true">/</span>
+                <a class="lang-option" href="#" onclick="return false;" lang="fr" aria-label="Français">FR</a>
+                <span class="lang-separator" aria-hidden="true">/</span>
+                <a class="lang-option" href="#" onclick="return false;" lang="th" aria-label="ภาษาไทย">ไทย</a>
+            </li>
+
+        </ul>
 
 </nav>
 
@@ -753,123 +1001,66 @@ We start with the requirement, then finds the source.
      FOOTER
 ===================================================== -->
 
-<footer>
+<!-- =====================================================
+     FOOTER — STAGE 2.5
+===================================================== -->
 
-<div class="footer-content">
+<footer class="footer-stage25">
 
+    <div class="footer-stage25-inner">
 
-<div class="footer-brand">
+        <div class="footer-identity">
+            <div class="footer-lockup">
+                <span class="footer-symbol" aria-hidden="true"></span>
+                <span class="footer-wordmark">MRLD</span>
+            </div>
 
-<div class="footer-logo">
-<h3>
-MRLD
-</h3>
-</div>
+            <p class="footer-acronym">
+                MARKET REACH · LEVERAGE · DEVELOPMENT
+            </p>
+        </div>
 
+        <div class="footer-rule" aria-hidden="true"></div>
 
-<p class="footer-tagline">
-Market Reach. Leverage. Development.
-</p>
+        <div class="footer-nav-grid">
 
+            <nav class="footer-nav-group" aria-label="Explore">
+                <h4>Explore</h4>
+                <a href="equipment.html">Equipment</a>
+                <a href="project-logistics.html">Project Logistics</a>
+                <a href="industries.html">Sectors</a>
+            </nav>
 
-<p class="footer-description">
-Connecting selected manufacturers with qualified buyers across established and emerging markets.
-</p>
+            <nav class="footer-nav-group" aria-label="Company">
+                <h4>Company</h4>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
 
-</div>
+            <nav class="footer-nav-group" aria-label="Connect">
+                <h4>Connect</h4>
+                <a
+                    href="https://www.linkedin.com/in/sayudi/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >LinkedIn</a>
+                <a href="mailto:contact@sayudi.com">Email</a>
+            </nav>
 
+        </div>
 
+        <div class="footer-rule footer-rule-bottom" aria-hidden="true"></div>
 
-<div class="footer-links">
+        <div class="footer-utility">
+            <div class="footer-legal-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
 
+            <p>© 2026 MRLD, a Sayudi Inc. company.</p>
+        </div>
 
-<div class="footer-column">
-
-<h4>
-Explore
-</h4>
-
-<a href="equipment.html">
-Equipment
-</a>
-
-<a href="project-logistics.html">
-Project Logistics
-</a>
-
-<a href="industries.html">
-Industries
-</a>
-
-<a href="about.html">
-About
-</a>
-
-</div>
-
-
-
-<div class="footer-column">
-
-<h4>
-Connect
-</h4>
-
-<a
-    href="https://www.linkedin.com/in/sayudi/"
-    target="_blank"
-    rel="noopener noreferrer"
->
-LinkedIn
-</a>
-
-<a href="mailto:contact@sayudi.com">
-Email
-</a>
-
-<a href="contact.html">
-Contact
-</a>
-
-</div>
-
-
-
-<div class="footer-column">
-
-<h4>
-Legal
-</h4>
-
-<a href="privacy.html">
-Privacy Policy
-</a>
-
-<a href="terms.html">
-Terms of Use
-</a>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-<div class="footer-bottom">
-
-<p class="footer-canada">
-🇨🇦 Canadian company. Global reach.
-</p>
-
-
-<p>
-© 2026 MRLD, a Sayudi Inc. company. All rights reserved.
-</p>
-
-</div>
+    </div>
 
 </footer>
 
