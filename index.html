@@ -328,75 +328,6 @@
     background: #292e30;
 }
 
-/* Brand strip */
-.brand-strip {
-    padding: 2.1rem 0 0;
-}
-
-.brand-strip-label {
-    margin-bottom: 1.75rem;
-    font-size: .67rem;
-    font-weight: 600;
-    letter-spacing: .15em;
-    color: #7b8386;
-    text-transform: uppercase;
-}
-
-.brand-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    align-items: center;
-    gap: clamp(1.25rem, 4vw, 4rem);
-    padding: 2rem 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-
-.brand-mark {
-    min-height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: .55;
-    transition: opacity .22s ease;
-}
-
-.brand-mark:hover {
-    opacity: .8;
-}
-
-.brand-mark img {
-    max-width: 145px;
-    max-height: 52px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    filter: grayscale(1) contrast(1.1);
-    mix-blend-mode: multiply;
-}
-
-.brand-mark[data-brand="cummins"] img {
-    max-height: 58px;
-    max-width: 64px;
-}
-
-.brand-mark[data-brand="mwm"] img {
-    max-height: 58px;
-    max-width: 118px;
-}
-
-.brand-mark[data-brand="waukesha"] img {
-    max-width: 150px;
-}
-
-.brand-fallback {
-    display: block;
-    font-family: var(--heading-font);
-    font-size: .9rem;
-    font-weight: 700;
-    letter-spacing: .11em;
-    color: var(--graphite);
-}
 
 /* Final CTA */
 .final-cta {
@@ -770,34 +701,6 @@
                 <span>Industrial equipment manufacturers exploring the Canadian market are invited to start a conversation.</span>
                 <span class="equipment-arrow">Discuss your equipment →</span>
             </a>
-
-        </div>
-
-        <div class="brand-strip">
-
-            <div class="brand-strip-label">
-                Selected equipment brands
-            </div>
-
-            <div class="brand-grid" aria-label="Selected equipment brands available through MRLD">
-
-                <div class="brand-mark" data-brand="caterpillar">
-                    <span class="brand-fallback">CATERPILLAR</span>
-                </div>
-
-                <div class="brand-mark" data-brand="mwm">
-                    <span class="brand-fallback">MWM</span>
-                </div>
-
-                <div class="brand-mark" data-brand="cummins">
-                    <span class="brand-fallback">CUMMINS</span>
-                </div>
-
-                <div class="brand-mark" data-brand="waukesha">
-                    <span class="brand-fallback">WAUKESHA</span>
-                </div>
-
-            </div>
 
         </div>
 
