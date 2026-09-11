@@ -10,11 +10,6 @@
 <title>Project Logistics | MRLD</title>
 <meta name="description" content="MRLD coordinates industrial equipment projects from supplier to site, keeping parties, requirements, and delivery dependencies connected through specialized logistics providers.">
 <meta name="author" content="MRLD">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="../assets/css/style.css">
 
 <style>
@@ -45,6 +40,8 @@
 .logistics-hero {
     position: relative;
     overflow: hidden;
+    height: clamp(31rem, 40vw, 35rem);
+    box-sizing: border-box;
     padding: clamp(5.5rem, 9vw, 8.5rem) 0 clamp(5rem, 8vw, 7.5rem);
 }
 
@@ -69,7 +66,7 @@
 
 .logistics-hero h1 {
     max-width: 980px;
-    margin-bottom: 1.65rem;
+    margin: 0 0 1.65rem;
     font-size: clamp(3.15rem, 6.1vw, 6.15rem);
     line-height: 1;
     letter-spacing: -.05em;
@@ -377,6 +374,7 @@
 
 @media (max-width: 700px) {
     .logistics-hero {
+        height: 35rem;
         padding: 4.5rem 0 4.75rem;
     }
 
@@ -386,9 +384,6 @@
         opacity: .026;
     }
 
-    .logistics-hero h1 {
-        font-size: clamp(3rem, 15vw, 4.45rem);
-    }
 
     .delivery-section,
     .logistics-cta {

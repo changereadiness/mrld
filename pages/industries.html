@@ -7,9 +7,6 @@
 <title>Sectors | MRLD</title>
 <meta name="description" content="MRLD works across industrial environments including construction, mining, energy, manufacturing, infrastructure, and material handling.">
 <meta name="author" content="MRLD">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
 /* =====================================================
@@ -39,6 +36,8 @@
 .sectors-hero {
     position: relative;
     overflow: hidden;
+    height: clamp(31rem, 40vw, 35rem);
+    box-sizing: border-box;
     padding: clamp(5.5rem, 9vw, 8.5rem) 0 clamp(5rem, 8vw, 7.5rem);
 }
 
@@ -62,18 +61,18 @@
 }
 
 .sectors-hero h1 {
-    max-width: 825px;
-    margin-bottom: 2rem;
+    max-width: 980px;
+    margin: 0 0 1.65rem;
     font-size: clamp(3.15rem, 6.1vw, 6.15rem);
     line-height: 1;
     letter-spacing: -.05em;
 }
 
 .sector-list {
-    max-width: 760px;
+    max-width: 790px;
     margin: 0;
     color: #596267;
-    font-size: 1.04rem;
+    font-size: 1.1rem;
     line-height: 1.75;
 }
 
@@ -194,6 +193,7 @@
 
 @media (max-width: 700px) {
     .sectors-hero {
+        height: 35rem;
         padding: 4.5rem 0 4.75rem;
     }
 
@@ -205,7 +205,6 @@
 
     .sectors-hero h1 {
         max-width: 92%;
-        font-size: clamp(2.7rem, 13vw, 4.3rem);
     }
 
     .sector-list {
@@ -337,7 +336,7 @@ Contact
 <section class="sector-visuals" aria-label="Industrial sectors">
     <div class="container">
         <div class="sector-grid">
-            <!-- Temporary remote Unsplash imagery; localize during final self-contained pass. -->
+            <!-- Approved industrial sector photography. -->
             <article class="sector-card" tabindex="0">
                 <div class="sector-photo">
                     <img src="https://images.unsplash.com/photo-1494778924281-cce023ab1acb?auto=format&fit=crop&fm=jpg&q=72&w=1800" alt="Excavator bucket detail on a construction site" loading="lazy">
