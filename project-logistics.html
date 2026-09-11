@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+<title>Project Logistics | MRLD</title>
+<meta name="description" content="MRLD coordinates industrial equipment projects from supplier to site, keeping parties, requirements, and delivery dependencies connected through specialized logistics providers.">
+<meta name="author" content="MRLD">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+/* =====================================================
+   MRLD — STAGE 2 PROJECT LOGISTICS
+   One path. Six dependencies. No theatre.
+===================================================== */
+
+/* Navigation mark */
+.logistics-page .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.68rem;
+    letter-spacing: 0.19em;
+}
+
+.logistics-page .logo img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.logistics-page .logo span {
+    transform: translateY(1px);
+}
+
+/* Hero — intentionally matched to Equipment */
+.logistics-hero {
+    position: relative;
+    overflow: hidden;
+    height: clamp(31rem, 40vw, 35rem);
+    box-sizing: border-box;
+    padding: clamp(5.5rem, 9vw, 8.5rem) 0 clamp(5rem, 8vw, 7.5rem);
+}
+
+.logistics-hero::after {
+    content: "";
+    position: absolute;
+    width: min(40vw, 560px);
+    aspect-ratio: 1;
+    right: clamp(-13rem, -8vw, -3rem);
+    top: 50%;
+    transform: translateY(-50%);
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTkgMjY5Ij4KCjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0ibGVmdEdyYWQiIHgxPSIyMCIgeTE9IjI0NSIgeDI9IjgwIiB5Mj0iMTUwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTUxODE5Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjcyJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KCiAgPGxpbmVhckdyYWRpZW50IGlkPSJtaWRHcmFkIiB4MT0iNTUiIHkxPSIyNDUiIHgyPSIxMjUiIHkyPSIxMDUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxNTE4MTkiLz4KICAgIDxzdG9wIG9mZnNldD0iNTglIiBzdG9wLWNvbG9yPSIjMjAyNDI2Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Im91dEdyYWQiIHgxPSIxMjUiIHkxPSIyMzAiIHgyPSIyMzIiIHkyPSIyNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MiUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICAgIDxzdG9wIG9mZnNldD0iODQlIiBzdG9wLWNvbG9yPSIjOEI3NTZBIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNCNTZBM0MiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Imxvd2VyR3JhZCIgeDE9IjEyNSIgeTE9IjI0NSIgeDI9IjIzNSIgeTI9IjEwNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE1MTgxOSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiMyMDI0MjYiLz4KICAgIDxzdG9wIG9mZnNldD0iODYlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4Qjc1NkEiLz4KICA8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIj4KCjxnPgogIDwhLS0gbGVmdCByaXNpbmcgc3BhbiAtLT4KICA8cGF0aCBkPSIKICAgIE0gMjYsMjQ1CiAgICBMIDI2LDE5OQogICAgQyAyNiwxOTAgMzEsMTg1IDM4LDE4MQogICAgQyA0MywxNzggNDgsMTc2IDUyLDE3MwogICAgTCA1MiwyNDUKICAgIFoiIGZpbGw9InVybCgjbGVmdEdyYWQpIi8+CgogIDwhLS0gbWlkZGxlIHJpc2luZyBzcGFuIC0tPgogIDxwYXRoIGQ9IgogICAgTSA2MywyNDUKICAgIEwgNjMsMTYwCiAgICBDIDYzLDE0OSA3MCwxNDMgODAsMTM4CiAgICBDIDk0LDEzMSAxMDcsMTI0IDExNiwxMTUKICAgIEwgMTE2LDI0NQogICAgWiIgZmlsbD0idXJsKCNtaWRHcmFkKSIvPgoKICA8IS0tIHVwcGVyIHVuZm9sZGluZyBibGFkZSAtLT4KICA8cGF0aCBkPSIKICAgIE0gMTI4LDE2NgogICAgTCAxMjgsMTE5CiAgICBDIDEyOCwxMDIgMTM4LDkxIDE1Myw4MgogICAgQyAxNzgsNjcgMjAyLDQ5IDIyNCwyMwogICAgTCAyMjQsMTAyCiAgICBDIDIwNSwxMTUgMTg0LDEyNiAxNjUsMTM3CiAgICBDIDE0OCwxNDcgMTM2LDE1NyAxMjgsMTY2CiAgICBaIiBmaWxsPSJ1cmwoI291dEdyYWQpIi8+CgogIDwhLS0gbG93ZXIgdW5mb2xkaW5nIGJsYWRlIC0tPgogIDxwYXRoIGQ9IgogICAgTSAxMjgsMjQ1CiAgICBMIDEyOCwxOTkKICAgIEMgMTM2LDE4NCAxNDksMTcxIDE2NSwxNjEKICAgIEMgMTg3LDE0NyAyMTEsMTM1IDIzMywxMDYKICAgIEwgMjMzLDE3NwogICAgQyAyMzMsMTkzIDIyNCwyMDQgMjEwLDIxNAogICAgQyAxOTEsMjI3IDE2MiwyMzcgMTI4LDI0NQogICAgWiIgZmlsbD0idXJsKCNsb3dlckdyYWQpIi8+CjwvZz4KCjwvZz4KPC9zdmc+") center / contain no-repeat;
+    opacity: .026;
+    pointer-events: none;
+}
+
+.logistics-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 990px;
+}
+
+.logistics-hero h1 {
+    max-width: 980px;
+    margin: 0 0 1.65rem;
+    font-size: clamp(3.15rem, 6.1vw, 6.15rem);
+    line-height: 1;
+    letter-spacing: -.05em;
+}
+
+.logistics-hero p {
+    max-width: 790px;
+    color: #596267;
+    font-size: 1.1rem;
+}
+
+/* Supplier-to-site interactive path */
+.delivery-section {
+    padding: clamp(5.5rem, 8vw, 8rem) 0;
+    background: var(--graphite-dark);
+    color: rgba(250,250,248,.74);
+}
+
+.delivery-header {
+    max-width: 790px;
+    margin-bottom: clamp(3.5rem, 6vw, 5.25rem);
+}
+
+.delivery-header .eyebrow {
+    color: rgba(250,250,248,.48);
+}
+
+.delivery-header h2 {
+    max-width: 760px;
+    color: var(--white);
+    font-size: clamp(2.45rem, 4.5vw, 4.6rem);
+    line-height: 1.03;
+    letter-spacing: -.043em;
+}
+
+.delivery-header p {
+    max-width: 650px;
+    color: rgba(250,250,248,.58);
+    font-size: 1.02rem;
+}
+
+.delivery-canvas {
+    position: relative;
+    padding: clamp(2.4rem, 5vw, 4rem);
+    border: 1px solid rgba(250,250,248,.12);
+    background:
+        linear-gradient(rgba(250,250,248,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(250,250,248,.025) 1px, transparent 1px),
+        #151819;
+    background-size: 42px 42px;
+    overflow: hidden;
+}
+
+.delivery-canvas::before {
+    content: "";
+    position: absolute;
+    width: 620px;
+    height: 620px;
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181,106,60,.085) 0%, transparent 68%);
+    pointer-events: none;
+}
+
+.delivery-track {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0;
+    padding: 1.3rem 0 .9rem;
+}
+
+.delivery-track::before {
+    content: "";
+    position: absolute;
+    left: 7.5%;
+    right: 7.5%;
+    top: 62px;
+    height: 1px;
+    background: rgba(250,250,248,.18);
+    pointer-events: none;
+}
+
+.delivery-track::after {
+    content: "";
+    position: absolute;
+    left: 7.5%;
+    top: 60px;
+    width: 18%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--copper), transparent);
+    opacity: .68;
+    animation: logisticsPulse 7.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes logisticsPulse {
+    0%, 100% { transform: translateX(0); opacity: .08; }
+    42% { opacity: .72; }
+    78% { transform: translateX(390%); opacity: .32; }
+}
+
+.delivery-step {
+    position: relative;
+    z-index: 2;
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: center;
+    cursor: pointer;
+    padding: 0 .55rem 1.2rem;
+    transition: opacity .24s ease, transform .24s ease;
+}
+
+.delivery-step:focus-visible {
+    outline: 1px solid var(--copper);
+    outline-offset: 8px;
+}
+
+.step-node {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 1rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(250,250,248,.2);
+    border-radius: 50%;
+    background: #151819;
+    box-shadow: 0 12px 36px rgba(0,0,0,.2);
+    color: rgba(250,250,248,.48);
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    transition: transform .24s ease, background-color .24s ease, border-color .24s ease, color .24s ease, box-shadow .24s ease;
+}
+
+.delivery-step strong {
+    display: block;
+    max-width: 150px;
+    margin: 0 auto;
+    color: rgba(250,250,248,.78);
+    font-family: var(--heading-font);
+    font-size: .86rem;
+    line-height: 1.35;
+    transition: color .24s ease;
+}
+
+.delivery-canvas.has-active-step .delivery-step:not(.is-active) {
+    opacity: .38;
+}
+
+.delivery-step.is-active {
+    transform: translateY(-5px);
+}
+
+.delivery-step.is-active .step-node {
+    transform: scale(1.16);
+    background: var(--background);
+    border-color: rgba(181,106,60,.72);
+    color: var(--graphite);
+    box-shadow: 0 18px 48px rgba(0,0,0,.34);
+}
+
+.delivery-step.is-active strong {
+    color: var(--white);
+}
+
+.delivery-detail {
+    position: relative;
+    z-index: 1;
+    min-height: 115px;
+    margin-top: clamp(2rem, 4vw, 3.4rem);
+    padding-top: 1.8rem;
+    border-top: 1px solid rgba(250,250,248,.11);
+}
+
+.delivery-detail-inner {
+    max-width: 760px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.delivery-detail.is-visible .delivery-detail-inner {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delivery-detail-label {
+    display: block;
+    margin-bottom: .65rem;
+    color: var(--copper);
+    font-size: .66rem;
+    font-weight: 600;
+    letter-spacing: .15em;
+}
+
+.delivery-detail p {
+    max-width: 760px;
+    color: rgba(250,250,248,.66);
+    font-size: .98rem;
+}
+
+.coordination-note {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: .8rem;
+    padding-top: 1.65rem;
+    border-top: 1px solid rgba(250,250,248,.11);
+}
+
+.coordination-note::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    flex: 0 0 auto;
+    margin-top: .83rem;
+    background: var(--copper);
+}
+
+.coordination-note p {
+    max-width: 820px;
+    color: rgba(250,250,248,.62);
+    font-size: .9rem;
+}
+
+.coordination-note strong {
+    color: rgba(250,250,248,.88);
+    font-weight: 600;
+}
+
+/* Closing CTA */
+.logistics-cta {
+    padding: clamp(5.5rem, 8vw, 8rem) 0;
+}
+
+.logistics-cta-box {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) auto;
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: end;
+    padding: clamp(2.6rem, 5vw, 4.5rem);
+    border: 1px solid var(--border);
+    background: rgba(250,250,248,.32);
+}
+
+.logistics-cta h2 {
+    max-width: 780px;
+    margin-bottom: 1.25rem;
+    font-size: clamp(2.5rem, 4.6vw, 4.7rem);
+    line-height: 1.03;
+    letter-spacing: -.043em;
+}
+
+.logistics-cta p {
+    max-width: 690px;
+    color: #5d666a;
+    font-size: 1.02rem;
+}
+
+.logistics-cta .button {
+    white-space: nowrap;
+    transition: background-color .22s ease, border-color .22s ease, color .22s ease, transform .22s ease;
+}
+
+.logistics-cta .button:hover,
+.logistics-cta .button:focus-visible {
+    background: var(--copper);
+    border-color: var(--copper);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .delivery-track::after { animation: none; }
+    .delivery-step,
+    .step-node,
+    .delivery-detail-inner,
+    .logistics-cta .button { transition: none; }
+}
+
+@media (max-width: 980px) {
+    .delivery-track {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 2.8rem;
+    }
+
+    .delivery-track::before,
+    .delivery-track::after {
+        display: none;
+    }
+
+    .logistics-cta-box {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+}
+
+@media (max-width: 700px) {
+    .logistics-hero {
+        height: 35rem;
+        padding: 4.5rem 0 4.75rem;
+    }
+
+    .logistics-hero::after {
+        width: 90vw;
+        right: -48vw;
+        opacity: .026;
+    }
+
+
+    .delivery-section,
+    .logistics-cta {
+        padding: 4.5rem 0;
+    }
+
+    .delivery-canvas {
+        padding: 2rem 1.15rem;
+    }
+
+    .delivery-track {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 2.15rem;
+    }
+
+    .delivery-step {
+        padding-inline: .35rem;
+    }
+
+    .step-node {
+        width: 54px;
+        height: 54px;
+    }
+
+    .delivery-detail {
+        min-height: 150px;
+    }
+
+    .coordination-note {
+        gap: .75rem;
+    }
+
+    .logistics-cta-box {
+        padding: 2rem;
+    }
+}
+</style>
+
+<link rel="stylesheet" href="assets/css/interactions.css">
+
+
+<style>
+/* =====================================================
+   STAGE 2.5 FOOTER + LANGUAGE CONTROL
+===================================================== */
+
+.nav-language {
+    display: inline-flex;
+    align-items: center;
+    gap: .42rem;
+    margin-left: .65rem;
+    padding-left: 1.05rem;
+    border-left: 1px solid rgba(32,36,38,.20);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .10em;
+    line-height: 1;
+}
+
+.nav-language .lang-current,
+.nav-language .lang-option {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-transform: none;
+}
+
+.nav-language .lang-current {
+    color: var(--graphite, #202426);
+}
+
+.nav-language .lang-separator {
+    color: rgba(32,36,38,.30);
+    font-weight: 400;
+}
+
+.nav-language .lang-option {
+    opacity: .45;
+    text-decoration: none;
+    transition: color .2s ease, opacity .2s ease;
+}
+
+.nav-language .lang-option:hover {
+    color: var(--copper, #b56a3c);
+    opacity: 1;
+}
+
+.footer-stage25 {
+    margin: 0;
+    padding: 0;
+    background: #151819;
+    color: #f4f3ef;
+}
+
+.footer-stage25-inner {
+    width: min(100% - 3rem, 1240px);
+    margin: 0 auto;
+    padding: clamp(4.75rem, 7vw, 7rem) 0 2rem;
+}
+
+.footer-identity {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: end;
+}
+
+.footer-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(.75rem, 1.5vw, 1.2rem);
+    min-width: 0;
+}
+
+.footer-symbol {
+    display: inline-block;
+    flex: 0 0 auto;
+    width: clamp(33px, 3.2vw, 46px);
+    height: clamp(33px, 3.2vw, 46px);
+    background: #faf9f6;
+    -webkit-mask: url("assets/images/mrld-symbol-web.png") center / contain no-repeat;
+    mask: url("assets/images/mrld-symbol-web.png") center / contain no-repeat;
+}
+
+.footer-wordmark {
+    font-family: var(--heading-font, system-ui, sans-serif);
+    font-size: clamp(2.95rem, 6.2vw, 5.35rem);
+    font-weight: 700;
+    line-height: .82;
+    letter-spacing: -.055em;
+    color: #faf9f6;
+}
+
+.footer-acronym {
+    margin: 0 0 .35rem;
+    color: var(--copper, #b56a3c);
+    font-size: .68rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.footer-rule {
+    height: 1px;
+    margin: clamp(2.75rem, 5vw, 4.5rem) 0 clamp(2.75rem, 4vw, 3.75rem);
+    background: rgba(255,255,255,.13);
+}
+
+.footer-nav-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1fr;
+    gap: clamp(2.5rem, 8vw, 8rem);
+    max-width: 820px;
+}
+
+.footer-nav-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .62rem;
+}
+
+.footer-nav-group h4 {
+    margin: 0 0 .8rem;
+    color: rgba(244,243,239,.43);
+    font-size: .66rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.footer-nav-group a,
+.footer-legal-links a {
+    color: rgba(250,249,246,.82);
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.footer-nav-group a {
+    font-size: .96rem;
+}
+
+.footer-nav-group a:hover,
+.footer-legal-links a:hover {
+    color: var(--copper, #b56a3c);
+}
+
+.footer-rule-bottom {
+    margin-top: clamp(3.5rem, 6vw, 5.5rem);
+    margin-bottom: 1.55rem;
+}
+
+.footer-utility {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    color: rgba(244,243,239,.38);
+    font-size: .74rem;
+}
+
+.footer-utility p {
+    margin: 0;
+    color: inherit;
+}
+
+.footer-legal-links {
+    display: inline-flex;
+    gap: 1.25rem;
+}
+
+.footer-legal-links a {
+    color: rgba(244,243,239,.52);
+    font-size: .74rem;
+}
+
+@media (max-width: 840px) {
+    .footer-identity {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 1.8rem;
+    }
+
+    .footer-acronym {
+        margin: 0;
+        white-space: normal;
+    }
+
+    .footer-nav-grid {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 760px) {
+    .nav-language {
+        margin: .7rem 0 0;
+        padding: 1.15rem 0 0;
+        border-left: 0;
+        border-top: 1px solid rgba(32,36,38,.15);
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .footer-stage25-inner {
+        width: min(100% - 2.25rem, 1240px);
+        padding-top: 4.25rem;
+    }
+
+    .footer-symbol {
+        width: 29px;
+        height: 29px;
+    }
+
+    .footer-wordmark {
+        font-size: clamp(2.55rem, 13vw, 3.75rem);
+    }
+
+    .footer-nav-grid {
+        grid-template-columns: 1fr;
+        gap: 2.65rem;
+    }
+
+    .footer-utility {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+</style>
+
+</head>
+
+<body class="logistics-page">
+
+<header>
+<nav class="navbar">
+<a href="index.html" class="logo" aria-label="MRLD Home">
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTkgMjY5Ij4KCjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0ibGVmdEdyYWQiIHgxPSIyMCIgeTE9IjI0NSIgeDI9IjgwIiB5Mj0iMTUwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTUxODE5Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjcyJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KCiAgPGxpbmVhckdyYWRpZW50IGlkPSJtaWRHcmFkIiB4MT0iNTUiIHkxPSIyNDUiIHgyPSIxMjUiIHkyPSIxMDUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxNTE4MTkiLz4KICAgIDxzdG9wIG9mZnNldD0iNTglIiBzdG9wLWNvbG9yPSIjMjAyNDI2Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Im91dEdyYWQiIHgxPSIxMjUiIHkxPSIyMzAiIHgyPSIyMzIiIHkyPSIyNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MiUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICAgIDxzdG9wIG9mZnNldD0iODQlIiBzdG9wLWNvbG9yPSIjOEI3NTZBIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNCNTZBM0MiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Imxvd2VyR3JhZCIgeDE9IjEyNSIgeTE9IjI0NSIgeDI9IjIzNSIgeTI9IjEwNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE1MTgxOSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiMyMDI0MjYiLz4KICAgIDxzdG9wIG9mZnNldD0iODYlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4Qjc1NkEiLz4KICA8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIj4KCjxnPgogIDwhLS0gbGVmdCByaXNpbmcgc3BhbiAtLT4KICA8cGF0aCBkPSIKICAgIE0gMjYsMjQ1CiAgICBMIDI2LDE5OQogICAgQyAyNiwxOTAgMzEsMTg1IDM4LDE4MQogICAgQyA0MywxNzggNDgsMTc2IDUyLDE3MwogICAgTCA1MiwyNDUKICAgIFoiIGZpbGw9InVybCgjbGVmdEdyYWQpIi8+CgogIDwhLS0gbWlkZGxlIHJpc2luZyBzcGFuIC0tPgogIDxwYXRoIGQ9IgogICAgTSA2MywyNDUKICAgIEwgNjMsMTYwCiAgICBDIDYzLDE0OSA3MCwxNDMgODAsMTM4CiAgICBDIDk0LDEzMSAxMDcsMTI0IDExNiwxMTUKICAgIEwgMTE2LDI0NQogICAgWiIgZmlsbD0idXJsKCNtaWRHcmFkKSIvPgoKICA8IS0tIHVwcGVyIHVuZm9sZGluZyBibGFkZSAtLT4KICA8cGF0aCBkPSIKICAgIE0gMTI4LDE2NgogICAgTCAxMjgsMTE5CiAgICBDIDEyOCwxMDIgMTM4LDkxIDE1Myw4MgogICAgQyAxNzgsNjcgMjAyLDQ5IDIyNCwyMwogICAgTCAyMjQsMTAyCiAgICBDIDIwNSwxMTUgMTg0LDEyNiAxNjUsMTM3CiAgICBDIDE0OCwxNDcgMTM2LDE1NyAxMjgsMTY2CiAgICBaIiBmaWxsPSJ1cmwoI291dEdyYWQpIi8+CgogIDwhLS0gbG93ZXIgdW5mb2xkaW5nIGJsYWRlIC0tPgogIDxwYXRoIGQ9IgogICAgTSAxMjgsMjQ1CiAgICBMIDEyOCwxOTkKICAgIEMgMTM2LDE4NCAxNDksMTcxIDE2NSwxNjEKICAgIEMgMTg3LDE0NyAyMTEsMTM1IDIzMywxMDYKICAgIEwgMjMzLDE3NwogICAgQyAyMzMsMTkzIDIyNCwyMDQgMjEwLDIxNAogICAgQyAxOTEsMjI3IDE2MiwyMzcgMTI4LDI0NQogICAgWiIgZmlsbD0idXJsKCNsb3dlckdyYWQpIi8+CjwvZz4KCjwvZz4KPC9zdmc+" alt="" aria-hidden="true">
+    <span>MRLD</span>
+</a>
+
+<button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
+    <span></span><span></span><span></span>
+</button>
+
+<ul class="nav-links" id="primary-navigation">
+    <li><a href="equipment.html">Equipment</a></li>
+    <li><a href="project-logistics.html">Project Logistics</a></li>
+    <li><a href="sectors.html">Sectors</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+
+
+            <li class="nav-language" aria-label="Language selector">
+                <span class="lang-current" aria-current="page">EN</span>
+                <span class="lang-separator" aria-hidden="true">/</span>
+                <a class="lang-option" href="#" onclick="return false;" lang="fr" aria-label="Français">FR</a>
+                <span class="lang-separator" aria-hidden="true">/</span>
+                <a class="lang-option" href="#" onclick="return false;" lang="th" aria-label="ภาษาไทย">ไทย</a>
+            </li>
+
+        </ul>
+</nav>
+</header>
+
+<main>
+
+<section class="hero logistics-hero">
+    <div class="container">
+        <div class="hero-content">
+            <span class="eyebrow">BEYOND THE ORDER</span>
+            <h1>The deal can be done. The project isn’t.</h1>
+            <p>
+                Between supplier and site, timelines, documentation, logistics partners,
+                access and handoffs create risks. We keep the parties
+                and requirements connected through delivery.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="delivery-section">
+    <div class="container">
+        <div class="delivery-header">
+            <span class="eyebrow">FROM SUPPLIER TO SITE</span>
+            <h2>Six points where coordination matters.</h2>
+            <p>Each handoff introduces another dependency. Explore the path.</p>
+        </div>
+
+        <div class="delivery-canvas" aria-label="Six project logistics coordination points from supplier to site">
+            <div class="delivery-track">
+                <button class="delivery-step" type="button" data-step="01" data-title="Supplier" data-detail="Origin details, equipment readiness, dimensions and release timing establish the starting point." aria-label="Supplier — show details">
+                    <span class="step-node">01</span>
+                    <strong>Supplier</strong>
+                </button>
+                <button class="delivery-step" type="button" data-step="02" data-title="Planning" data-detail="Equipment dimensions, weight, route, timing and delivery constraints are established before movement begins." aria-label="Planning — show details">
+                    <span class="step-node">02</span>
+                    <strong>Planning</strong>
+                </button>
+                <button class="delivery-step" type="button" data-step="03" data-title="Partner Alignment" data-detail="Qualified logistics providers, suppliers, buyers and project stakeholders are aligned around responsibilities and timing." aria-label="Partner Alignment — show details">
+                    <span class="step-node">03</span>
+                    <strong>Partner Alignment</strong>
+                </button>
+                <button class="delivery-step" type="button" data-step="04" data-title="Cross-Border Movement" data-detail="International movements require coordinated documentation, commercial communication and handoffs between specialized providers." aria-label="Cross-Border Movement — show details">
+                    <span class="step-node">04</span>
+                    <strong>Cross-Border Movement</strong>
+                </button>
+                <button class="delivery-step" type="button" data-step="05" data-title="Site Readiness" data-detail="Access, scheduling, receiving requirements and site constraints are considered before arrival." aria-label="Site Readiness — show details">
+                    <span class="step-node">05</span>
+                    <strong>Site Readiness</strong>
+                </button>
+                <button class="delivery-step" type="button" data-step="06" data-title="Delivery" data-detail="The final handoff stays connected to the project plan so the equipment reaches its destination with the right parties ready." aria-label="Delivery — show details">
+                    <span class="step-node">06</span>
+                    <strong>Delivery</strong>
+                </button>
+            </div>
+
+            <div class="delivery-detail" aria-live="polite">
+                <div class="delivery-detail-inner">
+                    <span class="delivery-detail-label"></span>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="coordination-note">
+                <p><strong>MRLD coordinates the path.</strong> Specialized logistics providers execute transport and freight services.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="logistics-cta">
+    <div class="container">
+        <div class="logistics-cta-box">
+            <div>
+                <span class="eyebrow">HAVE A PROJECT IN MOTION?</span>
+                <h2>Need equipment to reach the site?</h2>
+                <p>Tell us what is moving, where it is coming from, where it needs to go, and what the project requires.</p>
+            </div>
+            <a class="button" href="contact.html">Discuss Your Delivery</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<!-- =====================================================
+     FOOTER — STAGE 2.5
+===================================================== -->
+
+<footer class="footer-stage25">
+
+    <div class="footer-stage25-inner">
+
+        <div class="footer-identity">
+            <div class="footer-lockup">
+                <span class="footer-symbol" aria-hidden="true"></span>
+                <span class="footer-wordmark">MRLD</span>
+            </div>
+
+            <p class="footer-acronym">
+                MARKET REACH · LEVERAGE · DEVELOPMENT
+            </p>
+        </div>
+
+        <div class="footer-rule" aria-hidden="true"></div>
+
+        <div class="footer-nav-grid">
+
+            <nav class="footer-nav-group" aria-label="Explore">
+                <h4>Explore</h4>
+                <a href="equipment.html">Equipment</a>
+                <a href="project-logistics.html">Project Logistics</a>
+                <a href="sectors.html">Sectors</a>
+            </nav>
+
+            <nav class="footer-nav-group" aria-label="Company">
+                <h4>Company</h4>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <nav class="footer-nav-group" aria-label="Connect">
+                <h4>Connect</h4>
+                <a
+                    href="https://www.linkedin.com/in/sayudi/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >LinkedIn</a>
+                <a href="mailto:contact@sayudi.com">Email</a>
+            </nav>
+
+        </div>
+
+        <div class="footer-rule footer-rule-bottom" aria-hidden="true"></div>
+
+        <div class="footer-utility">
+            <div class="footer-legal-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+
+            <p>© 2026 MRLD, a Sayudi Inc. company.</p>
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.querySelector('.delivery-canvas');
+    if (!canvas) return;
+
+    const steps = [...canvas.querySelectorAll('.delivery-step')];
+    const detail = canvas.querySelector('.delivery-detail');
+    const label = canvas.querySelector('.delivery-detail-label');
+    const copy = detail.querySelector('p');
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    const showStep = (step) => {
+        steps.forEach((item) => item.classList.toggle('is-active', item === step));
+        canvas.classList.add('has-active-step');
+        label.textContent = `${step.dataset.step} · ${step.dataset.title.toUpperCase()}`;
+        copy.textContent = step.dataset.detail;
+        detail.classList.add('is-visible');
+    };
+
+    const clearStep = () => {
+        steps.forEach((item) => item.classList.remove('is-active'));
+        canvas.classList.remove('has-active-step');
+        detail.classList.remove('is-visible');
+    };
+
+    if (finePointer) {
+        steps.forEach((step) => {
+            step.addEventListener('mouseenter', () => showStep(step));
+            step.addEventListener('focus', () => showStep(step));
+        });
+        canvas.querySelector('.delivery-track').addEventListener('mouseleave', clearStep);
+    } else {
+        steps.forEach((step) => {
+            step.addEventListener('click', () => {
+                if (step.classList.contains('is-active')) clearStep();
+                else showStep(step);
+            });
+        });
+    }
+});
+</script>
+<script src="assets/js/site.js" defer></script>
+
+</body>
+</html>

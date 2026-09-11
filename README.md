@@ -1,12 +1,17 @@
 # MRLD Website — Engineering README
 
+
+## URL architecture
+
+All public HTML pages live at the repository root. There is no `/pages/` directory. Primary page URLs are `/equipment.html`, `/project-logistics.html`, `/sectors.html`, `/about.html`, `/contact.html`, `/privacy.html`, and `/terms.html`. The former `industries.html` route has been renamed to `sectors.html`.
+
 ## 1. Purpose
 
 This repository contains the public website for **MRLD**, a Canadian industrial equipment company focused on connecting selected manufacturers with qualified buyers, supporting equipment sourcing, and coordinating project logistics.
 
 The site is intentionally lightweight. It is built as a **static HTML/CSS/JavaScript website** with no framework, package manager, database, server-side rendering, build step, or application backend.
 
-The current design is the **Stage 2** architecture. Its core product/design principle is restraint: each page should have one job, communicate only what is necessary, and avoid repeating the same commercial proposition across multiple pages.
+The current design is the **Stage 2.5** architecture. Its core product/design principle is restraint: each page should have one job, communicate only what is necessary, and avoid repeating the same commercial proposition across multiple pages.
 
 For an engineer reviewing the site, the main priorities are:
 
@@ -70,14 +75,13 @@ There is no repository-level hosting configuration beyond the static files and `
 │   └── js/
 │       └── site.js
 │
-└── pages/
-    ├── equipment.html
-    ├── project-logistics.html
-    ├── industries.html
-    ├── about.html
-    ├── contact.html
-    ├── privacy.html
-    └── terms.html
+├── equipment.html
+├── project-logistics.html
+├── sectors.html
+├── about.html
+├── contact.html
+├── privacy.html
+└── terms.html
 ```
 
 ### Important architectural note
@@ -103,14 +107,14 @@ Do not refactor one of these layers in isolation without checking all public pag
 
 | Path | Public purpose | Current behavior |
 |---|---|---|
-| `/index.html` | Main homepage | Core MRLD proposition, manufacturers/buyers, selected equipment, selected brands, CTA |
-| `/pages/equipment.html` | Equipment sourcing | Requirement-first sourcing philosophy and buyer/manufacturer entry points |
-| `/pages/project-logistics.html` | Project logistics | Supplier-to-site coordination flow with interactive process steps |
-| `/pages/industries.html` | Sectors | Visual sector recognition page; content title is **Sectors** |
-| `/pages/about.html` | About / founder | Market position, founder story, selective-by-design principle |
-| `/pages/contact.html` | Contact | Primary inquiry form and direct contact channels |
-| `/pages/privacy.html` | Privacy Policy | Legal/privacy content |
-| `/pages/terms.html` | Terms of Use | Legal/terms content |
+| `/index.html` | Main homepage | Core MRLD proposition, manufacturers/buyers, selected equipment, CTA |
+| `/equipment.html` | Equipment sourcing | Requirement-first sourcing philosophy and buyer/manufacturer entry points |
+| `/project-logistics.html` | Project logistics | Supplier-to-site coordination flow with interactive process steps |
+| `/sectors.html` | Sectors | Visual sector recognition page; content title is **Sectors** |
+| `/about.html` | About / founder | Market position, founder story, selective-by-design principle |
+| `/contact.html` | Contact | Primary inquiry form and direct contact channels |
+| `/privacy.html` | Privacy Policy | Legal/privacy content |
+| `/terms.html` | Terms of Use | Legal/terms content |
 
 ### Auxiliary / direct-access pages
 
@@ -157,7 +161,7 @@ Commercial rule: do **not** add manufacturers merely because discussions are in 
 
 ---
 
-### 5.2 Equipment — `pages/equipment.html`
+### 5.2 Equipment — `equipment.html`
 
 Primary job: explain MRLD's sourcing philosophy without becoming a catalogue.
 
@@ -188,7 +192,7 @@ Page-specific JS is inline near the bottom of the page.
 
 ---
 
-### 5.3 Project Logistics — `pages/project-logistics.html`
+### 5.3 Project Logistics — `project-logistics.html`
 
 Primary job: explain what happens between commercial agreement and physical delivery.
 
@@ -217,7 +221,7 @@ Page-specific JS is inline near the bottom of the page.
 
 ---
 
-### 5.4 Sectors — `pages/industries.html`
+### 5.4 Sectors — `sectors.html`
 
 Primary job: let visitors recognize their operating environment without another page of explanatory text.
 
@@ -244,12 +248,12 @@ The page is intentionally minimal:
 
 #### Naming note
 
-The page's content/title uses **Sectors**, but the filename and current navigation/footer label still use **Industries**.
+
 
 Current path:
 
 ```text
-/pages/industries.html
+/sectors.html
 ```
 
 If this is renamed later, preserve old links with an appropriate redirect where the hosting platform permits it.
@@ -262,7 +266,7 @@ This is the only meaningful passive external asset dependency still present in t
 
 ---
 
-### 5.5 About — `pages/about.html`
+### 5.5 About — `about.html`
 
 Primary job: explain where MRLD sits and who is behind it.
 
@@ -289,7 +293,7 @@ The market-axis has a small travelling copper animation. At the time of this REA
 
 ---
 
-### 5.6 Contact — `pages/contact.html`
+### 5.6 Contact — `contact.html`
 
 Primary job: make it easy to start the right commercial conversation.
 
@@ -359,8 +363,8 @@ Do not replace the endpoint or form field names casually; changes can affect For
 Files:
 
 ```text
-/pages/privacy.html
-/pages/terms.html
+/privacy.html
+/terms.html
 ```
 
 These pages received visual normalization only during Stage 2. Their legal copy should be treated as content-controlled text.
@@ -419,7 +423,7 @@ The primary public site now uses the Stage 2.5 footer on:
 - `index.html`;
 - Equipment;
 - Project Logistics;
-- Sectors / `industries.html`;
+- Sectors / `sectors.html`;
 - About;
 - Contact;
 - Privacy;
@@ -436,7 +440,7 @@ The footer is intentionally architectural rather than explanatory. It contains:
 
 The old footer description and `Canadian company. Global reach.` line were intentionally removed. Canadian identity remains present elsewhere in site content and should not be reintroduced into the footer without a deliberate content decision.
 
-The footer label uses **Sectors** even though the current primary navigation still uses **Industries** and the physical file remains `industries.html`. This is intentional during the transition period.
+
 
 ### Language control
 
@@ -527,7 +531,7 @@ Key behaviors:
 
 Desktop navigation breakpoint is centered around `1050px` in the shared styles/JS.
 
-The navigation currently labels the sectors page as **Industries** even though the page itself is now titled **Sectors**.
+
 
 ---
 
@@ -918,13 +922,13 @@ These items are not necessarily visible defects. They are good candidates for a 
 
 Highest-priority dependency cleanup.
 
-### B. Rename Industries → Sectors consistently
+### B. Sectors naming
 
 Current state:
 
 - page title/content: Sectors;
-- filename: `industries.html`;
-- primary navigation: Industries;
+- filename: `sectors.html`;
+- primary navigation: Sectors;
 - Stage 2.5 footer: Sectors.
 
 If changed, preserve compatibility for existing indexed/shared URLs.
@@ -1048,7 +1052,7 @@ This is not a replacement for browser/device QA.
 - [ ] Verify `CNAME` remains correct
 - [ ] Test clean-cache deployment
 - [ ] Test hard refresh
-- [ ] Test relative paths from `/` and `/pages/`
+- [ ] Test all root-level page and asset paths from `/`
 - [ ] Confirm HTTP → HTTPS and canonical host behavior at the hosting layer
 
 ---
@@ -1111,7 +1115,7 @@ For a software engineer taking over the site:
 - Preserve the current low-copy architecture.
 - Treat `partner.html` access as cosmetic/client-side only.
 - Treat Sectors imagery as the remaining passive remote dependency.
-- Treat `industries.html` → Sectors naming as a future URL/navigation cleanup task.
+
 - Use real business evidence, not speculative content, as the reason to expand the site.
 
 ---
