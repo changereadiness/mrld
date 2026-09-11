@@ -8,11 +8,11 @@
 
 <link rel="icon" type="image/png" href="../assets/images/favicon.png">
 
-<title>Equipment Sourcing | MRLD</title>
+<title>Industrial Equipment | MRLD</title>
 
 <meta
     name="description"
-    content="MRLD connects buyers with industrial equipment manufacturers and sourcing opportunities across Canada and international markets."
+    content="MRLD sources industrial equipment around application, specifications, operating conditions, support, lead time, and commercial fit."
 >
 
 <meta name="author" content="MRLD">
@@ -28,456 +28,433 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 
 
+
+
 <style>
-
 /* =====================================================
-   EQUIPMENT PAGE
+   MRLD — STAGE 2 EQUIPMENT
+   One requirement. One sourcing logic. No catalogue theatre.
 ===================================================== */
 
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.equipment-hero {
-    padding: 5rem 0 5.5rem;
-}
-
-.equipment-hero .hero-content {
-    max-width: 980px;
-}
-
-.equipment-hero h1 {
-    max-width: 900px;
-    margin-bottom: 1.5rem;
-}
-
-.equipment-hero p {
-    max-width: 760px;
-}
-
-
-/* =====================================================
-   SOURCING INTRO
-===================================================== */
-
-.sourcing-intro {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-.sourcing-intro-header {
-    max-width: 780px;
-}
-
-
-/* =====================================================
-   EQUIPMENT CATEGORIES
-===================================================== */
-
-.equipment-categories {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    margin-top: 2.75rem;
-
-    border-top: 1px solid rgba(0,0,0,0.14);
-    border-left: 1px solid rgba(0,0,0,0.1);
-}
-
-
-.equipment-category {
-    padding: 1.75rem 1.5rem;
-
-    border-right: 1px solid rgba(0,0,0,0.1);
-    border-bottom: 1px solid rgba(0,0,0,0.14);
-}
-
-
-.equipment-category-number {
-    display: block;
-
-    margin-bottom: 0.75rem;
-
-    font-size: 0.68rem;
-    font-weight: 600;
-
-    letter-spacing: 0.12em;
-
-    opacity: 0.5;
-}
-
-
-.equipment-category h3 {
-    margin: 0 0 0.5rem;
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: 1rem;
-}
-
-
-.equipment-category p {
-    margin: 0;
-
-    font-size: 0.86rem;
-
-    line-height: 1.55;
-
-    opacity: 0.7;
-}
-
-
-/* =====================================================
-   SOURCING PROCESS
-===================================================== */
-
-.equipment-process {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-
-.equipment-process-header {
-    max-width: 760px;
-
-    margin-bottom: 2.75rem;
-}
-
-.equipment-process-header h2 {
-    margin-bottom: 24px;
-}
-.sourcing-flow {
-    position: relative;
-
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        70px
-        1fr
-        70px
-        1fr
-        70px
-        1fr;
-
+/* Navigation mark */
+.equipment-page .logo {
+    display: inline-flex;
     align-items: center;
-
-    padding: 2rem;
-
-    background:
-        linear-gradient(
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        ),
-        #151819;
-
-    background-size: 34px 34px;
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-    overflow: hidden;
+    gap: 0.68rem;
+    letter-spacing: 0.19em;
 }
 
+.equipment-page .logo img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
 
-.sourcing-flow::before {
+.equipment-page .logo span {
+    transform: translateY(1px);
+}
+
+/* Hero */
+.equipment-hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(5.5rem, 9vw, 8.5rem) 0 clamp(5rem, 8vw, 7.5rem);
+}
+
+.equipment-hero::after {
     content: "";
-
     position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    border-radius: 50%;
-
-    background: radial-gradient(
-        circle,
-        rgba(181,106,60,0.11) 0%,
-        transparent 68%
-    );
-
-    left: 50%;
+    width: min(40vw, 560px);
+    aspect-ratio: 1;
+    right: clamp(-13rem, -8vw, -3rem);
     top: 50%;
-
-    transform: translate(-50%, -50%);
-
+    transform: translateY(-50%);
+    background: url("../assets/images/mrld-symbol-master.svg") center / contain no-repeat;
+    opacity: .026;
     pointer-events: none;
 }
 
-
-.sourcing-node {
+.equipment-hero .hero-content {
     position: relative;
-    z-index: 2;
-
-    text-align: center;
-
-    padding: 1rem 0.5rem;
+    z-index: 1;
+    max-width: 990px;
 }
 
-
-.sourcing-number {
-    display: block;
-
-    margin-bottom: 0.6rem;
-
-    font-size: 0.65rem;
-
-    letter-spacing: 0.12em;
-
-    color: rgba(255,255,255,0.4);
+.equipment-hero h1 {
+    max-width: 980px;
+    margin-bottom: 1.65rem;
+    font-size: clamp(3.15rem, 6.1vw, 6.15rem);
+    line-height: 1;
+    letter-spacing: -.05em;
 }
 
-
-.sourcing-node strong {
-    display: block;
-
-    color: #ffffff;
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: 0.92rem;
-
-    line-height: 1.25;
+.equipment-hero p {
+    max-width: 790px;
+    color: #596267;
+    font-size: 1.1rem;
 }
 
-
-.sourcing-node p {
-    margin: 0.55rem auto 0;
-
-    max-width: 170px;
-
-    color: rgba(255,255,255,0.6);
-
-    font-size: 0.78rem;
-
-    line-height: 1.45;
+/* Sourcing approach */
+.approach-section {
+    padding: clamp(5.5rem, 8vw, 8rem) 0;
+    background: var(--graphite-dark);
+    color: rgba(250,250,248,.74);
 }
 
+.approach-header {
+    max-width: 790px;
+    margin-bottom: clamp(3.5rem, 6vw, 5.25rem);
+}
 
-.sourcing-arrow {
+.approach-header .eyebrow {
+    color: rgba(250,250,248,.48);
+}
+
+.approach-header h2 {
+    max-width: 730px;
+    color: var(--white);
+    font-size: clamp(2.45rem, 4.5vw, 4.6rem);
+    line-height: 1.03;
+    letter-spacing: -.043em;
+}
+
+.approach-header p {
+    max-width: 650px;
+    color: rgba(250,250,248,.6);
+    font-size: 1.02rem;
+}
+
+.requirement-flow {
     position: relative;
-    z-index: 2;
-
-    height: 1px;
-
-    background: rgba(255,255,255,0.2);
-}
-
-
-.sourcing-arrow::after {
-    content: "";
-
-    position: absolute;
-
-    right: 0;
-    top: 50%;
-
-    width: 7px;
-    height: 7px;
-
-    border-top: 1px solid rgba(255,255,255,0.5);
-    border-right: 1px solid rgba(255,255,255,0.5);
-
-    transform: translateY(-50%) rotate(45deg);
-}
-
-
-/* =====================================================
-   PROJECT SUPPORT
-===================================================== */
-
-.equipment-support {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-
-.equipment-support-content {
-    max-width: 820px;
-}
-
-.equipment-support-content p {
-    margin-bottom: 24px;
-}
-
-.equipment-support-content p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* =====================================================
-   MANUFACTURER CTA
-===================================================== */
-
-.manufacturer-section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-
-.manufacturer-box {
     display: grid;
+    grid-template-columns: minmax(0, 1fr) 190px minmax(0, 1fr);
+    align-items: stretch;
+    gap: clamp(2rem, 4vw, 4.75rem);
+    padding: clamp(2.5rem, 5vw, 4rem);
+    border: 1px solid rgba(250,250,248,.12);
+    background:
+        linear-gradient(rgba(250,250,248,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(250,250,248,.025) 1px, transparent 1px);
+    background-size: 42px 42px;
+    overflow: hidden;
+}
 
-    grid-template-columns:
-        1.4fr
-        0.6fr;
+.requirement-flow::before,
+.requirement-flow::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    background: rgba(250,250,248,.19);
+    pointer-events: none;
+}
 
-    gap: 3rem;
+.requirement-flow::before {
+    left: 9%;
+    right: 50%;
+}
 
+.requirement-flow::after {
+    left: 50%;
+    right: 9%;
+}
+
+.flow-pulse {
+    position: absolute;
+    z-index: 1;
+    top: calc(50% - 1px);
+    left: 9%;
+    width: 21%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--copper), transparent);
+    opacity: .75;
+    animation: equipmentPulse 6.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes equipmentPulse {
+    0%, 100% { transform: translateX(0); opacity: .1; }
+    45% { opacity: .75; }
+    75% { transform: translateX(285%); opacity: .35; }
+}
+
+.flow-side,
+.flow-core {
+    position: relative;
+    z-index: 2;
+}
+
+.flow-side {
+    min-height: 310px;
+    padding: 2rem;
+    background: rgba(21,24,25,.92);
+    border: 1px solid rgba(250,250,248,.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flow-kicker {
+    display: block;
+    margin-bottom: 1.25rem;
+    color: rgba(250,250,248,.46);
+    font-size: .67rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+}
+
+.flow-side h3 {
+    max-width: 390px;
+    margin-bottom: 1.35rem;
+    color: var(--white);
+    font-size: clamp(1.55rem, 2.45vw, 2.3rem);
+    line-height: 1.1;
+    letter-spacing: -.03em;
+}
+
+.flow-side > p {
+    max-width: 410px;
+    color: rgba(250,250,248,.58);
+}
+
+.flow-factors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .55rem;
+    margin-top: .35rem;
+    list-style: none;
+}
+
+.flow-factors li {
+    padding: .42rem .68rem;
+    border: 1px solid rgba(250,250,248,.13);
+    color: rgba(250,250,248,.68);
+    font-size: .75rem;
+    line-height: 1.2;
+}
+
+.flow-core {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-
-    padding: 3rem;
-
-    background: #151819;
-
-    color: #ffffff;
+    justify-content: center;
+    text-align: center;
 }
 
-
-.manufacturer-box h2 {
-    color: #ffffff;
+.flow-core-mark {
+    width: 116px;
+    height: 116px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(250,250,248,.19);
+    background: var(--background);
+    box-shadow: 0 18px 60px rgba(0,0,0,.28);
 }
 
-
-.manufacturer-box p {
-    color: rgba(255,255,255,0.68);
+.flow-core-mark img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
 }
 
-
-.manufacturer-box .eyebrow {
-    color: rgba(255,255,255,0.5);
+.flow-core strong {
+    margin-top: 1.15rem;
+    color: var(--white);
+    font-family: var(--heading-font);
+    font-size: .72rem;
+    letter-spacing: .16em;
 }
 
-
-.manufacturer-action {
-    text-align: right;
+.flow-core p {
+    margin-top: .8rem;
+    color: rgba(250,250,248,.49);
+    font-size: .73rem;
+    line-height: 1.65;
 }
 
-
-/* =====================================================
-   FINAL CTA
-===================================================== */
-
-.equipment-cta {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+/* Project logistics bridge */
+.logistics-bridge {
+    padding: 0;
+    border-bottom: 1px solid var(--border);
 }
 
+.logistics-bridge-inner {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    padding: 2rem 0;
+}
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+.logistics-bridge p {
+    max-width: 800px;
+    color: #5b6468;
+}
 
+.logistics-bridge a {
+    flex: 0 0 auto;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Closing commercial exits */
+.equipment-paths {
+    padding: clamp(5.5rem, 8vw, 8rem) 0;
+}
+
+.path-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 1px solid var(--border);
+}
+
+.path-panel {
+    min-height: 430px;
+    padding: clamp(2.5rem, 5vw, 4.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.path-panel + .path-panel {
+    border-left: 1px solid var(--border);
+}
+
+.path-panel h2 {
+    max-width: 520px;
+    margin-bottom: 1.35rem;
+    font-size: clamp(2.15rem, 3.8vw, 3.75rem);
+    line-height: 1.04;
+    letter-spacing: -.04em;
+}
+
+.path-panel p {
+    max-width: 500px;
+    color: #5e676b;
+}
+
+.path-panel .path-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    margin-top: 2.5rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.path-panel.manufacturer-path {
+    background: var(--graphite);
+}
+
+.path-panel.manufacturer-path h2,
+.path-panel.manufacturer-path .path-link {
+    color: var(--white);
+}
+
+.path-panel.manufacturer-path p {
+    color: rgba(250,250,248,.64);
+}
+
+.path-panel.manufacturer-path .eyebrow {
+    color: rgba(250,250,248,.45);
+}
+
+/* Responsive */
 @media (max-width: 900px) {
-
-    .equipment-categories {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+    .requirement-flow {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
 
-
-    .sourcing-flow {
-        grid-template-columns:
-            1fr
-            45px
-            1fr
-            45px
-            1fr
-            45px
-            1fr;
+    .requirement-flow::before,
+    .requirement-flow::after,
+    .flow-pulse {
+        display: none;
     }
 
+    .flow-core {
+        padding: 1.2rem 0;
+    }
 
-    .manufacturer-box {
+    .flow-side {
+        min-height: auto;
+    }
+
+    .path-grid {
         grid-template-columns: 1fr;
     }
 
-
-    .manufacturer-action {
-        text-align: left;
+    .path-panel + .path-panel {
+        border-left: 0;
+        border-top: 1px solid var(--border);
     }
-
 }
-
 
 @media (max-width: 700px) {
+    .equipment-page .logo img {
+        width: 27px;
+        height: 27px;
+    }
 
     .equipment-hero {
-        padding: 4rem 0 4.5rem;
+        padding: 4.5rem 0 4.75rem;
     }
 
-
-    .sourcing-intro,
-    .equipment-process,
-    .equipment-support,
-    .manufacturer-section,
-    .equipment-cta {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+    .equipment-hero::after {
+        width: 90vw;
+        right: -48vw;
     }
 
-
-    .equipment-categories {
-        grid-template-columns: 1fr;
+    .approach-section {
+        padding: 4.5rem 0;
     }
 
-
-    .sourcing-flow {
-        grid-template-columns: 1fr;
-
-        gap: 0;
-    }
-
-
-    .sourcing-node {
+    .requirement-flow {
         padding: 1rem;
+        background-size: 34px 34px;
     }
 
-
-    .sourcing-arrow {
-        width: 1px;
-        height: 25px;
-
-        margin: 0 auto;
-
-        background: rgba(255,255,255,0.2);
+    .flow-side {
+        padding: 1.5rem;
     }
 
-
-    .sourcing-arrow::after {
-        right: auto;
-        top: auto;
-        bottom: 0;
-        left: 50%;
-
-        transform:
-            translateX(-50%)
-            rotate(135deg);
+    .flow-core-mark {
+        width: 100px;
+        height: 100px;
     }
 
+    .flow-core-mark img {
+        width: 46px;
+        height: 46px;
+    }
 
-    .manufacturer-box {
+    .logistics-bridge-inner {
+        min-height: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.15rem;
+        padding: 2rem 0;
+    }
+
+    .equipment-paths {
+        padding: 4.5rem 0;
+    }
+
+    .path-panel {
+        min-height: 360px;
         padding: 2rem;
     }
-
 }
-
 </style>
-
 
 <link rel="stylesheet" href="../assets/css/interactions.css">
 
 </head>
 
 
-<body>
+<body class="equipment-page">
 
 
 <!-- =====================================================
@@ -493,7 +470,8 @@
     class="logo"
     aria-label="MRLD Home"
 >
-    MRLD
+    <img src="../assets/images/mrld-symbol-master.svg" alt="" aria-hidden="true">
+    <span>MRLD</span>
 </a>
 
 
@@ -557,677 +535,162 @@ Contact
 
 <main>
 
-
 <!-- =====================================================
      HERO
 ===================================================== -->
-
 <section class="hero equipment-hero">
 
-<div class="container">
+    <div class="container">
+        <div class="hero-content">
 
-<div class="hero-content">
+            <span class="eyebrow">
+                BEFORE YOU SOURCE
+            </span>
 
-<span class="eyebrow">
-EQUIPMENT SOURCING
-</span>
+            <h1>
+                The wrong equipment often looks right on paper.
+            </h1>
 
+            <p>
+                Specifications matter. So do application, operating conditions,
+                support, lead time and commercial fit. MRLD starts there — then
+                identifies the right equipment and source.
+            </p>
 
-<h1>
-The right equipment starts with the right source.
-</h1>
-
-
-<p>
-MRLD helps buyers identify suitable industrial equipment and connect with
-manufacturers and suppliers aligned with their operational requirements.
-</p>
-
-</div>
-
-</div>
+        </div>
+    </div>
 
 </section>
-
-
 
 <!-- =====================================================
-     SOURCING
+     SOURCING APPROACH
 ===================================================== -->
+<section class="approach-section">
 
-<section class="sourcing-intro">
+    <div class="container">
 
-<div class="container">
+        <div class="approach-header">
+            <span class="eyebrow">OUR SOURCING APPROACH</span>
 
-<div class="sourcing-intro-header">
+            <h2>Your requirement sets the direction.</h2>
 
-<span class="eyebrow">
-WHAT WE SOURCE
-</span>
+            <p>
+                MRLD works outward from the requirement — not inward from a catalogue.
+            </p>
+        </div>
 
-<h2>
-Industrial equipment across demanding applications.
-</h2>
+        <div class="requirement-flow" aria-label="MRLD sourcing approach from requirement to equipment">
+            <div class="flow-pulse" aria-hidden="true"></div>
 
-<p>
-MRLD is developing a focused network of manufacturers and suppliers across
-selected equipment categories. We source according to the requirement —
-not from a fixed online inventory.
-</p>
+            <article class="flow-side">
+                <span class="flow-kicker">YOUR REQUIREMENT</span>
 
-</div>
+                <h3>What must the equipment actually do?</h3>
 
+                <ul class="flow-factors">
+                    <li>Application</li>
+                    <li>Specifications</li>
+                    <li>Operating conditions</li>
+                    <li>Timeline</li>
+                    <li>Support</li>
+                    <li>Commercial fit</li>
+                </ul>
+            </article>
 
-<div class="equipment-categories">
+            <div class="flow-core">
+                <div class="flow-core-mark">
+                    <img src="../assets/images/mrld-symbol-master.svg" alt="" aria-hidden="true">
+                </div>
 
+                <strong>MRLD</strong>
 
-<article class="equipment-category">
+                <p>
+                    Assess fit<br>
+                    Identify sources<br>
+                    Compare options<br>
+                    Connect parties
+                </p>
+            </div>
 
-<div class="equipment-category-line"></div>
+            <article class="flow-side">
+                <span class="flow-kicker">EQUIPMENT</span>
 
-<h3>
-Construction
-</h3>
+                <h3>A source that fits the requirement.</h3>
 
-<span>
-Equipment
-</span>
+                <p>
+                    Suitable equipment, a credible source, and a commercial path forward.
+                </p>
+            </article>
 
-<p>
-Earthmoving, infrastructure, and construction applications.
-</p>
+        </div>
 
-</article>
-
-
-<article class="equipment-category">
-
-<div class="equipment-category-line"></div>
-
-<h3>
-Mining
-</h3>
-
-<span>
-Equipment
-</span>
-
-<p>
-Equipment for demanding extraction and mining environments.
-</p>
-
-</article>
-
-
-<article class="equipment-category">
-
-<div class="equipment-category-line"></div>
-
-<h3>
-Industrial
-</h3>
-
-<span>
-Equipment
-</span>
-
-<p>
-Equipment supporting manufacturing and industrial operations.
-</p>
-
-</article>
-
-
-<article class="equipment-category">
-
-<div class="equipment-category-line"></div>
-
-<h3>
-Material
-</h3>
-
-<span>
-Handling
-</span>
-
-<p>
-Equipment for warehouses, facilities, and industrial movement.
-</p>
-
-</article>
-
-
-<article class="equipment-category">
-
-<div class="equipment-category-line"></div>
-
-<h3>
-Energy &
-</h3>
-
-<span>
-Infrastructure
-</span>
-
-<p>
-Equipment supporting power, infrastructure, and major projects.
-</p>
-
-</article>
-
-
-<article class="equipment-category">
-
-<div class="equipment-category-line"></div>
-
-<h3>
-Specialized
-</h3>
-
-<span>
-Machinery
-</span>
-
-<p>
-Solutions identified around specific operational requirements.
-</p>
-
-</article>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
-
-
-<style>
-
-/* =====================================================
-   EDITORIAL EQUIPMENT CATEGORIES
-===================================================== */
-
-.equipment-categories {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 0;
-
-    margin-top: 4rem;
-
-    border-top: 1px solid rgba(0,0,0,0.12);
-
-}
-
-
-.equipment-category {
-
-    position: relative;
-
-    min-height: 210px;
-
-    padding: 1.75rem 1.5rem 1.75rem 0;
-
-    border-bottom: 1px solid rgba(0,0,0,0.12);
-
-    transition:
-        opacity 0.3s ease;
-}
-
-
-.equipment-category:not(:nth-child(3n+1)) {
-
-    padding-left: 1.5rem;
-
-    border-left: 1px solid rgba(0,0,0,0.08);
-
-}
-
-
-/* =====================================================
-   ACCENT LINE
-===================================================== */
-
-.equipment-category-line {
-
-    width: 28px;
-
-    height: 1px;
-
-    margin-bottom: 1.4rem;
-
-    background: rgba(0,0,0,0.25);
-
-    transition:
-        width 0.35s ease,
-        background 0.35s ease;
-}
-
-
-.equipment-category:hover
-.equipment-category-line {
-
-    width: 52px;
-
-    background: #7c9b88;
-
-}
-
-
-/* =====================================================
-   TYPOGRAPHY
-===================================================== */
-
-.equipment-category h3 {
-
-    margin: 0;
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: 1.45rem;
-
-    font-weight: 700;
-
-    line-height: 1.05;
-
-}
-
-
-.equipment-category > span {
-
-    display: block;
-
-    margin-top: 0.1rem;
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: 1.45rem;
-
-    font-weight: 700;
-
-    line-height: 1.05;
-
-    opacity: 0.35;
-
-}
-
-
-.equipment-category p {
-
-    max-width: 240px;
-
-    margin: 1.25rem 0 0;
-
-    font-size: 0.78rem;
-
-    line-height: 1.55;
-
-    opacity: 0.6;
-
-}
-
-
-/* =====================================================
-   HOVER
-===================================================== */
-
-.equipment-categories:hover
-.equipment-category:not(:hover) {
-
-    opacity: 0.55;
-
-}
-
-
-.equipment-category:hover {
-
-    opacity: 1;
-
-}
-
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media (max-width: 900px) {
-
-    .equipment-categories {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-
-    .equipment-category:nth-child(3n+1) {
-
-        padding-left: 0;
-
-    }
-
-
-    .equipment-category:not(:nth-child(3n+1)) {
-
-        padding-left: 1.5rem;
-
-    }
-
-
-    .equipment-category:nth-child(odd) {
-
-        padding-left: 0;
-
-        border-left: 0;
-
-    }
-
-}
-
-
-@media (max-width: 700px) {
-
-    .equipment-categories {
-
-        grid-template-columns: 1fr;
-
-        margin-top: 2.5rem;
-
-    }
-
-
-    .equipment-category,
-    .equipment-category:not(:nth-child(3n+1)),
-    .equipment-category:nth-child(odd) {
-
-        min-height: auto;
-
-        padding: 1.5rem 0;
-
-        border-left: 0;
-
-    }
-
-
-    .equipment-category:first-child {
-
-        border-top: 0;
-
-    }
-
-
-    .equipment-category p {
-
-        max-width: 100%;
-
-    }
-
-}
-
-</style>
-<!-- =====================================================
-     SOURCING PROCESS
-===================================================== -->
-
-<section class="process-section equipment-process">
-
-<div class="container">
-
-
-<div class="equipment-process-header">
-
-<span class="eyebrow eyebrow-light">
-OUR SOURCING APPROACH
-</span>
-
-
-<h2>
-From requirement to equipment.
-</h2>
-
-
-<p>
-MRLD approaches sourcing as a structured commercial process rather than a
-catalogue search.
-</p>
-
-</div>
-
-
-
-<div class="sourcing-flow">
-
-
-<div class="sourcing-node">
-
-<span class="sourcing-number">
-01
-</span>
-
-<strong>
-UNDERSTAND
-</strong>
-
-<p>
-Application, specifications, timeline, and objectives.
-</p>
-
-</div>
-
-
-<div class="sourcing-arrow"></div>
-
-
-<div class="sourcing-node">
-
-<span class="sourcing-number">
-02
-</span>
-
-<strong>
-IDENTIFY
-</strong>
-
-<p>
-Relevant manufacturers and equipment solutions.
-</p>
-
-</div>
-
-
-<div class="sourcing-arrow"></div>
-
-
-<div class="sourcing-node">
-
-<span class="sourcing-number">
-03
-</span>
-
-<strong>
-EVALUATE
-</strong>
-
-<p>
-Fit, availability, commercial considerations, and requirements.
-</p>
-
-</div>
-
-
-<div class="sourcing-arrow"></div>
-
-
-<div class="sourcing-node">
-
-<span class="sourcing-number">
-04
-</span>
-
-<strong>
-CONNECT
-</strong>
-
-<p>
-Bring the right parties together and move the opportunity forward.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
 
 <!-- =====================================================
-     PROJECT SUPPORT
+     PROJECT LOGISTICS BRIDGE
 ===================================================== -->
+<section class="logistics-bridge">
 
-<section class="equipment-support">
+    <div class="container logistics-bridge-inner">
+        <p>
+            When the requirement extends beyond the equipment, MRLD can also coordinate
+            project logistics and delivery support.
+        </p>
 
-<div class="container">
-
-<div class="equipment-support-content">
-
-<span class="eyebrow">
-BEYOND SOURCING
-</span>
-
-
-<h2>
-Equipment is only part of the project.
-</h2>
-
-
-<p>
-Once the right equipment has been identified, the requirements can extend
-to supplier coordination, commercial discussions, logistics planning,
-documentation, and delivery.
-</p>
-
-
-<p>
-MRLD can coordinate with specialized partners to help move equipment
-opportunities beyond the initial introduction.
-</p>
-
-
-<p>
-<a href="project-logistics.html">
-Explore Project Logistics →
-</a>
-</p>
-
-</div>
-
-</div>
+        <a href="project-logistics.html">
+            Explore Project Logistics →
+        </a>
+    </div>
 
 </section>
-
-
 
 <!-- =====================================================
-     MANUFACTURER PARTNERSHIPS
+     COMMERCIAL EXITS
 ===================================================== -->
+<section class="equipment-paths">
 
-<section class="manufacturer-section">
+    <div class="container">
+        <div class="path-grid">
 
-<div class="container">
+            <article class="path-panel manufacturer-path">
+                <div>
+                    <span class="eyebrow">FOR MANUFACTURERS</span>
 
-<div class="manufacturer-box">
+                    <h2>Want your equipment in the hands of new customers?</h2>
 
+                    <p>
+                        MRLD works with selected industrial equipment manufacturers seeking
+                        qualified buyer access and commercial development in new markets.
+                    </p>
+                </div>
 
-<div>
+                <a class="path-link" href="contact.html">
+                    Discuss Your Equipment →
+                </a>
+            </article>
 
-<span class="eyebrow">
-MANUFACTURER & PRINCIPAL PARTNERSHIPS
-</span>
+            <article class="path-panel buyer-path">
+                <div>
+                    <span class="eyebrow">FOR BUYERS</span>
 
+                    <h2>Have an equipment requirement?</h2>
 
-<h2>
-Looking to grow into a new market?
-</h2>
+                    <p>
+                        Tell us what the equipment needs to do. We'll start there.
+                    </p>
+                </div>
 
+                <a class="path-link" href="contact.html">
+                    Discuss Your Requirement →
+                </a>
+            </article>
 
-<p>
-MRLD works with selected equipment manufacturers and principals seeking
-commercial representation, market development, and qualified buyer access.
-</p>
-
-</div>
-
-
-<div class="manufacturer-action">
-
-<a
-    class="button button-light"
-    href="contact.html"
->
-Partner with MRLD
-</a>
-
-</div>
-
-
-</div>
-
-</div>
+        </div>
+    </div>
 
 </section>
-
-
-
-<!-- =====================================================
-     FINAL CTA
-===================================================== -->
-
-<section class="cta-section equipment-cta">
-
-<div class="container">
-
-<div class="cta-box">
-
-<div>
-
-<span class="eyebrow">
-FOR BUYERS
-</span>
-
-
-<h2>
-Looking for a new equipment source?
-</h2>
-
-
-<p>
-Tell us what you are looking for. MRLD can help identify potential
-manufacturers and sourcing opportunities aligned with your requirements.
-</p>
-
-</div>
-
-
-<a
-    class="button"
-    href="contact.html"
->
-Discuss Your Requirements
-</a>
-
-</div>
-
-</div>
-
-</section>
-
 
 </main>
 
