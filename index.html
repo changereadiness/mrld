@@ -28,606 +28,510 @@
 <link rel="stylesheet" href="assets/css/style.css">
 
 
+<link rel="stylesheet" href="assets/css/interactions.css">
+
 <style>
-
 /* =====================================================
-   HOMEPAGE BRIDGE TEST
-   Page-specific styles
+   MRLD — STAGE 2 HOMEPAGE
+   Restraint, hierarchy, commercial clarity.
 ===================================================== */
 
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.bridge-hero {
-    padding: 6rem 0 6rem;
-}
-
-.bridge-hero .hero-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+/* Navigation mark */
+.home-page .logo {
+    display: inline-flex;
     align-items: center;
-    gap: 5rem;
+    gap: 0.68rem;
+    letter-spacing: 0.19em;
 }
 
-.bridge-hero .hero-content {
-    max-width: 720px;
+.home-page .logo img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
 }
 
-.bridge-hero h1 {
-    max-width: 760px;
+.home-page .logo span {
+    transform: translateY(1px);
 }
 
-.bridge-hero .hero-lead {
-    max-width: 680px;
-    font-size: 1.15rem;
+/* Hero */
+.home-hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(5.5rem, 9vw, 8.5rem) 0 clamp(6rem, 9vw, 9rem);
+}
+
+.home-hero::after {
+    content: "";
+    position: absolute;
+    width: min(54vw, 760px);
+    aspect-ratio: 1;
+    right: clamp(-16rem, -12vw, -5rem);
+    top: 50%;
+    transform: translateY(-50%);
+    background: url("assets/images/mrld-symbol-web.png") center / contain no-repeat;
+    opacity: 0.055;
+    pointer-events: none;
+}
+
+.home-hero .hero-layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(390px, .88fr);
+    gap: clamp(4rem, 8vw, 8rem);
+    align-items: center;
+}
+
+.home-hero .hero-content {
+    max-width: 790px;
+}
+
+.home-hero h1 {
+    max-width: 830px;
+    font-size: clamp(3.4rem, 6.4vw, 6.35rem);
+    line-height: .99;
+    letter-spacing: -.052em;
+}
+
+.home-hero .hero-lead {
+    max-width: 640px;
+    margin-top: 1.8rem;
+    color: #596267;
+    font-size: 1.12rem;
 }
 
 .hero-actions-dual {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 2.15rem;
 }
-
-
-/* =====================================================
-   HERO BRIDGE VISUAL
-===================================================== */
-
-.market-bridge {
-    position: relative;
-    min-height: 430px;
-    padding: 2rem;
-
-    background:
-        linear-gradient(
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        ),
-        #151819;
-
-    background-size: 38px 38px;
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-    overflow: hidden;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* subtle technical glow */
-
-.market-bridge::before {
-    content: "";
-    position: absolute;
-
-    width: 360px;
-    height: 360px;
-
-    border-radius: 50%;
-
-    background: radial-gradient(
-        circle,
-        rgba(181,106,60,0.16) 0%,
-        rgba(181,106,60,0.05) 35%,
-        transparent 70%
-    );
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    pointer-events: none;
-}
-
-
-/* outer technical ring */
-
-.market-bridge::after {
-    content: "";
-
-    position: absolute;
-
-    width: 300px;
-    height: 300px;
-
-    border: 1px solid rgba(255,255,255,0.06);
-
-    border-radius: 50%;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    pointer-events: none;
-}
-
-
-.market-bridge-inner {
-    position: relative;
-    z-index: 2;
-
-    width: 100%;
-}
-
-
-/* eyebrow */
-
-.market-bridge-label {
-    text-align: center;
-
-    font-family: "Inter", sans-serif;
-
-    font-size: 0.68rem;
-    font-weight: 600;
-
-    letter-spacing: 0.16em;
-
-    color: rgba(255,255,255,0.55);
-
-    text-transform: uppercase;
-
-    margin-bottom: 2.25rem;
-}
-
-
-/* node layout */
-
-.market-flow {
-    display: grid;
-
-    grid-template-columns:
-        minmax(100px, 1fr)
-        55px
-        minmax(130px, 1.25fr)
-        55px
-        minmax(100px, 1fr);
-
-    align-items: center;
-
-    gap: 0.5rem;
-}
-
-
-.market-node {
-    position: relative;
-
-    min-height: 125px;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 1rem;
-
-    border: 1px solid rgba(255,255,255,0.16);
-
-    background: rgba(255,255,255,0.035);
-
-    color: #ffffff;
-}
-
-
-.market-node small {
-    display: block;
-
-    margin-bottom: 0.55rem;
-
-    font-size: 0.62rem;
-
-    letter-spacing: 0.14em;
-
-    text-transform: uppercase;
-
-    color: rgba(255,255,255,0.45);
-}
-
-
-.market-node strong {
-    font-family: "Manrope", sans-serif;
-
-    font-size: 0.95rem;
-
-    line-height: 1.25;
-}
-
-
-.market-node.mrld {
-    min-height: 155px;
-
-    border-color: rgba(181,106,60,0.75);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(181,106,60,0.2),
-            rgba(255,255,255,0.035)
-        );
-
-    box-shadow:
-        0 0 0 1px rgba(181,106,60,0.08),
-        0 0 45px rgba(181,106,60,0.08);
-}
-
-
-.market-node.mrld small {
-    color: rgba(255,255,255,0.6);
-}
-
-
-.market-node.mrld strong {
-    font-size: 1.35rem;
-
-    letter-spacing: 0.03em;
-}
-
-
-/* arrows */
-
-.market-arrow {
-    position: relative;
-
-    height: 1px;
-
-    background: rgba(255,255,255,0.25);
-}
-
-
-.market-arrow::after {
-    content: "";
-
-    position: absolute;
-
-    right: 0;
-    top: 50%;
-
-    width: 7px;
-    height: 7px;
-
-    border-top: 1px solid rgba(255,255,255,0.6);
-    border-right: 1px solid rgba(255,255,255,0.6);
-
-    transform: translateY(-50%) rotate(45deg);
-}
-
-
-/* capabilities */
-
-.market-capabilities {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 0.5rem;
-
-    margin-top: 2.25rem;
-
-    padding-top: 1.5rem;
-
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-
-.market-capabilities span {
-    text-align: center;
-
-    font-size: 0.63rem;
-
-    letter-spacing: 0.08em;
-
-    text-transform: uppercase;
-
-    color: rgba(255,255,255,0.48);
-}
-
-
-/* =====================================================
-   SECONDARY BUTTON
-===================================================== */
 
 .button-secondary {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
     padding: 0.9rem 1.4rem;
-
     border: 1px solid currentColor;
-
     text-decoration: none;
-
     font-weight: 600;
 }
 
-
-/* =====================================================
-   BRIDGE SECTION
-===================================================== */
-
-.bridge-section {
-    padding: 6rem 0;
+/* Minimal bridge */
+.hero-connection {
+    position: relative;
+    min-height: 260px;
+    display: flex;
+    align-items: center;
 }
 
-.bridge-intro {
-    max-width: 800px;
-
-    margin-bottom: 3rem;
+.hero-connection::before {
+    content: "";
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 50%;
+    height: 1px;
+    background: rgba(32,36,38,.24);
 }
 
-.bridge-intro h2 {
-    max-width: 760px;
+.hero-connection::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 5%;
+    width: 34%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--copper), transparent);
+    opacity: .8;
+    animation: bridgePulse 5.8s ease-in-out infinite;
 }
 
-
-/* =====================================================
-   MANUFACTURER / BUYER CARDS
-===================================================== */
-
-.bridge-grid {
+.connection-grid {
+    position: relative;
+    z-index: 1;
+    width: 100%;
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 1.5rem;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1.15rem;
 }
 
-
-.bridge-card {
-    padding: 2.5rem;
-
-    border: 1px solid rgba(0,0,0,0.12);
-
-    background: rgba(255,255,255,0.35);
+.connection-label {
+    font-family: var(--body-font);
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #697277;
+    white-space: nowrap;
 }
 
-
-.bridge-card h3 {
-    margin-bottom: 1rem;
+.connection-label:last-child {
+    justify-self: end;
 }
 
-
-.bridge-card p {
-    max-width: 560px;
+.connection-core {
+    position: relative;
+    width: 118px;
+    height: 118px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(32,36,38,.19);
+    border-radius: 50%;
+    background: rgba(242,241,237,.93);
+    box-shadow: 0 14px 45px rgba(32,36,38,.07);
 }
 
+.connection-core img {
+    width: 48px;
+    opacity: .82;
+}
 
-.bridge-card .card-link {
+.connection-core span {
+    position: absolute;
+    bottom: -2rem;
+    font-family: var(--heading-font);
+    font-size: .69rem;
+    font-weight: 700;
+    letter-spacing: .17em;
+    color: var(--graphite);
+}
+
+@keyframes bridgePulse {
+    0%, 100% { transform: translateX(0); opacity: .12; }
+    45% { opacity: .8; }
+    70% { transform: translateX(155%); opacity: .45; }
+}
+
+/* Commercial centre of gravity */
+.audience-section {
+    padding: 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.audience-panel {
+    min-height: 470px;
+    padding: clamp(3rem, 6vw, 5.25rem) clamp(2.25rem, 5vw, 4.75rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.audience-panel:first-child {
+    border-right: 1px solid var(--border);
+}
+
+.audience-panel .eyebrow {
+    margin-bottom: 2.5rem;
+}
+
+.audience-panel h2 {
+    max-width: 520px;
+    margin-bottom: 1.4rem;
+    font-size: clamp(2.5rem, 4.4vw, 4.45rem);
+    line-height: 1.02;
+    letter-spacing: -.045em;
+}
+
+.audience-panel p {
+    max-width: 510px;
+    color: #5d666a;
+    font-size: 1.02rem;
+}
+
+.audience-panel .card-link {
     display: inline-flex;
-
-    margin-top: 1.5rem;
+    align-items: center;
+    gap: .6rem;
+    margin-top: 2.4rem;
+    font-weight: 600;
+    text-decoration: none;
 }
 
+.audience-panel .card-link span {
+    transition: transform .22s ease;
+}
 
-/* =====================================================
-   EQUIPMENT
-===================================================== */
+.audience-panel .card-link:hover span {
+    transform: translateX(4px);
+}
+
+/* Equipment */
+.equipment-section {
+    padding: clamp(5.5rem, 8vw, 8rem) 0;
+}
+
+.equipment-section .section-header {
+    max-width: 760px;
+    margin-bottom: 3.25rem;
+}
 
 .equipment-preview {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 1.25rem;
-
-    margin-top: 2.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
 }
-
 
 .equipment-item {
+    min-height: 235px;
+    padding: 2rem;
     display: flex;
-
     flex-direction: column;
-
-    min-height: 175px;
-
-    padding: 1.75rem;
-
-    border: 1px solid rgba(0,0,0,0.12);
-
-    background: rgba(255,255,255,0.35);
-
+    justify-content: space-between;
+    background: var(--background);
+    color: inherit;
     text-decoration: none;
-
-    transition:
-        transform 0.2s ease,
-        border-color 0.2s ease;
+    transition: background-color .22s ease, transform .22s ease;
 }
-
 
 .equipment-item:hover {
-    transform: translateY(-3px);
-
-    border-color: rgba(0,0,0,0.28);
+    background: var(--white);
 }
-
 
 .equipment-item strong {
     display: block;
-
-    margin-bottom: 0.7rem;
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: 1.05rem;
+    max-width: 280px;
+    font-family: var(--heading-font);
+    font-size: 1.45rem;
+    line-height: 1.25;
+    color: var(--graphite);
 }
-
 
 .equipment-item span {
     display: block;
-
+    max-width: 300px;
+    color: #677075;
     line-height: 1.65;
 }
 
-
-.equipment-item.coming-soon {
-    border-style: dashed;
-
-    opacity: 0.78;
+.equipment-item .equipment-arrow {
+    margin-top: 2rem;
+    color: var(--copper);
+    font-weight: 600;
 }
 
-
-.equipment-item.coming-soon strong {
-    font-size: 0.95rem;
+.equipment-item.manufacturer-invite {
+    background: var(--graphite);
 }
 
-
-/* =====================================================
-   MARKET ACCESS
-===================================================== */
-
-.partner-network-note {
-    margin-top: 1.5rem;
-
-    font-size: 0.9rem;
-
-    opacity: 0.7;
+.equipment-item.manufacturer-invite strong,
+.equipment-item.manufacturer-invite .equipment-arrow {
+    color: var(--white);
 }
 
+.equipment-item.manufacturer-invite span {
+    color: rgba(250,250,248,.68);
+}
 
-/* =====================================================
-   FINAL CTA
-===================================================== */
+.equipment-item.manufacturer-invite:hover {
+    background: #292e30;
+}
 
+/* Brand strip */
+.brand-strip {
+    padding: 2.1rem 0 0;
+}
+
+.brand-strip-label {
+    margin-bottom: 1.75rem;
+    font-size: .67rem;
+    font-weight: 600;
+    letter-spacing: .15em;
+    color: #7b8386;
+    text-transform: uppercase;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(1.25rem, 4vw, 4rem);
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.brand-mark {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .55;
+    transition: opacity .22s ease;
+}
+
+.brand-mark:hover {
+    opacity: .8;
+}
+
+.brand-mark img {
+    max-width: 145px;
+    max-height: 52px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(1) contrast(1.1);
+    mix-blend-mode: multiply;
+}
+
+.brand-mark[data-brand="cummins"] img {
+    max-height: 58px;
+    max-width: 64px;
+}
+
+.brand-mark[data-brand="mwm"] img {
+    max-height: 58px;
+    max-width: 118px;
+}
+
+.brand-mark[data-brand="waukesha"] img {
+    max-width: 150px;
+}
+
+.brand-fallback {
+    display: none;
+    font-family: var(--heading-font);
+    font-size: .98rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: var(--graphite);
+}
+
+/* Final CTA */
 .final-cta {
-    padding: 6rem 0;
+    padding: 5rem 0 6rem;
 }
-
-
-.final-cta .cta-box h2 {
-    max-width: 700px;
-}
-
 
 .final-actions {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 1rem;
-
     margin-top: 2rem;
 }
 
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
 .footer-canada {
     margin-top: 1.5rem;
-
     font-weight: 600;
-
-    letter-spacing: 0.01em;
+    letter-spacing: .01em;
 }
 
+@media (max-width: 980px) {
+    .home-hero::after {
+        width: 720px;
+        right: -280px;
+        opacity: .045;
+    }
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media (max-width: 900px) {
-
-    .bridge-hero .hero-layout {
+    .home-hero .hero-layout {
         grid-template-columns: 1fr;
-
-        gap: 3.5rem;
+        gap: 4rem;
     }
 
-    .market-bridge {
-        min-height: 390px;
+    .hero-connection {
+        max-width: 720px;
+        min-height: 200px;
     }
 
+    .audience-panel {
+        min-height: 430px;
+    }
 }
-
 
 @media (max-width: 760px) {
-
-    .bridge-hero {
-        padding: 5rem 0 4rem;
+    .home-page .logo {
+        gap: .55rem;
     }
 
+    .home-page .logo img {
+        width: 26px;
+        height: 26px;
+    }
 
-    .bridge-grid,
+    .home-hero {
+        padding: 4.75rem 0 5.25rem;
+    }
+
+    .home-hero h1 {
+        font-size: clamp(3rem, 15vw, 4.65rem);
+    }
+
+    .home-hero::after {
+        width: 560px;
+        right: -270px;
+        top: 62%;
+    }
+
+    .hero-connection {
+        min-height: 170px;
+    }
+
+    .connection-grid {
+        grid-template-columns: 1fr auto 1fr;
+        gap: .55rem;
+    }
+
+    .connection-label {
+        font-size: .56rem;
+        letter-spacing: .1em;
+    }
+
+    .connection-core {
+        width: 90px;
+        height: 90px;
+    }
+
+    .connection-core img {
+        width: 37px;
+    }
+
+    .audience-grid,
     .equipment-preview {
         grid-template-columns: 1fr;
     }
 
-
-    .bridge-card {
-        padding: 2rem;
+    .audience-panel {
+        min-height: 0;
+        padding: 4rem 0;
     }
 
-
-    .market-flow {
-        grid-template-columns: 1fr;
-
-        gap: 0.65rem;
+    .audience-panel:first-child {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
     }
 
-
-    .market-node,
-    .market-node.mrld {
-        min-height: 95px;
+    .equipment-preview {
+        gap: 1px;
     }
 
-
-    .market-arrow {
-        width: 1px;
-
-        height: 24px;
-
-        margin: 0 auto;
-
-        background: rgba(255,255,255,0.25);
+    .equipment-item {
+        min-height: 210px;
     }
 
-
-    .market-arrow::after {
-        right: auto;
-
-        top: auto;
-        bottom: 0;
-        left: 50%;
-
-        transform:
-            translateX(-50%)
-            rotate(135deg);
+    .brand-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 2rem;
     }
-
-
-    .market-capabilities {
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 1rem;
-    }
-
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .hero-connection::after {
+        animation: none;
+        left: 33%;
+        width: 34%;
+        opacity: .45;
+    }
+}
 </style>
-
-
-<link rel="stylesheet" href="assets/css/interactions.css">
 
 </head>
 
@@ -648,7 +552,8 @@
             class="logo"
             aria-label="MRLD Home"
         >
-            MRLD
+            <img src="assets/images/mrld-symbol-web.png" alt="" aria-hidden="true">
+            <span>MRLD</span>
         </a>
 
 
@@ -716,42 +621,31 @@
      HERO
 ===================================================== -->
 
-<section class="hero bridge-hero">
+<section class="hero home-hero">
 
     <div class="container hero-layout">
 
-
         <div class="hero-content">
 
-     <span class="eyebrow">
-    INDUSTRIAL EQUIPMENT · CANADA <span class="text-arrow">↔︎</span> ASIA
-</span>
-
+            <span class="eyebrow">
+                INDUSTRIAL EQUIPMENT · CANADA <span class="text-arrow">↔︎</span> ASIA
+            </span>
 
             <h1>
                 Connecting manufacturers with buyers.
             </h1>
 
-
             <p class="hero-lead">
                 MRLD connects selected industrial equipment manufacturers across Asia with qualified buyers in Canada.
             </p>
 
-
             <div class="hero-actions-dual">
 
-                <a
-                    class="button"
-                    href="pages/contact.html"
-                >
+                <a class="button" href="pages/contact.html">
                     Partner with MRLD
                 </a>
 
-
-                <a
-                    class="button-secondary"
-                    href="pages/equipment.html"
-                >
+                <a class="button-secondary" href="pages/equipment.html">
                     Source Equipment
                 </a>
 
@@ -759,90 +653,22 @@
 
         </div>
 
+        <div class="hero-connection" aria-label="MRLD connects manufacturers and buyers">
 
-        <!-- HERO BRIDGE GRAPHIC -->
+            <div class="connection-grid">
 
-        <div class="market-bridge">
+                <span class="connection-label">
+                    Manufacturers
+                </span>
 
-            <div class="market-bridge-inner">
-
-                <div class="market-bridge-label">
-                    THE MRLD BRIDGE
+                <div class="connection-core">
+                    <img src="assets/images/mrld-symbol-web.png" alt="" aria-hidden="true">
+                    <span>MRLD</span>
                 </div>
 
-
-                <div class="market-flow">
-
-
-                    <div class="market-node">
-
-                        <small>
-                            Supply
-                        </small>
-
-                        <strong>
-                            Asian<br>
-                            Manufacturers
-                        </strong>
-
-                    </div>
-
-
-                    <div class="market-arrow"></div>
-
-
-                    <div class="market-node mrld">
-
-                        <small>
-                            Market Reach
-                        </small>
-
-                        <strong>
-                            MRLD
-                        </strong>
-
-                    </div>
-
-
-                    <div class="market-arrow"></div>
-
-
-                    <div class="market-node">
-
-                        <small>
-                            Demand
-                        </small>
-
-                        <strong>
-                            Qualified<br>
-                            Buyers
-                        </strong>
-
-                    </div>
-
-
-                </div>
-
-
-                <div class="market-capabilities">
-
-                    <span>
-                        Market
-                    </span>
-
-                    <span>
-                        Representation
-                    </span>
-
-                    <span>
-                        Leverage
-                    </span>
-
-                    <span>
-                        Delivery
-                    </span>
-
-                </div>
+                <span class="connection-label">
+                    Buyers
+                </span>
 
             </div>
 
@@ -853,133 +679,70 @@
 </section>
 
 
-
 <!-- =====================================================
-     THE MRLD BRIDGE
+     FOR MANUFACTURERS / FOR BUYERS
 ===================================================== -->
 
-<section class="bridge-section">
+<section class="audience-section">
 
-    <div class="container">
+    <div class="container audience-grid">
 
+        <article class="audience-panel">
 
-        <div class="bridge-intro">
-
-            <span class="eyebrow">
-                THE MRLD BRIDGE
-            </span>
-
-
-            <h2>
-                One connection between selected supply and qualified demand.
-            </h2>
-
-
-            <p>
-                MRLD works on both sides of the industrial equipment market
-                by helping selected manufacturers across Asia reach qualified buyers 
-                in Canada, while helping Canadian organizations identify 
-                reliable equipment and alternative sources.
-            </p>
-
-        </div>
-
-
-
-        <div class="bridge-grid">
-
-
-            <!-- MANUFACTURERS -->
-
-            <article class="bridge-card">
-
-                <span class="service-number">
-                    SELL
+            <div>
+                <span class="eyebrow">
+                    FOR MANUFACTURERS
                 </span>
-
-
-                <h3>
-                    For Manufacturers
-                </h3>
-
 
                 <h2>
                     Looking to grow into new markets?
                 </h2>
 
-
                 <p>
-                    MRLD provides market representation, business development,
-                    and access to qualified buyers for selected equipment
-                    manufacturers seeking opportunities in Canada.
+                    MRLD provides market representation, business development, and access to qualified buyers for selected industrial equipment manufacturers seeking opportunities in Canada.
                 </p>
+            </div>
 
+            <a href="pages/contact.html" class="card-link">
+                Partner with MRLD <span>→</span>
+            </a>
 
-                <a
-                    href="pages/contact.html"
-                    class="card-link"
-                >
-                    Partner with MRLD
-                    <span>→</span>
-                </a>
+        </article>
 
-            </article>
+        <article class="audience-panel">
 
-
-
-            <!-- BUYERS -->
-
-            <article class="bridge-card">
-
-                <span class="service-number">
-                    SOURCE
+            <div>
+                <span class="eyebrow">
+                    FOR BUYERS
                 </span>
-
-
-                <h3>
-                    For Buyers
-                </h3>
-
 
                 <h2>
                     Looking for another source?
                 </h2>
 
-
                 <p>
-                    MRLD helps organizations identify and acquire industrial
-                    equipment from selected manufacturers across Asia through
-                    a Canadian commercial point of contact.
+                    MRLD helps organizations identify and acquire industrial equipment from selected manufacturers across Asia through a Canadian commercial point of contact.
                 </p>
+            </div>
 
+            <a href="pages/equipment.html" class="card-link">
+                Source Equipment <span>→</span>
+            </a>
 
-                <a
-                    href="pages/equipment.html"
-                    class="card-link"
-                >
-                    Source Equipment
-                    <span>→</span>
-                </a>
-
-            </article>
-
-
-        </div>
+        </article>
 
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
      SELECTED EQUIPMENT
 ===================================================== -->
 
-<section class="bridge-section">
+<section class="equipment-section">
 
     <div class="container">
-
 
         <div class="section-header">
 
@@ -987,211 +750,89 @@
                 SELECTED EQUIPMENT
             </span>
 
-
             <h2>
-                Industrial equipment for demanding operational environments.
+                Industrial equipment for demanding environments.
             </h2>
 
-
             <p>
-                MRLD is building a focused network of equipment manufacturers
-                across categories where supplier access, reliability, and
-                execution matter.
+                MRLD works across equipment categories where supplier access, reliability, and execution matter.
             </p>
 
         </div>
-
-
 
         <div class="equipment-preview">
 
-
-            <a
-                href="pages/equipment.html"
-                class="equipment-item"
-            >
-
-                <strong>
-                    Power Generation
-                </strong>
-
-
-                <span>
-                    Diesel generators and power generation equipment.
-                </span>
-
+            <a href="pages/equipment.html" class="equipment-item">
+                <strong>Power Generation</strong>
+                <span>Diesel generators, gas engines, and power generation equipment.</span>
+                <span class="equipment-arrow">Explore →</span>
             </a>
 
-
-
-            <a
-                href="pages/equipment.html"
-                class="equipment-item"
-            >
-
-                <strong>
-                    Construction Machinery
-                </strong>
-
-
-                <span>
-                    Equipment for construction, infrastructure, and earthmoving.
-                </span>
-
+            <a href="pages/equipment.html" class="equipment-item">
+                <strong>Construction Machinery</strong>
+                <span>Equipment for construction, infrastructure, and earthmoving applications.</span>
+                <span class="equipment-arrow">Explore →</span>
             </a>
 
+            <a href="pages/contact.html" class="equipment-item manufacturer-invite">
+                <strong>Beyond these categories</strong>
+                <span>Industrial equipment manufacturers exploring the Canadian market are invited to start a conversation.</span>
+                <span class="equipment-arrow">Discuss your equipment →</span>
+            </a>
 
+        </div>
 
-            <div class="equipment-item coming-soon">
+        <div class="brand-strip">
 
-                <strong>
-                    More Equipment Categories — Coming Soon
-                </strong>
-
-
-                <span>
-                    MRLD is actively expanding its manufacturer network.
-                </span>
-
+            <div class="brand-strip-label">
+                Selected equipment brands
             </div>
 
+            <div class="brand-grid" aria-label="Selected equipment brands available through MRLD">
+
+                <div class="brand-mark" data-brand="caterpillar">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Caterpillar_logo.svg"
+                        alt="Caterpillar"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+                    >
+                    <span class="brand-fallback">CATERPILLAR</span>
+                </div>
+
+                <div class="brand-mark" data-brand="mwm">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/a/a0/MWM.svg"
+                        alt="MWM"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+                    >
+                    <span class="brand-fallback">MWM</span>
+                </div>
+
+                <div class="brand-mark" data-brand="cummins">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Cummins_logo.svg"
+                        alt="Cummins"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+                    >
+                    <span class="brand-fallback">CUMMINS</span>
+                </div>
+
+                <div class="brand-mark" data-brand="waukesha">
+                    <img
+                        src="https://seeklogo.com/images/W/waukesha-engines-logo-A2FFFE0D5C-seeklogo.com.png"
+                        alt="Waukesha"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+                    >
+                    <span class="brand-fallback">WAUKESHA</span>
+                </div>
+
+            </div>
 
         </div>
 
     </div>
 
 </section>
-
-
-
-<!-- =====================================================
-     MARKET REACH
-===================================================== -->
-
-<section class="process-section">
-
-    <div class="container">
-
-
-        <div class="process-intro">
-
-            <div>
-
-                <span class="eyebrow eyebrow-light">
-                    MARKET REACH
-                </span>
-
-
-                <h2>
-                    More than a supplier directory.
-                </h2>
-
-            </div>
-
-
-            <p>
-                MRLD selectively develops manufacturer relationships and
-                connects them with real market opportunities. We support the
-                commercial path from initial requirement and supplier
-                identification through coordination and delivery.
-            </p>
-
-        </div>
-
-
-
-        <div class="process-grid">
-
-
-            <div class="process-step">
-
-                <span class="process-number">
-                    01
-                </span>
-
-                <div class="process-line"></div>
-
-                <h3>
-                    Identify
-                </h3>
-
-                <p>
-                    Understand equipment requirements, market opportunities,
-                    specifications, and project conditions.
-                </p>
-
-            </div>
-
-
-
-            <div class="process-step">
-
-                <span class="process-number">
-                    02
-                </span>
-
-                <div class="process-line"></div>
-
-                <h3>
-                    Connect
-                </h3>
-
-                <p>
-                    Match qualified buyers, manufacturers, equipment, and
-                    commercial opportunities.
-                </p>
-
-            </div>
-
-
-
-            <div class="process-step">
-
-                <span class="process-number">
-                    03
-                </span>
-
-                <div class="process-line"></div>
-
-                <h3>
-                    Coordinate
-                </h3>
-
-                <p>
-                    Align suppliers, logistics providers, stakeholders,
-                    documentation, and project requirements.
-                </p>
-
-            </div>
-
-
-
-            <div class="process-step">
-
-                <span class="process-number">
-                    04
-                </span>
-
-                <div class="process-line"></div>
-
-                <h3>
-                    Deliver
-                </h3>
-
-                <p>
-                    Support the movement from commercial opportunity through
-                    equipment delivery and project execution.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
 
 
 <!-- =====================================================
