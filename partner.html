@@ -30,6 +30,7 @@
 .partner-page .logo span { transform:translateY(1px); }
 
 .partner-gate { min-height:calc(100vh - 90px); display:flex; align-items:center; padding:5rem 0; }
+.partner-gate[hidden] { display:none !important; }
 .partner-gate-inner { width:100%; max-width:690px; margin:0 auto; text-align:center; }
 .partner-gate .eyebrow { display:block; margin-bottom:1.5rem; }
 .partner-gate h1 { max-width:680px; margin:0 auto 1.35rem; }
@@ -44,8 +45,8 @@
 .access-error { display:none; margin-top:1rem; font-size:.82rem; color:#8b3f32; }
 .access-note { margin-top:1.5rem; font-size:.76rem; opacity:.58; line-height:1.6; }
 
-.partner-content { display:none; padding:5.5rem 0 6rem; }
-.partner-content.is-visible { display:block; }
+.partner-content { display:block; padding:5.5rem 0 6rem; }
+.partner-content[hidden] { display:none !important; }
 .partner-header { max-width:920px; margin-bottom:3.25rem; }
 .partner-header h1 { max-width:880px; margin-bottom:1.1rem; }
 .partner-header p { max-width:780px; font-size:1.08rem; }
@@ -476,7 +477,7 @@
 <!-- =====================================================
      PARTNER WORKSPACE
 ===================================================== -->
-<section class="partner-content" id="partner-content">
+<section class="partner-content" id="partner-content" hidden aria-hidden="true">
     <div class="container">
         <div class="partner-header">
             <span class="eyebrow">MRLD · PARTNER WORKSPACE</span>
@@ -757,9 +758,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (enteredCode === ACCESS_CODE) {
 
-            accessGate.style.display = "none";
+            accessGate.hidden = true;
 
-            partnerContent.classList.add("is-visible");
+            partnerContent.hidden = false;
+            partnerContent.setAttribute("aria-hidden", "false");
 
             window.scrollTo({
                 top: 0,
