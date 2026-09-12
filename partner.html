@@ -45,11 +45,9 @@
 .access-error { display:none; margin-top:1rem; font-size:.82rem; color:#8b3f32; }
 .access-note { margin-top:1.5rem; font-size:.76rem; opacity:.58; line-height:1.6; }
 
-.partner-content { display:block; padding:5.5rem 0 6rem; }
+.partner-content { display:block; padding:0 0 6rem; }
 .partner-content[hidden] { display:none !important; }
-.partner-header { max-width:920px; margin-bottom:3.25rem; }
-.partner-header h1 { max-width:880px; margin-bottom:1.1rem; }
-.partner-header p { max-width:780px; font-size:1.08rem; }
+.partner-header { margin-bottom:0; }
 
 
 .partner-section { padding:3.75rem 0; border-top:1px solid rgba(0,0,0,.12); }
@@ -93,8 +91,57 @@
 @media (max-width:650px) {
   .partner-page .logo { gap:.55rem; } .partner-page .logo img { width:26px; height:26px; }
   .partner-gate { min-height:calc(100vh - 75px); padding:4rem 0; } .access-panel { padding:1.5rem; } .access-row { flex-direction:column; } .access-button { width:100%; }
-  .partner-content { padding:4rem 0; } .info-grid,.checklist { grid-template-columns:1fr; }
+  .partner-content { padding:0 0 4rem; } .info-grid,.checklist { grid-template-columns:1fr; }
 }
+
+/* Partner workspace hero — intentionally mirrors Equipment */
+.partner-workspace-hero {
+    position: relative;
+    overflow: hidden;
+    height: clamp(31rem, 40vw, 35rem);
+    box-sizing: border-box;
+    padding: clamp(5.5rem, 9vw, 8.5rem) 0 clamp(5rem, 8vw, 7.5rem);
+}
+
+.partner-workspace-hero::after {
+    content: "";
+    position: absolute;
+    width: min(40vw, 560px);
+    aspect-ratio: 1;
+    right: clamp(-13rem, -8vw, -3rem);
+    top: 50%;
+    transform: translateY(-50%);
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTkgMjY5Ij4KCjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0ibGVmdEdyYWQiIHgxPSIyMCIgeTE9IjI0NSIgeDI9IjgwIiB5Mj0iMTUwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTUxODE5Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjcyJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KCiAgPGxpbmVhckdyYWRpZW50IGlkPSJtaWRHcmFkIiB4MT0iNTUiIHkxPSIyNDUiIHgyPSIxMjUiIHkyPSIxMDUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxNTE4MTkiLz4KICAgIDxzdG9wIG9mZnNldD0iNTglIiBzdG9wLWNvbG9yPSIjMjAyNDI2Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Im91dEdyYWQiIHgxPSIxMjUiIHkxPSIyMzAiIHgyPSIyMzIiIHkyPSIyNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIwMjQyNiIvPgogICAgPHN0b3Agb2Zmc2V0PSI1MiUiIHN0b3AtY29sb3I9IiM2ODcyNzgiLz4KICAgIDxzdG9wIG9mZnNldD0iODQlIiBzdG9wLWNvbG9yPSIjOEI3NTZBIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNCNTZBM0MiLz4KICA8L2xpbmVhckdyYWRpZW50PgoKICA8bGluZWFyR3JhZGllbnQgaWQ9Imxvd2VyR3JhZCIgeDE9IjEyNSIgeTE9IjI0NSIgeDI9IjIzNSIgeTI9IjEwNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE1MTgxOSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiMyMDI0MjYiLz4KICAgIDxzdG9wIG9mZnNldD0iODYlIiBzdG9wLWNvbG9yPSIjNjg3Mjc4Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4Qjc1NkEiLz4KICA8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIj4KCjxnPgogIDwhLS0gbGVmdCByaXNpbmcgc3BhbiAtLT4KICA8cGF0aCBkPSIKICAgIE0gMjYsMjQ1CiAgICBMIDI2LDE5OQogICAgQyAyNiwxOTAgMzEsMTg1IDM4LDE4MQogICAgQyA0MywxNzggNDgsMTc2IDUyLDE3MwogICAgTCA1MiwyNDUKICAgIFoiIGZpbGw9InVybCgjbGVmdEdyYWQpIi8+CgogIDwhLS0gbWlkZGxlIHJpc2luZyBzcGFuIC0tPgogIDxwYXRoIGQ9IgogICAgTSA2MywyNDUKICAgIEwgNjMsMTYwCiAgICBDIDYzLDE0OSA3MCwxNDMgODAsMTM4CiAgICBDIDk0LDEzMSAxMDcsMTI0IDExNiwxMTUKICAgIEwgMTE2LDI0NQogICAgWiIgZmlsbD0idXJsKCNtaWRHcmFkKSIvPgoKICA8IS0tIHVwcGVyIHVuZm9sZGluZyBibGFkZSAtLT4KICA8cGF0aCBkPSIKICAgIE0gMTI4LDE2NgogICAgTCAxMjgsMTE5CiAgICBDIDEyOCwxMDIgMTM4LDkxIDE1Myw4MgogICAgQyAxNzgsNjcgMjAyLDQ5IDIyNCwyMwogICAgTCAyMjQsMTAyCiAgICBDIDIwNSwxMTUgMTg0LDEyNiAxNjUsMTM3CiAgICBDIDE0OCwxNDcgMTM2LDE1NyAxMjgsMTY2CiAgICBaIiBmaWxsPSJ1cmwoI291dEdyYWQpIi8+CgogIDwhLS0gbG93ZXIgdW5mb2xkaW5nIGJsYWRlIC0tPgogIDxwYXRoIGQ9IgogICAgTSAxMjgsMjQ1CiAgICBMIDEyOCwxOTkKICAgIEMgMTM2LDE4NCAxNDksMTcxIDE2NSwxNjEKICAgIEMgMTg3LDE0NyAyMTEsMTM1IDIzMywxMDYKICAgIEwgMjMzLDE3NwogICAgQyAyMzMsMTkzIDIyNCwyMDQgMjEwLDIxNAogICAgQyAxOTEsMjI3IDE2MiwyMzcgMTI4LDI0NQogICAgWiIgZmlsbD0idXJsKCNsb3dlckdyYWQpIi8+CjwvZz4KCjwvZz4KPC9zdmc+") center / contain no-repeat;
+    opacity: .026;
+    pointer-events: none;
+}
+
+.partner-workspace-hero .partner-header {
+    position: relative;
+    z-index: 1;
+    max-width: 990px;
+}
+
+.partner-workspace-hero h1 {
+    max-width: 980px;
+    margin: 0 0 1.65rem;
+    font-size: clamp(3.15rem, 6.1vw, 6.15rem);
+    line-height: 1;
+    letter-spacing: -.05em;
+}
+
+@media (max-width: 700px) {
+    .partner-workspace-hero {
+        height: 35rem;
+        padding: 4.5rem 0 4.75rem;
+    }
+
+    .partner-workspace-hero::after {
+        width: 90vw;
+        right: -48vw;
+    }
+}
+
 </style>
 
 
@@ -459,12 +506,16 @@
      PARTNER WORKSPACE
 ===================================================== -->
 <section class="partner-content" id="partner-content" hidden aria-hidden="true">
-    <div class="container">
-        <div class="partner-header">
-            <span class="eyebrow">MRLD · PARTNER WORKSPACE</span>
-            <h1>MRLD business partnership information.</h1>
+    <section class="hero partner-workspace-hero">
+        <div class="container">
+            <div class="partner-header">
+                <span class="eyebrow">MRLD · PARTNER WORKSPACE</span>
+                <h1>MRLD business partnership information.</h1>
+            </div>
         </div>
+    </section>
 
+    <div class="container">
         <section class="partner-section">
             <div class="partner-section-header">
                 <div><span class="eyebrow">01 · HOW WE CREATE VALUE</span><h2>How MRLD creates value.</h2></div>
@@ -603,6 +654,7 @@
                     rel="noopener noreferrer"
                 >LinkedIn</a>
                 <a href="mailto:contact@sayudi.com">Email</a>
+                <a href="partner.html">Partner Access</a>
             </nav>
 
         </div>
