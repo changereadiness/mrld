@@ -92,6 +92,57 @@
       html.card-tight .button,html.card-tight .detail{min-height:37px}
       html.card-tight .foot{padding-top:6px;padding-bottom:calc(6px + env(safe-area-inset-bottom));font-size:6.5px}
     }
+
+    /* iPhone Air / modern-phone landscape business-card layout. */
+    @media (orientation:landscape) and (max-height:500px){
+      html,body{width:100%;height:100%;overflow:hidden;overscroll-behavior:none}
+      body{position:fixed;inset:0;width:100%;height:var(--card-vh,100svh);min-height:0;padding:0;display:block;background:var(--dark)}
+      .shell{width:100%;height:100%;max-width:none;border:0;box-shadow:none;display:grid;grid-template-columns:182px minmax(0,1fr);grid-template-rows:minmax(0,1fr) 38px;overflow:hidden;background:var(--white)}
+      .top{grid-column:1;grid-row:1 / 3;padding:calc(24px + env(safe-area-inset-top)) 22px calc(20px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));display:flex;align-items:stretch}
+      .top:after{left:auto;top:0;bottom:0;right:0;width:3px;height:auto;background:linear-gradient(180deg,var(--copper) 0 31%,var(--emerald) 31% 66%,transparent 66%)}
+      .brandrow{width:100%;height:100%;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:16px}
+      .brand{font-size:24px;letter-spacing:.17em;gap:12px}.brand img{width:22px;height:22px}
+      .axis{font-size:8px;line-height:1.6;letter-spacing:.17em;white-space:normal;max-width:105px}
+      .main{grid-column:2;grid-row:1;min-width:0;min-height:0;padding:24px calc(30px + env(safe-area-inset-right)) 20px 30px;display:grid;grid-template-columns:minmax(0,1fr) 308px;grid-template-rows:auto auto auto minmax(0,1fr);column-gap:30px;align-content:center;overflow:hidden}
+      .kicker{grid-column:1;grid-row:1;font-size:8px;align-self:end}
+      h1{grid-column:1;grid-row:2;margin:6px 0 0;font-size:52px;line-height:.92}
+      .role{grid-column:1;grid-row:3;margin-top:9px;font-size:9px}
+      .statement{grid-column:1;grid-row:4;align-self:end;margin:18px 0 0;padding:15px 0 0;font-size:12px;line-height:1.46;max-width:330px}
+      .primary{grid-column:2;grid-row:1 / 3;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 12px;align-self:start}
+      .button{min-height:42px;padding:9px 10px;font-size:7.5px;letter-spacing:.08em}
+      .details{grid-column:2;grid-row:3 / 5;margin:0;border-top:1px solid var(--line);align-self:stretch;display:grid;grid-template-rows:repeat(4,1fr)}
+      .detail{grid-template-columns:48px minmax(0,1fr) auto;gap:8px;min-height:0;height:auto}
+      .label{font-size:7px}.value{font-size:11.5px}.arrow{font-size:13px}
+      .foot{grid-column:2;grid-row:2;padding:0 calc(30px + env(safe-area-inset-right)) 0 30px;min-height:38px;font-size:6.5px;line-height:1.2}
+    }
+    @media (orientation:landscape) and (max-height:500px){
+      html.card-landscape-tight .shell{grid-template-columns:168px minmax(0,1fr);grid-template-rows:minmax(0,1fr) 34px}
+      html.card-landscape-tight .top{padding-top:calc(18px + env(safe-area-inset-top));padding-right:18px;padding-left:calc(20px + env(safe-area-inset-left));padding-bottom:calc(16px + env(safe-area-inset-bottom))}
+      html.card-landscape-tight .brand{font-size:21px}
+      html.card-landscape-tight .brand img{width:19px;height:19px}
+      html.card-landscape-tight .axis{font-size:7px}
+      html.card-landscape-tight .main{padding:18px calc(24px + env(safe-area-inset-right)) 14px 24px;grid-template-columns:minmax(0,1fr) 286px;column-gap:24px}
+      html.card-landscape-tight h1{font-size:45px}
+      html.card-landscape-tight .role{margin-top:6px}
+      html.card-landscape-tight .statement{margin-top:12px;padding-top:10px;font-size:10.7px;line-height:1.38}
+      html.card-landscape-tight .primary{margin-bottom:8px}
+      html.card-landscape-tight .button{min-height:36px;font-size:7px}
+      html.card-landscape-tight .value{font-size:10.5px}
+      html.card-landscape-tight .foot{min-height:34px;padding-left:24px;padding-right:calc(24px + env(safe-area-inset-right))}
+
+      html.card-landscape-ultra .shell{grid-template-columns:154px minmax(0,1fr);grid-template-rows:minmax(0,1fr) 30px}
+      html.card-landscape-ultra .top{padding-top:calc(14px + env(safe-area-inset-top));padding-right:16px;padding-left:calc(18px + env(safe-area-inset-left));padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+      html.card-landscape-ultra .brand{font-size:19px}
+      html.card-landscape-ultra .axis{font-size:6.5px}
+      html.card-landscape-ultra .main{padding:13px calc(20px + env(safe-area-inset-right)) 10px 20px;grid-template-columns:minmax(0,1fr) 270px;column-gap:20px}
+      html.card-landscape-ultra h1{font-size:40px}
+      html.card-landscape-ultra .statement{margin-top:8px;padding-top:8px;font-size:9.8px;line-height:1.3}
+      html.card-landscape-ultra .primary{margin-bottom:6px}
+      html.card-landscape-ultra .button{min-height:32px;padding:6px 8px}
+      html.card-landscape-ultra .label{font-size:6.5px}
+      html.card-landscape-ultra .value{font-size:9.8px}
+      html.card-landscape-ultra .foot{min-height:30px;font-size:6px;padding-left:20px;padding-right:calc(20px + env(safe-area-inset-right))}
+    }
   </style>
   <link rel="stylesheet" href="assets/css/interactions.css">
   <script>
@@ -99,10 +150,14 @@
       const syncViewport = () => {
         const viewport = window.visualViewport;
         const height = viewport ? viewport.height : window.innerHeight;
+        const width = viewport ? viewport.width : window.innerWidth;
         const root = document.documentElement;
+        const landscape = width > height;
         root.style.setProperty('--card-vh', `${height}px`);
-        root.classList.toggle('card-compact', height < 820);
-        root.classList.toggle('card-tight', height < 700);
+        root.classList.toggle('card-compact', !landscape && height < 820);
+        root.classList.toggle('card-tight', !landscape && height < 700);
+        root.classList.toggle('card-landscape-tight', landscape && height < 380);
+        root.classList.toggle('card-landscape-ultra', landscape && height < 330);
       };
       syncViewport();
       window.addEventListener('resize', syncViewport, { passive: true });
